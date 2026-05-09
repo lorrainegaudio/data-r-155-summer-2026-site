@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>03.1.08 ❌ Missing Values Practice Space File Submission HTML | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>03.1.08 ❌ Missing Values Practice Space File Submission HTML</h1>
+      <p>🌱 Core | 30 min | Module 3</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>This assignment collects your <strong>Chapter 6 Missing Values Practice Space</strong> work as a rendered <strong>HTML report</strong>.</p>
+
+      <p>For this chapter, the uploaded file matters because it shows how you handled missing values in a reproducible R Notebook workflow: building a vector with <code>NA</code>s, checking what defaults do, locating missing values, using <code>na.rm = TRUE</code>, and comparing removal versus imputation with short memos that explain your reasoning.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>File Upload</h2>
+
+      <ul>
+        <li><strong>Required file to submit:</strong> <code>chapter6_practice.html</code></li>
+        <li><strong>File type:</strong> <code>.html</code></li>
+        <li><strong>This file should show:</strong>
+          <ul>
+            <li>your completed Chapter 6 Practice Space work for <strong>Task 1 through Task 8</strong></li>
+            <li>the actual R code used in your R Notebook</li>
+            <li>your chapter-specific objects, including <code>pool</code>, <code>scores_numbers</code>, <code>scores</code>, <code>n_missing</code>, <code>average_raw</code>, <code>average_scores</code>, <code>scores_is_missing</code>, <code>missing_positions</code>, <code>mean_of_five</code>, <code>today_date</code>, <code>now_time</code>, <code>scores_clean</code>, and <code>scores_imputed</code></li>
+            <li>your checks after code, such as <code>length()</code>, <code>print()</code>, <code>sum(is.na(...))</code>, <code>mean()</code>, and other chapter checks</li>
+            <li>your one-sentence written explanations where the chapter asks for them</li>
+            <li>your memo responses for each task</li>
+          </ul>
+        </li>
+        <li><strong>Based on:</strong> <a href="../../../assets/Module-3/Chapter_6_❌MissingValues.html">Chapter 6: Missing Values</a></li>
+        <li><strong>If applicable, include:</strong> clear task headings, the required help-file response for <code>?sample</code>, the explanation of why <code>average_raw</code> behaves the way it does using the word <strong>default</strong>, the one-sentence explanation of <code>scores_clean</code> using indexing and <code>!</code>, and the final reflection on a <em>function object</em> versus a <em>function call</em>.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>How You Will Be Marked</h2>
+
+      <h3>✅ Complete if all are true</h3>
+
+      <ol>
+        <li>
+          <strong>Code + tasks</strong>
+          <ul>
+            <li>The uploaded <code>chapter6_practice.html</code> contains the completed <strong>Task 1 through Task 8</strong> for Chapter 6.</li>
+            <li>The work is clearly for <strong>Chapter 6 Missing Values</strong>, not a different chapter or assignment.</li>
+            <li>The file is readable, complete, and not blank, cut off, or replaced with unrelated content.</li>
+            <li>The report shows the actual R code used for the chapter tasks.</li>
+            <li>The submission includes the chapter-specific missing-values workflow: building <code>scores</code> with 3 missing values, counting missingness, locating missing positions, computing a mean that still works when <code>NA</code> appears, removing missing values into <code>scores_clean</code>, and imputing missing values into <code>scores_imputed</code>.</li>
+            <li>The file includes the required chapter objects: <code>pool</code>, <code>scores_numbers</code>, <code>scores</code>, <code>n_missing</code>, <code>average_raw</code>, <code>average_scores</code>, <code>scores_is_missing</code>, <code>missing_positions</code>, <code>mean_of_five</code>, <code>today_date</code>, <code>now_time</code>, <code>scores_clean</code>, and <code>scores_imputed</code>.</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>Memos</strong>
+          <ul>
+            <li>The file includes memo responses for each task where memoing is requested.</li>
+            <li>The file includes the required help-file explanation from Task 1 about how to tell required versus default arguments from the <strong>Usage</strong> line for <code>sample()</code>.</li>
+            <li>The file includes the Chapter 6 explanation of why <code>average_raw</code> behaves the way it does, and that explanation uses the word <strong>default</strong>.</li>
+            <li>The file includes the one-sentence explanation of what the code for <code>scores_clean</code> does, and that explanation mentions indexing and <code>!</code>.</li>
+            <li>The file includes the final reflection explaining the difference between a <em>function object</em> such as <code>mean</code> and a <em>function call</em> such as <code>mean()</code>.</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>Reproducibility / chapter-specific requirements</strong>
+          <ul>
+            <li>The submission is the correct output format: <code>chapter6_practice.html</code>, not the <code>.Rmd</code> source file.</li>
+            <li>The HTML report rendered successfully and opens as a complete report.</li>
+            <li>The notebook was run top to bottom so the HTML reflects a clean, reproducible run rather than leftover objects in the Environment.</li>
+            <li>The report includes the required checks showing that <code>scores</code> has 28 values, there are 3 missing values before cleaning, and there are 0 missing values after imputation.</li>
+            <li>The code correctly uses chapter-specific missing-values tools such as <code>is.na()</code>, <code>which()</code>, <code>na.rm = TRUE</code>, logical indexing with <code>!</code>, and replacement by indexed assignment.</li>
+            <li>The file documents the chapter workflow clearly enough that your missing-values work can be reviewed and rerun later.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <h3>🟡 Not Ready if any are true</h3>
+
+      <ul>
+        <li>No attachment.</li>
+        <li>Wrong artifact.</li>
+        <li>The file cannot be opened.</li>
+        <li>The submitted file is the <code>.Rmd</code> source file instead of the rendered <code>.html</code> report.</li>
+        <li>The report is blank, incomplete, cut off, or unrelated to Chapter 6.</li>
+        <li>The required missing-values workflow is missing or incorrect.</li>
+        <li>The required written explanations or memo responses are missing.</li>
+        <li>The report does not show a clean, reproducible top-to-bottom run.</li>
+      </ul>
+
+      <p>If your submission is marked 🟡 Not Ready, revise to address the missing elements and resubmit for reevaluation before the assignment locks.</p>
+
+      <h3>❌ Missing</h3>
+
+      <p>No submission.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Before You Submit</h2>
+
+      <ul>
+        <li>Confirm your rendered file is named <code>chapter6_practice.html</code>.</li>
+        <li>Confirm you are uploading the <code>.html</code> report, not only the <code>.Rmd</code> notebook source.</li>
+        <li>Confirm the report includes Tasks 1–8.</li>
+        <li>Confirm the report shows the missing-values workflow with <code>scores</code>, <code>n_missing</code>, <code>missing_positions</code>, <code>scores_clean</code>, and <code>scores_imputed</code>.</li>
+        <li>Confirm the report includes the required checks for missing values before and after cleaning or imputation.</li>
+        <li>Confirm your memo notes explain the choices you made, not just the code you typed.</li>
+        <li>Open the HTML file before submitting to make sure it renders correctly on your computer.</li>
+      </ul>
+
+      <p><a href="03-1-07-missing-values-practice-space.html">Back to 03.1.07 ❌ Missing Values Practice Space</a></p>
+
+      <p><a href="../../course-resources/items/how-to-complete-core-practice-space.html">How to Complete 🌱 Core Practice Space</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 3</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

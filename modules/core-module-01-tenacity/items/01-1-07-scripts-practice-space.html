@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>01.1.07 📑 Scripts Practice Space | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>01.1.07 📑 Scripts Practice Space</h1>
+      <p>🌱 Core | 30 min | Module 1: 💪 Tenacity</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>Chapter 2 matters because it moves you from one-off Console commands to a script that records what you ran, in what order, and why.</p>
+
+      <p>In this chapter, you practice writing and running code from the Source pane, using comments to document your thinking, and building basic R objects such as vectors and a simple data frame.</p>
+
+      <p>This work is worth doing now because a script is the foundation of reproducible R work. You will need this habit before later chapters ask you to organize, check, and explain more complex analysis.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>What This Practice Space Checks</h2>
+
+      <ul>
+        <li><strong>Use</strong> <code>seq()</code> and <code>:</code> to build numeric vectors with the correct values.</li>
+        <li><strong>Create</strong> character vectors with <code>c()</code> and extend an existing vector by adding a new element.</li>
+        <li><strong>Check</strong> vectors with <code>length()</code> and <code>mode()</code> to confirm their structure.</li>
+        <li><strong>Assemble</strong> a simple data frame with <code>data.frame()</code> from vectors you created earlier in the script.</li>
+        <li><strong>Run</strong> and save an R script from top to bottom, while documenting errors and troubleshooting with short memos when needed.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Practice Space Steps</h2>
+
+      <ul>
+        <li><strong>Time estimate:</strong> 30 minutes</li>
+        <li><strong>Due:</strong> Thursday</li>
+        <li><strong>Before starting:</strong> Complete the Guided Activity and then work through the Chapter 2 Practice Space tasks in the chapter file.</li>
+        <li><strong>Open:</strong> <a href="../../../assets/Module-1/Chapter_2_📑Scripts.html">Chapter_2_📑Scripts.html</a></li>
+        <li><strong>Use:</strong> RStudio Desktop / R Script</li>
+        <li><strong>Save as:</strong> <code>chapter2_practice.R</code> and <code>chapter2_practice.RData</code></li>
+        <li><strong>Complete:</strong> all 8 Practice Space tasks: Task 0 setup and environment sweep, then Tasks 1–7 on building vectors with <code>seq()</code> and <code>:</code>, checking objects with <code>length()</code> and <code>mode()</code>, creating character vectors with <code>c()</code>, extending an existing vector, and creating the <code>nerdy_df</code> data frame.</li>
+        <li><strong>Return to:</strong> the Practice Space Quiz in Canvas when Canvas is available.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Static Quiz Preview</h2>
+
+      <div class="context-note">
+        <p><strong>Important:</strong> This page is a static preview of the quiz questions. It does not submit answers and it does not replace the official Canvas quiz when Canvas is available.</p>
+      </div>
+
+      <h3>Task 1</h3>
+
+      <p>🎯 Build a numeric vector named <code>exponents</code> that contains the integers from 0.5 to 10 using the <code>seq()</code> function.</p>
+
+      <pre><code>exponents &lt;- ________(from = ________, to = ________)
+
+length(________)
+mode(exponents)</code></pre>
+
+      <p>🗣 The output shows length <code>10</code> and mode <code>numeric</code>.</p>
+
+      <p><strong>Word bank:</strong> <code>seq</code>, <code>0.5</code>, <code>10</code>, <code>exponents</code></p>
+
+      <h3>Task 2</h3>
+
+      <p>🎯 Create a numeric vector using <code>:</code> called <code>list_numbers</code> that contains the integer values from 1 to 10.</p>
+
+      <pre><code>________ &lt;- ________ ________ ________
+
+________(list_numbers)
+length(________)</code></pre>
+
+      <p>🗣 The length is <code>10</code> elements. The mode is <code>numeric</code>.</p>
+
+      <p><strong>Word bank:</strong> <code>list_numbers</code>, <code>1</code>, <code>:</code>, <code>10</code>, <code>mode</code>, <code>list_numbers</code></p>
+
+      <h3>Task 3</h3>
+
+      <p>🎯 Create a character vector named <code>nerdy_palette</code> that contains the listed hexadecimal color codes using the <code>c()</code> function.</p>
+
+      <pre><code>________ ________ ________("#7F00FF", "#003B6F", "#663399", "#4F97A3", "#FFF8E7", "#000000", "#03A062", "#FF00FF", "#CC0000")
+
+________(nerdy_palette)</code></pre>
+
+      <p>🗣 Comment: The output shows there are <code>9</code> hexadecimal color code elements stored in the <code>nerdy_palette</code> vector.</p>
+
+      <p><strong>Word bank:</strong> <code>nerdy_palette</code>, <code>&lt;-</code>, <code>c</code>, <code>length</code>, <code>9</code></p>
+
+      <h3>Task 4</h3>
+
+      <p>🎯 Add <code>"#4D9E68"</code> to the end of the existing <code>nerdy_palette</code> vector.</p>
+
+      <pre><code>nerdy_palette &lt;- c(________, ________)
+
+length(________)</code></pre>
+
+      <p>🗣 Comment: The output shows the updated <code>nerdy_palette</code> vector with <code>10</code> elements.</p>
+
+      <p><strong>Answer format:</strong> fill in the existing vector name, the new hex code, and the vector name checked with <code>length()</code>.</p>
+
+      <h3>Task 7</h3>
+
+      <p>🎯 Create a data frame named <code>nerdy_df</code> that contains three columns: <code>Color</code>, <code>Hex</code>, and <code>Origin</code>.</p>
+
+      <pre><code>nerdy_df &lt;- ________(
+  ________ = color_names,
+  Hex ________ nerdy_palette,
+  Origin = ________
+)
+
+print(________)</code></pre>
+
+      <p>🗣 Comment: The output shows the <code>nerdy_df</code> data frame with three columns.</p>
+
+      <p><strong>Word bank:</strong> <code>data.frame</code>, <code>Color</code>, <code>=</code>, <code>origin</code>, <code>nerdy_df</code></p>
+    </section>
+
+    <section class="content-card">
+      <h2>File Upload Requirement</h2>
+
+      <ul>
+        <li>Your practice work is submitted in a separate assignment.</li>
+        <li><strong>Required files to submit:</strong> <code>chapter2_practice.R</code> and <code>chapter2_practice.RData</code></li>
+      </ul>
+
+      <p>Submit the files in: <a href="01-1-08-scripts-practice-space-file-submission-r-and-rdata.html">01.1.08 Scripts Practice Space File Submission R and RData</a></p>
+    </section>
+
+    <section class="content-card">
+      <h2>Before You Leave This Page</h2>
+
+      <ul>
+        <li>Complete the Chapter 2 Practice Space tasks in RStudio.</li>
+        <li>Save your script as <code>chapter2_practice.R</code>.</li>
+        <li>Save your workspace as <code>chapter2_practice.RData</code>.</li>
+        <li>Run your script from top to bottom before submitting.</li>
+        <li>Use the static quiz preview to check what the Canvas quiz will ask.</li>
+      </ul>
+
+      <p><a href="../../course-resources/items/how-to-complete-core-practice-space.html">How to Complete 🌱 Core Practice Space</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 1</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

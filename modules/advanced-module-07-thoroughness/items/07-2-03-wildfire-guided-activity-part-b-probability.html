@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>07.2.03 🔥 Wildfire Guided Activity: Part B 🎲 Probability | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>07.2.03 🔥 Wildfire Guided Activity: Part B 🎲 Probability</h1>
+      <p>🌳 Advanced Module 7 | Thoroughness</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>In Part B, you move from data summaries to probability modeling. Part B focuses on using a lognormal model for 8-hour wildfire spread in High-hazard areas so you can estimate tail probability, percentile distance, local likelihood, and simulated fast-growing events. This matters because analysts often need to answer risk questions from a model, not just describe observed data. In this guided activity, you will practice using <code>plnorm()</code>, <code>qlnorm()</code>, <code>dlnorm()</code>, and <code>rlnorm()</code>, then interpret what those results mean in the context of wildfire spread.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Advanced Guided Activity</h2>
+
+      <ul>
+        <li><strong>Focus:</strong> lognormal probability modeling and simulation for wildfire spread</li>
+        <li><strong>Time estimate:</strong> 1 hour</li>
+        <li><strong>Do:</strong> Wednesday, Week 7</li>
+        <li><strong>Open:</strong> <a href="../../../assets/Module-7/Fire-Assignment-Part-B.html">Fire-Assignment-Part-B.html</a></li>
+        <li><strong>Use:</strong> RStudio Desktop, Quarto, <code>Fire-Assignment-PartB-StudentTemplate.qmd</code>, and the provided model-input table on this page</li>
+        <li><strong>Have ready:</strong> complete the 🎲 Probability Functions Guided Activity first</li>
+        <li><strong>What you will do:</strong> use the High-hazard lognormal model to compute a tail probability, find a percentile distance, compare density values, simulate 450 wildfire spread distances, count fast-growing ignitions, and visualize the simulated distribution.</li>
+        <li><strong>Produce:</strong>
+          <ul>
+            <li>a completed <code>Fire-Assignment-PartB-StudentTemplate.qmd</code></li>
+            <li>memoed notes for Part B within the QMD file</li>
+            <li>objects such as <code>p_high_exact</code>, <code>q95_high</code>, <code>d_3</code>, <code>d_10</code>, <code>High_Lognorm</code>, and <code>fast_growing_count</code></li>
+            <li>optional rendered file: <code>Fire-Assignment-PartB-StudentTemplate.html</code></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Activity File</h2>
+
+      <ul>
+        <li><a href="../../../assets/Module-7/Fire-Assignment-Part-B.html">Fire-Assignment-Part-B.html</a></li>
+        <li>Pay closest attention to how each lognormal function answers a different kind of wildfire question about the same High-hazard model.</li>
+        <li>Download this file for best viewing. Canvas sometimes prevents some formatting from displaying correctly, and those formatting differences may cause confusion.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Data and Report Template</h2>
+
+      <p>Part B does not introduce a new external dataset. Instead, you will use the values in Table 1 below. Complete your work in the provided template file <code>Fire-Assignment-PartB-StudentTemplate.qmd</code>. You are not generating Table 1 yourself in this part; you are using the given model inputs to answer probability questions and simulate wildfire spread distances.</p>
+
+      <ul>
+        <li><a href="../../../assets/Module-7/Fire-Assignment-PartB-StudentTemplate.qmd">Fire-Assignment-PartB-StudentTemplate.qmd</a></li>
+        <li>Save the template in your course folder before you start, then open it in RStudio.</li>
+      </ul>
+
+      <p>The table below summarizes the quantile-based wildfire hazard categories derived from Idaho&rsquo;s continuous USFS WHP raster and the distance distributions used for an 8-hour run. The <strong>Category</strong> column lists seven bins, from Very Low to Ultra, defined from the raster&rsquo;s cumulative distribution; the WHP index itself is unitless. The <strong>Probability</strong> column is the statewide area share for each bin, expressed as a percent of valid raster area with NA excluded, and is interpreted as the chance that a random ignition falls in that category. You will use the <strong>High</strong> category values when a task asks you to model 8-hour straight-line spread distance for a High-hazard ignition.</p>
+
+      <div style="overflow-x: auto;">
+        <table style="border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 1rem;">
+          <thead>
+            <tr style="background-color: #0033a0; color: #ffffff;">
+              <th style="padding: 10px; text-align: left; border: 1px solid #d8d8d8;">Category</th>
+              <th style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">Probability</th>
+              <th style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">Mean (km)</th>
+              <th style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">SD (km)</th>
+              <th style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">Mean log</th>
+              <th style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">SD log</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 10px; border: 1px solid #d8d8d8;">Very Low</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">25</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">2.0</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">1.0</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">0.582</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">0.472</td>
+            </tr>
+            <tr style="background-color: #f7f7f7;">
+              <td style="padding: 10px; border: 1px solid #d8d8d8;">Low</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">25</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">3.0</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">1.0</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">1.046</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">0.325</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px; border: 1px solid #d8d8d8;">Moderate</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">25</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">4.5</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">1.5</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">1.451</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">0.325</td>
+            </tr>
+            <tr style="background-color: #f7f7f7;">
+              <td style="padding: 10px; border: 1px solid #d8d8d8;"><strong>High</strong></td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;"><strong>15</strong></td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;"><strong>7.0</strong></td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;"><strong>2.0</strong></td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;"><strong>1.907</strong></td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;"><strong>0.280</strong></td>
+            </tr>
+            <tr>
+              <td style="padding: 10px; border: 1px solid #d8d8d8;">Very High</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">5</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">12.0</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">3.0</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">2.455</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">0.246</td>
+            </tr>
+            <tr style="background-color: #f7f7f7;">
+              <td style="padding: 10px; border: 1px solid #d8d8d8;">Extreme</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">4</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">18.0</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">4.0</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">2.866</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">0.220</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px; border: 1px solid #d8d8d8;">Ultra (Top 1%)</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">1</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">28.0</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">6.0</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">3.310</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #d8d8d8;">0.212</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><em>The table also defines a simple fire-spread scenario using plausible values for an 8-hour straight-line distance by hazard category. These distances are not estimated from the WHP raster. They are modeling assumptions chosen for this assignment. Specifically, we assume that ignitions are equally likely anywhere within the valid WHP raster, higher WHP categories correspond to larger 8-hour straight-line spread distances, and within each category, 8-hour distances follow either a zero-truncated normal distribution with the given mean and SD or a lognormal distribution.</em></p>
+    </section>
+
+    <section class="content-card">
+      <h2>Guiding Questions</h2>
+
+      <ul>
+        <li>What is the difference between a tail probability, a percentile, and a density value when you use a lognormal model?</li>
+        <li>Why does Part B focus on the High-hazard category, and what does that let you estimate about wildfire spread risk?</li>
+        <li>How do <code>plnorm()</code>, <code>qlnorm()</code>, <code>dlnorm()</code>, and <code>rlnorm()</code> answer different kinds of questions about the same model?</li>
+        <li>What does a simulated count of fast-growing ignitions add that the exact probability alone does not show?</li>
+        <li>How does the histogram of <code>High_Lognorm</code> connect to the numeric summaries and to what you expect from a lognormal distribution?</li>
+      </ul>
+
+      <p>You do not submit separate answers to these questions. Use them to focus your reading, follow-along coding, and memoed comments as you work through Part B.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Submission for This Part</h2>
+
+      <p>There is one submission for this part right now: the quiz. Complete <code>Fire-Assignment-PartB-StudentTemplate.qmd</code> first so you can work through the coding steps yourself, then use the quiz to check your understanding. The quiz may be taken multiple times, so if you miss a question, review your Part B work and try again.</p>
+
+      <ul>
+        <li><strong>Submit to:</strong> <a href="07-2-04-wildfire-practice-space-part-b-probability.html">🔥 Wildfire Practice Space: Part B 🎲 Probability Quiz</a></li>
+        <li><strong>Submission type:</strong> quiz</li>
+        <li><strong>What to submit:</strong> your completed quiz responses for Part B</li>
+        <li><strong>Before you submit:</strong> use your finished QMD file to review the probability model, your computed values, and the meaning of each lognormal function.</li>
+      </ul>
+
+      <p><strong>No file upload is required for Part B by itself.</strong> Save your completed Part B work because you will later combine Parts A, B, and C into one final wildfire report for the final Wildfire submission page.</p>
+    </section>
+
+    <section class="content-card">
+      <p><a href="../../course-resources/items/how-to-complete-advanced-guided-activities.html">How to Complete 🌳 Advanced Guided Activities</a></p>
+      <p><a href="07-2-00-wildfire-overview.html">Back to 🔥 Wildfire Overview</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

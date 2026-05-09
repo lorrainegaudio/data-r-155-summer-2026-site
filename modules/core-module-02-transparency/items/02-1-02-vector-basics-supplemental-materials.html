@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>02.1.02 📏 Vector Basics Supplemental Materials | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>02.1.02 📏 Vector Basics Supplemental Materials</h1>
+      <p>Optional | Time varies | Module 2</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>Review the supplemental resources on this page if you would like an alternative explanation, example, or walkthrough for concepts in this chapter or need extra help with a specific skill.</p>
+
+      <p>These materials are optional and do not replace the chapter.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Resources</h2>
+
+      <ul>
+        <li>
+          <strong>R for Social Scientists: Introduction to R</strong>
+          <ul>
+            <li>
+              <a href="https://datacarpentry.github.io/r-socialsci/01-intro-to-r.html#creating-objects-in-r" target="_blank" rel="noopener">Creating Objects in R</a> — stop at functions and their arguments.
+              <ul>
+                <li>This reading is most useful for learning how to <strong>assign values with <code>&lt;-</code></strong>, choose clear object names, and understand that R is <strong>case sensitive</strong>. It also helps you see the difference between creating an object, printing it, and then using that object in later calculations.</li>
+              </ul>
+            </li>
+            <li>
+              <a href="https://datacarpentry.github.io/r-socialsci/01-intro-to-r.html#vectors-and-data-types" target="_blank" rel="noopener">Vectors and Data Types</a>
+              <ul>
+                <li>Use this reading to focus on how to build <strong>vectors with <code>c()</code></strong> and how R handles basic data types such as <strong>numeric, character, and logical</strong> values. It is especially useful for seeing what happens when values of different types are combined into the same vector.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="https://vickysteeves.gitlab.io/2020-01-nyuR/getting-started-with-r.html" target="_blank" rel="noopener">R for Social Scientists: Getting Started with R</a>
+          <ul>
+            <li>This reading is most useful for practicing the early workflow of writing code in a script, assigning objects with <code>&lt;-</code>, using <strong>comments with <code>#</code></strong>, and checking objects with functions like <code>length()</code> and <code>class()</code>. It also gives beginner-friendly examples of vector work, subsetting, and handling missing values with <code>na.rm = TRUE</code>.</li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="https://datacarpentry.github.io/r-socialsci/01-intro-to-r.html#subsetting-vectors" target="_blank" rel="noopener">R for Social Scientists: Introduction to R — Subsetting Vectors</a> — stop at Missing Data.
+          <ul>
+            <li>This reading is most useful for learning how to pull values from a vector with <strong>square brackets</strong>, including selecting by position and selecting multiple elements at once. It also helps clarify how <strong>logical tests inside brackets</strong> can return only the values that match a condition.</li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="https://datacarpentry.github.io/genomics-r-intro/01-r-basics.html" target="_blank" rel="noopener">Data Analysis and Visualization with R for Genomics: R Basics</a>
+          <ul>
+            <li>Use this reading when you need a clearer picture of the basic R workflow: creating objects, applying functions, and inspecting what is stored in the Environment. It is especially useful for reinforcing how simple objects, vectors, and functions fit together in everyday R work.</li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="https://datasciencebook.ca/wrangling.html#data-frames-vectors-and-lists" target="_blank" rel="noopener">Data Science: A First Introduction — 3.3 Data Frames, Vectors, and Lists</a>
+          <ul>
+            <li>This reading is most useful for clarifying the difference between a <strong>vector</strong>, a <strong>list</strong>, and a <strong>data frame</strong>. It helps you understand that vectors usually hold one data type, lists can mix types, and data frames organize variables in columns for later analysis.</li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="https://datacarpentry.github.io/genomics-r-intro/07-r-help.html" target="_blank" rel="noopener">Data Analysis and Visualization with R for Genomics: Getting Help with R</a>
+          <ul>
+            <li>Choose this reading when you need help learning the basic <strong>help workflow</strong> in R, especially using <code>?function_name</code>, reading documentation, and checking a function’s arguments. It is most useful for building the habit of looking up what a function does before guessing at the syntax.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Video</h2>
+
+      <h3>Using Functions</h3>
+
+      <p>This video is most useful if you need to see how <strong>objects</strong> and <strong>functions</strong> work together in R, especially creating objects with <code>&lt;-</code> and then applying functions like <code>sum()</code>, <code>summary()</code>, <code>class()</code>, <code>length()</code>, <code>head()</code>, and <code>tail()</code>.</p>
+
+      <p>It is also helpful for watching basic <strong>data frame workflow moves</strong>, such as using <code>$</code> to work with one variable, making a quick <code>plot()</code> or <code>hist()</code>, and changing a function argument like <code>na.rm = TRUE</code> when missing values are present.</p>
+
+      <div class="video-wrapper">
+        <iframe
+          title="R programming for beginners: using functions and objects in R"
+          src="https://www.youtube.com/embed/hvFBDmT4bdY?si=Ps-srK4K3nSbW6bd"
+          width="560"
+          height="315"
+          loading="lazy"
+          allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+        </iframe>
+      </div>
+
+      <p>If the video above does not appear, use the direct link: <a href="https://youtu.be/hvFBDmT4bdY?si=Ps-srK4K3nSbW6bd" target="_blank" rel="noopener">R programming for beginners: using functions and objects in R</a> (11:14 min.).</p>
+
+      <p><a href="../../../assets/Module-2/R_Programming101_TRANSCRIPT_R programming for beginners using functions and objects in R (1).txt">Audio Transcript</a></p>
+
+      <h3>Fast Vectors</h3>
+
+      <p>This video is most useful if you need to see faster ways to <strong>create vectors</strong> and then <strong>index specific elements</strong> with square brackets.</p>
+
+      <p>It is especially helpful for watching how <code>:</code>, <code>rep()</code>, and <code>seq()</code> build vectors, and how indexing can select values, exclude values with a minus sign, or create a cleaned version of a vector without overwriting the original object.</p>
+
+      <div class="video-wrapper">
+        <iframe
+          title="The Basics of R for Ecologists: Lesson 4 Part 2, Creating and indexing vectors"
+          src="https://www.youtube.com/embed/8VMa_kE1tw4?si=nmR9QsKXpZAHtlMM"
+          width="560"
+          height="315"
+          loading="lazy"
+          allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+        </iframe>
+      </div>
+
+      <p>If the video above does not appear, use the direct link: <a href="https://youtu.be/8VMa_kE1tw4?si=nmR9QsKXpZAHtlMM" target="_blank" rel="noopener">The Basics of R for Ecologists: Lesson 4 Part 2 (Creating and indexing vectors)</a> (14:43 min.).</p>
+
+      <p><a href="../../../assets/Module-2/R_for_Ecologists_TRANSCRIPT_The Basics of R for Ecologists Lesson 4 Part 2 (Creating and indexing vectors).txt">Audio Transcript</a></p>
+    </section>
+
+    <section class="content-card">
+      <h2>Use This Page When...</h2>
+
+      <ul>
+        <li>You need another explanation of vectors, object assignment, or data types.</li>
+        <li>You are confused about <code>c()</code>, <code>seq()</code>, <code>:</code>, <code>length()</code>, or <code>class()</code>.</li>
+        <li>You want to see examples of indexing values from a vector.</li>
+        <li>You need help reading R function documentation instead of guessing syntax.</li>
+      </ul>
+
+      <p><a href="02-1-01-vector-basics-guided-activity.html">Back to 02.1.01 📏 Vector Basics Guided Activity</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 2</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>02.1.03 📏 Vector Basics Practice Space | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>02.1.03 📏 Vector Basics Practice Space</h1>
+      <p>🌱 Core | 30 min | Module 2</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>This Practice Space checks whether you can apply the main vector skills from <strong>Chapter 3: Vectors</strong> after completing the associated Guided Activity.</p>
+
+      <p>In this chapter, you work in an R Notebook to build vectors, perform vector arithmetic, interpret recycling, check object class, work with character strings, and create logical vectors with comparison operators.</p>
+
+      <p>This practice matters because these are core mechanics you will keep using as the course moves from simple vectors to more complex data work, and you are also expected to document your thinking in a reproducible notebook workflow.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>What This Practice Space Checks</h2>
+
+      <ul>
+        <li><strong>Build</strong> numeric vectors with <code>c()</code> and check their contents and length.</li>
+        <li><strong>Use</strong> vector arithmetic to combine vectors and interpret the result.</li>
+        <li><strong>Recognize</strong> recycling when vectors of different lengths are used in arithmetic.</li>
+        <li><strong>Explain</strong> how object metadata such as <code>class()</code> affects how R treats an object, including why mixed values in one vector may be coerced.</li>
+        <li><strong>Create</strong> and interpret logical vectors using comparison operators such as <code>&gt;</code>, <code>&lt;</code>, <code>==</code>, and <code>!=</code>.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Practice Space Steps</h2>
+
+      <ul>
+        <li><strong>Time estimate:</strong> 30 minutes</li>
+        <li><strong>Due:</strong> Tuesday</li>
+        <li><strong>Before starting:</strong> Complete the Guided Activity and then work through the Chapter 3 Practice Space tasks in the chapter file.</li>
+        <li><strong>Open:</strong> <a href="../../../assets/Module-2/Chapter_3_📏Vector.html">Chapter_3_📏Vector.html</a></li>
+        <li><strong>Use:</strong> RStudio Desktop / R Notebook</li>
+        <li><strong>Save as:</strong> <code>chapter3_practice.Rmd</code> and workspace <code>chapter3_practice.RData</code></li>
+        <li><strong>Complete:</strong> all 5 Practice Space tasks: build numeric vectors, perform vector arithmetic, continue the vector-skills practice from the chapter, reflect on coercion and object behavior, and finish with a clean-environment run so the notebook works top-to-bottom.</li>
+        <li><strong>Return to:</strong> the Practice Space Quiz in Canvas when Canvas is available.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Static Quiz Preview</h2>
+
+      <div class="context-note">
+        <p><strong>Important:</strong> This page is a static preview of the quiz questions. It does not submit answers and it does not replace the official Canvas quiz when Canvas is available.</p>
+      </div>
+
+      <h3>Task 2</h3>
+
+      <p>📈 <strong>Vector arithmetic</strong></p>
+
+      <p>First, create two sales vectors in your R Notebook. You may choose the values.</p>
+
+      <pre><code># ⚡ Type this in your R Notebook. Fill in the blanks: your choice.
+sales_q1 &lt;- c(___, ___, ___, ___)
+
+# ⚡ Type this in your R Notebook. Fill in the blanks: your choice.
+sales_q2 &lt;- c(___, ___, ___, ___)</code></pre>
+
+      <p>🎯 Using vector arithmetic, create an object named <code>growth</code> that stores the difference between <code>sales_q2</code> and <code>sales_q1</code>.</p>
+
+      <pre><code>growth &lt;- ________ ________ ________
+
+print(growth)</code></pre>
+
+      <p>🗣 The output shows quarter-to-quarter change for each item: positive values mean an increase, negative values mean a decrease.</p>
+
+      <p><strong>Answer format:</strong> fill in the two object names and the arithmetic operator needed to subtract first-quarter sales from second-quarter sales.</p>
+
+      <h3>Task 3</h3>
+
+      <p>🔢 <strong>Exponents and vectorized math</strong></p>
+
+      <p>🎯 Create a numeric vector named <code>binary_powers</code> that contains the powers of 2 from 2<sup>1</sup> to 2<sup>10</sup> using the <code>^</code> operator and the <code>exponents</code> vector. Then, check the length of the <code>binary_powers</code> vector.</p>
+
+      <pre><code>exponents &lt;- 1:10
+binary_powers &lt;- 2 ________ exponents
+
+________(binary_powers)</code></pre>
+
+      <p>🗣 Comment: The output shows <code>10</code> elements in the <code>binary_powers</code> vector.</p>
+
+      <p><strong>Answer format:</strong> fill in the exponent operator and the function used to check the number of elements.</p>
+
+      <h3>Task 4</h3>
+
+      <p>📈 <strong>Vector arithmetic</strong></p>
+
+      <p>🎯 Find the <code>anomaly</code> by subtracting the <code>travel_jumps</code> vector from the <code>cursed_seq</code> vector. You will recreate vectors seen earlier and then subtract them.</p>
+
+      <pre><code>cursed_seq &lt;- c(4L, 8L, 15L, 16L, 23L, 42L)
+
+travel_jumps &lt;- seq(from = 1887, to = 2052, by = 33)
+
+anomaly &lt;- ________ ________ ________
+
+print(anomaly)</code></pre>
+
+      <p>🗣 Comment: The output shows:</p>
+
+      <pre><code>-1883 -1912 -1938 -1970 -1996 -2010</code></pre>
+
+      <p><strong>Answer format:</strong> fill in the two object names and the arithmetic operator needed to subtract <code>travel_jumps</code> from <code>cursed_seq</code>.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>File Upload Requirement</h2>
+
+      <ul>
+        <li>Your practice work is submitted in a separate assignment.</li>
+        <li><strong>Required files to submit:</strong> <code>chapter3_practice.Rmd</code> and <code>chapter3_practice.RData</code></li>
+      </ul>
+
+      <p>Submit the files in: <a href="02-1-04-vector-basics-practice-space-file-submission-rmd-and-rdata.html">02.1.04 Vector Basics Practice Space File Submission RMD &amp; RData</a></p>
+    </section>
+
+    <section class="content-card">
+      <h2>Before You Leave This Page</h2>
+
+      <ul>
+        <li>Complete the Chapter 3 Practice Space tasks in RStudio.</li>
+        <li>Save your notebook as <code>chapter3_practice.Rmd</code>.</li>
+        <li>Save your workspace as <code>chapter3_practice.RData</code>.</li>
+        <li>Run your notebook from a clean Environment to check that it works top-to-bottom.</li>
+        <li>Use the static quiz preview to check what the Canvas quiz will ask.</li>
+      </ul>
+
+      <p><a href="../../course-resources/items/how-to-complete-core-practice-space.html">How to Complete 🌱 Core Practice Space</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 2</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

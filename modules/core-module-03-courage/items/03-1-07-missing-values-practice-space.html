@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>03.1.07 ❌ Missing Values Practice Space | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>03.1.07 ❌ Missing Values Practice Space</h1>
+      <p>🌱 Core | 30 min | Module 3</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>This Practice Space checks whether you can apply the main missing-values skills from <strong>Chapter 6: Missing Values</strong> after completing the associated Guided Activity.</p>
+
+      <p>In this chapter, you use help files to identify required and default arguments, build vectors with missing values, detect and locate <code>NA</code> values, use <code>na.rm</code> correctly, and compare removing missing values with simple imputation.</p>
+
+      <p>This practice matters because missing data can quietly break calculations, and you need to know how to check, explain, and handle those problems before moving on to more complex data analysis.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>What This Practice Space Checks</h2>
+
+      <ul>
+        <li><strong>Use</strong> a help file to distinguish required arguments from default arguments in a function such as <code>sample()</code>.</li>
+        <li><strong>Build</strong> a vector with observed values and missing values using <code>seq()</code>, <code>sample()</code>, and <code>c()</code>.</li>
+        <li><strong>Apply</strong> <code>is.na()</code>, <code>which()</code>, <code>sum()</code>, and <code>mean()</code> to detect, locate, and summarize missing values.</li>
+        <li><strong>Use</strong> <code>na.rm = TRUE</code> correctly when a summary function would otherwise return <code>NA</code> by default.</li>
+        <li><strong>Explain</strong> the difference between removing missing values, imputing missing values, and distinguishing a function object from a function call.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Practice Space Steps</h2>
+
+      <ul>
+        <li><strong>Time estimate:</strong> 1 hour</li>
+        <li><strong>Due:</strong> Thursday</li>
+        <li><strong>Before starting:</strong> Complete the Guided Activity and then work through the Chapter 6 Practice Space tasks in the chapter file.</li>
+        <li><strong>Open:</strong> <a href="../../../assets/Module-3/Chapter_6_❌MissingValues.html">Chapter_6_❌MissingValues.html</a></li>
+        <li><strong>Use:</strong> RStudio Desktop / R Notebook / built-in functions including <code>sample()</code>, <code>mean()</code>, <code>is.na()</code>, <code>which()</code>, <code>Sys.Date()</code>, and <code>Sys.time()</code>.</li>
+        <li><strong>Save as:</strong> <code>chapter6_practice.Rmd</code></li>
+        <li><strong>Complete:</strong> all 9 Practice Space tasks: help-file scavenger hunt, build a random dataset, handle missing data with defaults and <code>na.rm</code>, locate missing values, nest functions, create a quick timestamp, remove and impute missing values, reflect on function object versus function call, and then run everything top-to-bottom and knit to HTML.</li>
+        <li><strong>Return to:</strong> the Practice Space Quiz in Canvas when Canvas is available.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Static Quiz Preview</h2>
+
+      <div class="context-note">
+        <p><strong>Important:</strong> This page is a static preview of the quiz questions. It does not submit answers and it does not replace the official Canvas quiz when Canvas is available.</p>
+      </div>
+
+      <h3>Task 2</h3>
+
+      <p>🛠 <strong>Build a random data set</strong></p>
+
+      <p>🎯 Create <code>scores</code> as <strong>28 values</strong>: 25 random integers from <strong>60–100</strong> plus 3 <code>NA</code>s.</p>
+
+      <ol>
+        <li>Use <code>seq()</code> to create 60 through 100. Store as <code>pool</code>.</li>
+        <li>Use <code>sample()</code> to draw 25 values with replacement.</li>
+        <li>Add three <code>NA</code> values to the end of <code>scores_numbers</code> using <code>c()</code>. Store as <code>scores</code>.</li>
+        <li>Verify that there are 28 elements in <code>scores</code>.</li>
+      </ol>
+
+      <pre><code># ⚡ Type this in your R Notebook. Fill in the blanks.
+set.seed(1)
+
+pool &lt;- ________(60, 100)
+
+scores_numbers &lt;- ________(pool, size = ________, ________ = TRUE)
+
+scores &lt;- c(________, NA, NA, NA)
+
+# ✅ Check the length of scores
+________(scores)</code></pre>
+
+      <p>🗣 Articulate your learning process, connect ideas, or discuss challenges.</p>
+
+      <p><strong>Word bank:</strong> <code>seq</code>, <code>sample</code>, <code>25</code>, <code>replace</code>, <code>scores_numbers</code>, <code>length</code></p>
+
+      <h3>Task 3</h3>
+
+      <p>⚠️ <strong>Handle missing data</strong></p>
+
+      <p>🎯 Using <code>scores</code> from Task 2:</p>
+
+      <ol>
+        <li>Count missing values. Store as <code>n_missing</code>.</li>
+        <li>Compute the mean with defaults. Store as <code>average_raw</code>.</li>
+        <li>Compute the mean excluding <code>NA</code>s and store it as <code>average_score</code>.</li>
+      </ol>
+
+      <pre><code># ⚡ Type this in your R Notebook. Fill in the blanks.
+n_missing &lt;- ________(________(________))
+
+# ✅ Check the number of missing values
+n_missing
+
+# ⚡ Type this in your R Notebook. Fill in the blanks.
+average_raw &lt;- mean(________)
+
+# ⚡ Type this in your R Notebook. Fill in the blanks.
+average_score &lt;- mean(________, ________ = TRUE)
+
+# ✅ Print the mean
+average_score</code></pre>
+
+      <p><strong>Word bank:</strong> <code>sum</code>, <code>is.na</code>, <code>scores</code>, <code>scores</code>, <code>scores</code>, <code>na.rm</code></p>
+
+      <h3>Task 4</h3>
+
+      <p>🔎 <strong>Locate missing values</strong></p>
+
+      <p>🎯 Using <code>scores</code> from Task 2:</p>
+
+      <ol>
+        <li>Use <code>is.na()</code> to create a logical vector showing which elements of <code>scores</code> are missing. Store it as <code>scores_is_missing</code>.</li>
+        <li>Nest <code>is.na()</code> inside <code>which()</code> to find the positions of the missing values. Store as <code>missing_positions</code>.</li>
+      </ol>
+
+      <pre><code># ⚡ Type this in your R Notebook. Fill in the blanks.
+scores_is_missing &lt;- is.na(________)
+
+missing_positions &lt;- which(________(________))</code></pre>
+
+      <p><strong>Answer format:</strong> fill in the object name and the nested missing-value function call.</p>
+
+      <h3>Task 5</h3>
+
+      <p>📦 <strong>Nesting functions</strong></p>
+
+      <p>🎯 Compute the mean of 5 random draws from <code>scores</code> in one line, and make sure it still works even if the draw includes <code>NA</code>.</p>
+
+      <pre><code># ⚡ Type this in your R Notebook. Fill in the blanks.
+set.seed(21)
+
+mean_of_five &lt;- ________(________(scores, size = 5, replace = TRUE), ________ = TRUE)
+
+mean_of_five</code></pre>
+
+      <p><strong>Answer format:</strong> fill in the summary function, the random-draw function, and the missing-value argument.</p>
+
+      <h3>Task 7</h3>
+
+      <p>🧹 <strong>Handling Missing Values</strong></p>
+
+      <p>🎯 Using <code>scores</code> from Task 2:</p>
+
+      <h4>Part A — Remove <code>NA</code> values</h4>
+
+      <p>Create <code>scores_clean</code> by keeping only the observed, non-missing values in <code>scores</code>.</p>
+
+      <pre><code># ⚡ Type this in your R Notebook. Fill in the blanks.
+scores_clean &lt;- ________[________(________)]</code></pre>
+
+      <h4>Part B — Impute: replace <code>NA</code> with the mean of present values</h4>
+
+      <ol>
+        <li>Make a copy of <code>scores</code> named <code>scores_imputed</code> so you do not overwrite the original.</li>
+        <li>Replace the missing values in <code>scores_imputed</code> with the mean of the observed values.</li>
+      </ol>
+
+      <pre><code># ⚡ Type this in your R Notebook. Fill in the blanks.
+scores_imputed &lt;- scores
+
+________[________(________)] &lt;- mean(________, na.rm = TRUE)</code></pre>
+
+      <p><strong>Word bank:</strong> <code>scores</code>, <code>!is.na</code>, <code>scores</code>, <code>scores_imputed</code>, <code>is.na</code>, <code>scores_imputed</code>, <code>scores_imputed</code></p>
+    </section>
+
+    <section class="content-card">
+      <h2>File Upload Requirement</h2>
+
+      <ul>
+        <li>Your practice work is submitted in a separate assignment.</li>
+        <li><strong>Required file to submit:</strong> <code>chapter6_practice.html</code></li>
+      </ul>
+
+      <p>Submit the file in: <a href="03-1-08-missing-values-practice-space-file-submission-html.html">03.1.08 Missing Values Practice Space File Submission HTML</a></p>
+    </section>
+
+    <section class="content-card">
+      <h2>Before You Leave This Page</h2>
+
+      <ul>
+        <li>Complete the Chapter 6 Practice Space tasks in RStudio.</li>
+        <li>Save your notebook as <code>chapter6_practice.Rmd</code>.</li>
+        <li>Knit the notebook to create <code>chapter6_practice.html</code>.</li>
+        <li>Check that your work detects, counts, and locates missing values.</li>
+        <li>Check that your summaries use <code>na.rm = TRUE</code> only when appropriate.</li>
+        <li>Check that your notebook includes memo notes explaining your choices about missing values.</li>
+        <li>Use the static quiz preview to check what the Canvas quiz will ask.</li>
+      </ul>
+
+      <p><a href="../../course-resources/items/how-to-complete-core-practice-space.html">How to Complete 🌱 Core Practice Space</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 3</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

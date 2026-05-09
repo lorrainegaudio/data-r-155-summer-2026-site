@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>05.1.01 🔀 &amp;, |, and %in% Guided Activity | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>05.1.01 🔀 &amp;, |, and %in% Guided Activity</h1>
+      <p>🌱 Core | 1 hr 30 min | Module 5</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>Logical filtering is how analysts turn a plain-English rule into a precise subset of data. In this guided activity, you will practice base R subsetting with <code>[ ]</code>, build conditions with <code>&amp;</code>, <code>|</code>, <code>%in%</code>, and <code>!</code>, and learn why parentheses matter when conditions get more complex.</p>
+
+      <p>That work is worth doing now because later analysis depends on keeping the right rows for the right reason, not just writing code that runs. These skills will help you build cleaner subsets, catch silent logic errors, and explain your filtering choices clearly in R.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Guided Activity</h2>
+
+      <ul>
+        <li><strong>Time estimate:</strong> 1 hr 30 min</li>
+        <li><strong>Do:</strong> Monday</li>
+        <li><strong>Open:</strong> <a href="../../../assets/Module-5/Chapter_10_🔀AndOrIn.html">Chapter_10_🔀AndOrIn.html</a></li>
+        <li><strong>Use:</strong> RStudio, an R Notebook, and the built-in <code>mtcars</code> dataset used in the chapter examples</li>
+        <li><strong>Have ready:</strong> Your course folder open in RStudio and a new R Notebook saved as <code>chapter10_notes.Rmd</code> with the chapter YAML updated before you start coding</li>
+        <li><strong>Produce:</strong> A <code>chapter10_notes.Rmd</code> file with updated YAML, follow-along code, verification checks, and memo notes that document your base R filtering workflow</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Chapter</h2>
+
+      <ul>
+        <li><a href="../../../assets/Module-5/Chapter_10_🔀AndOrIn.html">Chapter_10_🔀AndOrIn.html</a></li>
+        <li>Focus on the guided activity sections on negative indices, logical filtering with <code>!=</code> and <code>!</code>, combining conditions with <code>&amp;</code>, <code>|</code>, and <code>%in%</code>, and the grouping-parentheses section that shows how to prevent a precedence bug.</li>
+        <li>Pay attention to the quick checks the chapter uses to confirm that a subset matches the intended rule.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Data</h2>
+
+      <p><strong>No external dataset required:</strong> Built-in <code>mtcars</code> dataset used during the guided activity.</p>
+
+      <p>This chapter’s guided activity uses <code>mtcars</code> to practice bracket subsetting, negative indexing, logical tests, and multi-condition row filters in base R.</p>
+
+      <p>The <code>gapminder</code> dataset appears later in the Practice Space, but it is not the main dataset for this Guided Activity page.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Guiding Questions</h2>
+
+      <ul>
+        <li>How does the chapter distinguish between excluding rows or columns by position and filtering rows by a logical condition?</li>
+        <li>When should you use <code>&amp;</code>, when should you use <code>|</code>, and when is <code>%in%</code> the cleaner choice?</li>
+        <li>What changes when you put <code>!</code> in front of a logical test, and how is that different from using <code>!=</code>?</li>
+        <li>Why do grouping parentheses matter when a filter mixes <code>&amp;</code> and <code>|</code> in the same statement?</li>
+        <li>As you follow the examples, what quick checks help you confirm that your subset really matches the rule you meant to write?</li>
+      </ul>
+
+      <p>You do not submit answers to these questions, but use them to focus your reading, coding, and memo notes as you work through the Guided Activity.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Before You Leave This Page</h2>
+
+      <ul>
+        <li>Open <a href="../../../assets/Module-5/Chapter_10_🔀AndOrIn.html">Chapter_10_🔀AndOrIn.html</a>.</li>
+        <li>Create and save <code>chapter10_notes.Rmd</code>.</li>
+        <li>Update the YAML before you start coding.</li>
+        <li>Run the examples yourself instead of only reading them.</li>
+        <li>Use checks after each subset to confirm your code matches the rule you intended.</li>
+        <li>Memo any filtering mistake you catch, especially if the code ran but returned the wrong rows.</li>
+      </ul>
+
+      <p><a href="../../course-resources/items/how-to-complete-core-guided-activities.html">How to Complete 🌱 Core Guided Activities</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 5</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

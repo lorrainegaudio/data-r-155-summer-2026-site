@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>07.1.06 📈 ggplot2 Supplemental Materials | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>07.1.06 📈 ggplot2 Supplemental Materials</h1>
+      <p>Optional | Time varies | Module 7</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>Review the supplemental resources on this page if you would like an alternative explanation, example, or walkthrough for concepts in this chapter, or if you need extra help with a specific skill.</p>
+
+      <p>These materials are optional. They do not replace the Chapter 16 guided activity.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Resources</h2>
+
+      <ul>
+        <li>
+          <a href="https://datasciencebook.ca/intro.html#exploring-data-with-visualizations" target="_blank" rel="noopener">Data Science: A First Introduction — 1.10 Exploring data with visualizations</a>
+          <ul>
+            <li>This reading is most useful for learning the basic <code>ggplot</code> workflow for a bar chart: mapping variables with <code>aes()</code>, using <code>geom_bar(stat = "identity")</code>, then improving readability with <code>xlab()</code>, <code>ylab()</code>, and <code>reorder()</code> to sort categories.</li>
+            <li>It also helps clarify that <strong>tidy data structure</strong> is what makes <code>ggplot</code> work cleanly in the first place.</li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="https://vickysteeves.gitlab.io/2020-01-nyuR/data-visualisation-with-ggplot2.html" target="_blank" rel="noopener">R for Social Scientists — 5 Data Visualization with ggplot2</a>
+          <ul>
+            <li>This reading is most useful for understanding <strong>layers and geoms</strong> in practice: how the same <code>ggplot(...)</code> setup can become a scatterplot with <code>geom_point()</code> or a boxplot with <code>geom_boxplot()</code>.</li>
+            <li>It also clearly shows the difference between <strong>mapping</strong> a variable inside <code>aes(color = village)</code> and <strong>setting</strong> a fixed color, plus when <code>geom_jitter()</code> is better than plain points because of overplotting.</li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="https://datacarpentry.github.io/R-ecology-lesson/visualizing-ggplot.html" target="_blank" rel="noopener">Data Analysis and Visualization in R for Ecologists — Data visualization with ggplot2</a>
+          <ul>
+            <li>This reading is most useful once you can already make a basic plot and need help with the <strong>workflow for refining it</strong>: layering global versus geom-specific aesthetics, using <code>alpha</code> for overplotting, combining <code>geom_boxplot()</code> with <code>geom_jitter()</code>, and remembering that the <code>+</code> belongs at the end of the line.</li>
+            <li>It also helps clarify when to move from one plot to many with <strong>faceting</strong>, such as <code>facet_wrap()</code> and <code>facet_grid()</code>, and how to adjust the appearance with a theme such as <code>theme_bw()</code>.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Video</h2>
+
+      <h3>Data Visualization: Short Video</h3>
+
+      <p>Choose this video if you want a concrete example of the basic <code>ggplot()</code> workflow: mapping variables with <code>aes()</code> and then adding a graph layer such as <code>geom_point()</code>, <code>geom_boxplot()</code>, or <code>geom_bar(stat = "summary", fun = "mean")</code>.</p>
+
+      <p>Watch for the coding step of piping a dataset into <code>ggplot()</code> and then switching to <code>+</code> to build the plot layer by layer, because that is a workflow move you will reuse in your own R work.</p>
+
+      <div class="video-wrapper">
+        <iframe
+          title="Data visualization with ggplot"
+          src="https://www.youtube.com/embed/c242yTnsPLw?si=J9QoWI-UxBlbY8Fk"
+          width="560"
+          height="315"
+          loading="lazy"
+          allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+        </iframe>
+      </div>
+
+      <p>If the video above does not appear, use this direct link: <a href="https://youtu.be/c242yTnsPLw?si=NHRTO2RR381uoGti" target="_blank" rel="noopener">Data visualization with ggplot</a> (09:37 min.).</p>
+
+      <p><a href="../../../assets/Module-7/R_Programming101_TRANSCRIPT_Data visualization with ggplot.txt">Audio Transcript</a></p>
+
+      <h3>Data Visualization: Medium Length Video</h3>
+
+      <p>Choose this video if you need a practical example of making bar charts for two categorical variables in <code>ggplot</code>, especially using <code>geom_bar()</code> with <code>position = "dodge"</code> or <code>facet_wrap()</code> to compare groups clearly.</p>
+
+      <p>Watch for the workflow of filtering the dataset first with <code>filter()</code> and <code>drop_na()</code>, then piping it into <code>ggplot()</code> so the plot only uses the categories you want.</p>
+
+      <div class="video-wrapper">
+        <iframe
+          title="Using ggplot to create bar charts for 2 categorical variables"
+          src="https://www.youtube.com/embed/Er-tXfGkL08?si=3NukL28FJslAaTXI"
+          width="560"
+          height="315"
+          loading="lazy"
+          allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+        </iframe>
+      </div>
+
+      <p>If the video above does not appear, use this direct link: <a href="https://youtu.be/Er-tXfGkL08?si=3NukL28FJslAaTXI" target="_blank" rel="noopener">Using ggplot to create bar charts for 2 categorical variables. R programming for beginners</a> (17:25 min.).</p>
+
+      <p><a href="../../../assets/Module-7/R_Programminmg101_TRANSCRIPT_Using ggplot to create bar charts for 2 categorical variables.         R programming for beginners.txt">Audio Transcript</a></p>
+
+      <h3>Data Visualization: Detailed Video</h3>
+
+      <p>Choose this video if you want a practical introduction to the basic <code>ggplot()</code> workflow: defining the dataset, mapping variables with <code>aes()</code>, and adding layers such as <code>geom_point()</code>, <code>geom_line()</code>, <code>geom_boxplot()</code>, or <code>facet_wrap()</code>.</p>
+
+      <p>Watch for the coding step of deciding whether an aesthetic like <code>color</code> or <code>size</code> goes in the main <code>ggplot()</code> call or inside one geometry, because that controls whether the setting applies to the whole plot or just one layer.</p>
+
+      <div class="video-wrapper">
+        <iframe
+          title="ggplot for plots and graphs. An introduction to data visualization using R programming"
+          src="https://www.youtube.com/embed/HPJn1CMvtmI?si=uqZd2UYcxN5WWQeD"
+          width="560"
+          height="315"
+          loading="lazy"
+          allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+        </iframe>
+      </div>
+
+      <p>If the video above does not appear, use this direct link: <a href="https://youtu.be/HPJn1CMvtmI?si=uqZd2UYcxN5WWQeD" target="_blank" rel="noopener">ggplot for plots and graphs. An introduction to data visualization using R programming</a> (26:50 min.).</p>
+
+      <p><a href="../../../assets/Module-7/R_Programming101_TRANSCRIPT_ggplot for plots and graphs. An introduction to data visualization using R programming.txt">Audio Transcript</a></p>
+    </section>
+
+    <section class="content-card">
+      <h2>How to Use These Materials</h2>
+
+      <ul>
+        <li>Start with the Chapter 16 guided activity before using these resources.</li>
+        <li>Use the first reading if you need help with the basic bar-chart workflow and readable labels.</li>
+        <li>Use the second reading if you are confused about geoms, layers, or mapping versus setting aesthetics.</li>
+        <li>Use the third reading if you need help refining plots with transparency, jittering, faceting, or themes.</li>
+        <li>Use the shortest video for a quick workflow refresher, and use the longer videos when you need more examples.</li>
+      </ul>
+
+      <p><a href="07-1-05-ggplot2-guided-activity.html">Back to 07.1.05 📈 ggplot2 Guided Activity</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 7</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>02.1.07 🏗️ Structures Practice Space | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>02.1.07 🏗️ Structures Practice Space</h1>
+      <p>🌱 Core | 30 min | Module 2</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>This Practice Space checks whether you can apply the main vector-metadata skills from <strong>Chapter 4: Structures</strong> after completing the associated Guided Activity.</p>
+
+      <p>In this chapter, you practice using named indexing, positional indexing, and logical filtering on vectors. You also explain coercion and document your work transparently in an R Notebook.</p>
+
+      <p>This practice matters because it is the mechanics behind intentionally selecting values in R, and it prepares you for later filtering, recoding, and subsetting work with datasets.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>What This Practice Space Checks</h2>
+
+      <ul>
+        <li><strong>Use</strong> character indexing to retrieve values from a named vector by element name.</li>
+        <li><strong>Apply</strong> positional indexing to retrieve specific elements from a vector by number.</li>
+        <li><strong>Use</strong> logical filtering and indexing to create subsets of a vector based on a condition.</li>
+        <li><strong>Explain</strong> why mixed-type vectors can trigger coercion, such as numeric values becoming character values.</li>
+        <li><strong>Document</strong> troubleshooting, memo thinking, and verification steps in a reproducible R Notebook workflow.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Practice Space Steps</h2>
+
+      <ul>
+        <li><strong>Time estimate:</strong> 30 minutes</li>
+        <li><strong>Due:</strong> Thursday</li>
+        <li><strong>Before starting:</strong> Complete the Guided Activity and then work through the Chapter 4 Practice Space tasks in the chapter file.</li>
+        <li><strong>Open:</strong> <a href="../../../assets/Module-2/Chapter_4_🏗️Structures.html">Chapter_4_🏗️Structures.html</a></li>
+        <li><strong>Use:</strong> RStudio Desktop / R Notebook</li>
+        <li><strong>Save as:</strong> <code>chapter4_practice.Rmd</code></li>
+        <li><strong>Complete:</strong> all 5 Practice Space tasks: named-vector indexing, positional indexing, logical filtering with indexing, a short reflection on coercion, and the final clean-environment run-and-save check.</li>
+        <li><strong>Return to:</strong> the Practice Space Quiz in Canvas when Canvas is available.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Static Quiz Preview</h2>
+
+      <div class="context-note">
+        <p><strong>Important:</strong> This page is a static preview of the quiz questions. It does not submit answers and it does not replace the official Canvas quiz when Canvas is available.</p>
+      </div>
+
+      <h3>Task 1</h3>
+
+      <p>🎨 <strong>Indexing named vectors</strong></p>
+
+      <p>🎯 Use character indexing to retrieve the hexadecimal color codes for <code>"Matrix Green"</code> and <code>"Command Red"</code> from the <code>nerdy_palette</code> vector.</p>
+
+      <pre><code># ⚡ Type this in your R Notebook
+nerdy_palette &lt;- c(
+  "Octarine" = "#7F00FF",
+  "TARDIS Blue" = "#003B6F",
+  "Rebeccapurple" = "#663399",
+  "Hooloovoo" = "#4F97A3",
+  "Cosmic Latte" = "#FFF8E7",
+  "Vantablack" = "#000000",
+  "Matrix Green" = "#03A062",
+  "Source Engine Magenta" = "#FF00FF",
+  "Command Red" = "#CC0000",
+  "Impossible Green" = "#4D9E68"
+)
+
+# ⚡ Type this in your R Notebook. Fill in the blanks.
+nerdy_palette[c("________", "________")]</code></pre>
+
+      <p><strong>Answer format:</strong> fill in the two element names exactly as they appear in the named vector.</p>
+
+      <h3>Task 2</h3>
+
+      <p>📌 <strong>Indexing by position</strong></p>
+
+      <p>🎯 Use positional indexing to retrieve the 2nd, 4th, and 6th color codes from <code>nerdy_palette</code>.</p>
+
+      <pre><code># ⚡ Type this in your R Notebook
+nerdy_palette &lt;- c(
+  "Octarine" = "#7F00FF",
+  "TARDIS Blue" = "#003B6F",
+  "Rebeccapurple" = "#663399",
+  "Hooloovoo" = "#4F97A3",
+  "Cosmic Latte" = "#FFF8E7",
+  "Vantablack" = "#000000",
+  "Matrix Green" = "#03A062",
+  "Source Engine Magenta" = "#FF00FF",
+  "Command Red" = "#CC0000",
+  "Impossible Green" = "#4D9E68"
+)
+
+# ⚡ Type this in your R Notebook. Fill in the blanks.
+nerdy_palette[c(________, ________, ________)]</code></pre>
+
+      <p><strong>Answer format:</strong> fill in the three numeric positions requested in the task.</p>
+
+      <h3>Task 3</h3>
+
+      <p>⚠️ <strong>Logical filtering + indexing practice</strong></p>
+
+      <p>First, create a vector called <code>sales_q1</code> with four numbers of your choice. Create a vector called <code>sales_q2</code> with four numbers of your choice. Then use vector arithmetic to create an object named <code>growth</code> that stores the difference between <code>sales_q2</code> and <code>sales_q1</code>.</p>
+
+      <p>🎯 Using the <code>growth</code> vector, complete the following:</p>
+
+      <ol>
+        <li>Create a new vector <code>positive_growth</code> that contains only values in <code>growth</code> that are greater than zero.</li>
+        <li>Create a new vector <code>last_two</code> that contains the last two elements of <code>sales_q2</code>. Use numeric positions, not names.</li>
+      </ol>
+
+      <pre><code># ⚡ Type this in your R Notebook. Fill in the blanks.
+positive_growth &lt;- growth[growth ________ 0]
+
+last_two &lt;- sales_q2[c(________, ________)]
+
+# ✅ Check the outputs
+print(positive_growth)
+print(last_two)</code></pre>
+
+      <p><strong>Answer format:</strong> fill in the comparison operator and the two numeric positions for the last two elements of a four-element vector.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>File Upload Requirement</h2>
+
+      <ul>
+        <li>Your practice work is submitted in a separate assignment.</li>
+        <li><strong>Required file to submit:</strong> <code>chapter4_practice.Rmd</code></li>
+      </ul>
+
+      <p>Submit the file in the linked Chapter 4 Practice Space file submission assignment when Canvas is available.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Before You Leave This Page</h2>
+
+      <ul>
+        <li>Complete the Chapter 4 Practice Space tasks in RStudio.</li>
+        <li>Save your notebook as <code>chapter4_practice.Rmd</code>.</li>
+        <li>Check that your notebook includes named indexing, positional indexing, and logical filtering.</li>
+        <li>Include memo notes explaining coercion and any troubleshooting.</li>
+        <li>Run your notebook from a clean Environment to confirm it works top-to-bottom.</li>
+        <li>Use the static quiz preview to check what the Canvas quiz will ask.</li>
+      </ul>
+
+      <p><a href="../../course-resources/items/how-to-complete-core-practice-space.html">How to Complete 🌱 Core Practice Space</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 2</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

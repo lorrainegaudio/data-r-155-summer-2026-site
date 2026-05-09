@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>07.2.04 🔥 Wildfire Practice Space: Part B 🎲 Probability | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>07.2.04 🔥 Wildfire Practice Space: Part B 🎲 Probability</h1>
+      <p>🌳 Advanced Module 7 | Thoroughness</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>This Practice Space Quiz checks whether you understand the main coding moves from <strong>Wildfire Guided Activity: Part B</strong> and the related chapter practice work. In this quiz, you will work with lognormal probability models for wildfire spread by using <code>plnorm()</code>, <code>qlnorm()</code>, <code>dlnorm()</code>, and <code>rlnorm()</code> to answer questions about tail probability, percentile distance, local likelihood, and simulated 8-hour spread distances in High-hazard areas. This practice matters because later simulation work depends on being able to interpret model assumptions, compute meaningful quantities from a distribution, and connect code output back to a wildfire question.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>What this Practice Space Checks</h2>
+
+      <p><strong>This Practice Space checks whether you can:</strong></p>
+
+      <ul>
+        <li>Use <code>plnorm()</code> to compute and interpret a tail probability for High-hazard wildfire spread distance.</li>
+        <li>Use <code>qlnorm()</code> to identify a percentile-based run length under a lognormal model.</li>
+        <li>Use <code>dlnorm()</code> to compare the local likelihood of shorter versus longer wildfire runs.</li>
+        <li>Use <code>rlnorm()</code> and <code>set.seed()</code> to simulate 8-hour spread distances for ignitions in High-hazard areas.</li>
+        <li>Count, summarize, and visualize simulated fast-growing ignitions using logical conditions and a histogram.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Practice Space Steps</h2>
+
+      <ul>
+        <li><strong>Time estimate:</strong> 30 minutes</li>
+        <li><strong>Do:</strong> complete during or after <a href="07-2-03-wildfire-guided-activity-part-b-probability.html">🔥 Wildfire Guided Activity: Part B 🎲 Probability</a></li>
+        <li><strong>Before starting:</strong> complete the guided activity and the related chapter practice tasks</li>
+        <li><strong>Open/Download:</strong> <a href="../../../assets/Module-7/Fire-Assignment-Part-B.html">Fire-Assignment-Part-B.html</a></li>
+        <li><strong>Use:</strong> RStudio Desktop, Quarto, and <code>Fire-Assignment-PartB-StudentTemplate.qmd</code></li>
+        <li><strong>Save as:</strong> <code>Fire-Assignment-PartB-StudentTemplate.qmd</code></li>
+        <li><strong>Complete:</strong> Part B tasks on lognormal tail probability, percentile distance, density comparison, simulation of <code>High_Lognorm</code>, counting <code>fast_growing_count</code>, and visualizing the simulated distances</li>
+        <li><strong>Return to:</strong> this quiz</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>File Upload Requirement</h2>
+
+      <p>Your practice work is <strong>not</strong> submitted here. This page is only for the quiz.</p>
+
+      <p>Complete <code>Fire-Assignment-PartB-StudentTemplate.qmd</code> first so you can work through the coding steps yourself, then use this quiz to check your understanding. Save your completed Part B file because <strong>you will later combine Parts A, B, and C into one final wildfire report</strong> for the <a href="07-2-09-wildfire-peer-review-final-revision.html">final Wildfire submission page</a>.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Quiz Questions</h2>
+
+      <p>Use these questions to check your work after completing the Part B template. The blanks show where you should know the missing code. Use the word bank for each task.</p>
+
+      <h3>Task 1: Tail Probability</h3>
+
+      <p>❓ If a new ignition starts in a High-hazard area, what is the probability that its 8-hour straight-line spread is at least 10 km?</p>
+
+      <p>🎯 Compute the exact probability that a new ignition in a High-hazard area spreads at least 10 km in 8 hours using the <code>plnorm()</code> function. Use the <strong>High</strong> row’s <strong>Mean log</strong> and <strong>SD log</strong> in Table 1. Set <code>lower.tail</code> equal to <code>FALSE</code>. Store the result as <code>p_high_exact</code>.</p>
+
+      <pre><code># ⚡ Test: single lognormal, single threshold
+p_high_exact &lt;- ________(10, ________ = 1.907, ________ = 0.280, ________ = FALSE)
+
+# ✅ Verify
+p_high_exact
+p_high_exact * 100  # as a percentage</code></pre>
+
+      <p>🗣 Comment: Interpret the probability as a percentage. Explain what it means in the context of a new ignition in a High-hazard area.</p>
+
+      <p><strong>Word bank:</strong> <code>plnorm</code>, <code>meanlog</code>, <code>sdlog</code>, <code>lower.tail</code>, <code>qlnorm</code>, <code>dlnorm</code>, <code>rlnorm</code></p>
+
+      <h3>Task 2: 95th Percentile</h3>
+
+      <p>❓ We’ll treat distances above the 95th percentile as “extreme fast runs.” For ignitions in High-hazard areas, what 8-hour distance is only exceeded 5% of the time? In other words, what is the 95th percentile run length?</p>
+
+      <p>🎯 Compute the distance such that there is a 95% chance the 8-hour spread is no more than this value and a 5% chance it exceeds it. Use <code>qlnorm()</code>. Set the probability to <code>0.95</code> and use the parameters in the <strong>High</strong> row’s <strong>Mean log</strong> and <strong>SD log</strong> in Table 1.</p>
+
+      <pre><code># ⚡ Test
+q95_high &lt;- qlnorm(________, meanlog = ________, sdlog = ________)
+
+# ✅ Verify
+q95_high</code></pre>
+
+      <p>🗣 Comment: Interpret the 95th percentile in context. About what percent of High-hazard ignitions are expected to stay below this distance, and about what percent are expected to exceed it?</p>
+
+      <p><strong>Word bank:</strong> <code>0.95</code>, <code>1.907</code>, <code>0.280</code>, <code>95</code>, <code>5</code>, <code>10</code>, <code>8</code>, <code>10.7</code></p>
+
+      <h3>Task 3: Density</h3>
+
+      <p>❓ Under our High-hazard lognormal model, how concentrated is the distribution locally around the shorter 3 km run versus the longer 10 km distance in 8 hours?</p>
+
+      <p><em>Note:</em> Higher density indicates a higher likelihood of the value in a small neighborhood around that point.</p>
+
+      <p>🎯 Compute the density at 3 km and 10 km using <code>dlnorm()</code>. Use the <strong>High</strong> row’s <strong>Mean log</strong> and <strong>SD log</strong> in Table 1.</p>
+
+      <pre><code># ⚡ Test
+d_3  &lt;- ________(________, ________ = ________, ________ = ________)
+d_10 &lt;- ________(________, ________ = ________, ________ = ________)
+
+# ✅ Verify
+d_3
+d_10</code></pre>
+
+      <p>🗣 Comment: Compare the two density values. Which distance has the higher density under the High-hazard lognormal model, and what does that mean?</p>
+
+      <p><strong>Word bank:</strong> <code>dlnorm</code>, <code>3</code>, <code>meanlog</code>, <code>1.907</code>, <code>sdlog</code>, <code>0.280</code>, <code>dlnorm</code>, <code>10</code>, <code>meanlog</code>, <code>1.907</code>, <code>sdlog</code>, <code>0.280</code>, <code>rlnorm</code>, <code>qlnorm</code>, <code>plnorm</code></p>
+
+      <h3>Task 4.1: Replication — Simulate</h3>
+
+      <p>❓ If we simulate 450 new ignitions in High-hazard areas this season, about how many would we expect to classify as “fast-growing” at 10 km or more in 8 hours?</p>
+
+      <p>🎯 Generate a large vector of simulated 8-hour distances for the <strong>High</strong> category using <code>rlnorm()</code>. Use the <strong>High</strong> row’s <strong>Mean log</strong> and <strong>SD log</strong> in Table 1, and store the result as <code>High_Lognorm</code>. Set the number of ignitions per season to <code>450</code>.</p>
+
+      <pre><code>set.seed(2025)
+
+# ⚡ Test
+High_Lognorm &lt;- ________(________ = 450, ________ = 1.907, ________ = 0.280)
+
+# ✅ Verify
+summary(High_Lognorm)</code></pre>
+
+      <p>🗣 Comment: What does the summary tell you about the simulated 8-hour spread distances?</p>
+
+      <p><strong>Word bank:</strong> <code>rlnorm</code>, <code>n</code>, <code>meanlog</code>, <code>sdlog</code>, <code>dlnorm</code>, <code>qlnorm</code>, <code>plnorm</code></p>
+
+      <h3>Task 4.2: Replication — Sum Fast-Growing</h3>
+
+      <p>❓ If we simulate 450 new ignitions in High-hazard areas this season, about how many would we expect to classify as “fast-growing” at 10 km or more in 8 hours?</p>
+
+      <p>🎯 Use <code>sum()</code> to find the count of new ignitions in the simulation where the wildfire is classified as fast-growing.</p>
+
+      <pre><code># ⚡ Test
+fast_growing_count &lt;- ________(High_Lognorm ________ 10)
+
+# ✅ Verify
+fast_growing_count</code></pre>
+
+      <p>🗣 Comment: Based on the simulation, how many new ignitions in High-hazard areas were classified as fast-growing? Is this close to what you would expect from the exact probability in Task 1?</p>
+
+      <p><strong>Word bank:</strong> <code>sum</code>, <code>&gt;=</code></p>
+    </section>
+
+    <section class="content-card">
+      <p><a href="../../course-resources/items/how-to-complete-advanced-guided-activities.html">How to Complete 🌳 Advanced Guided Activities</a></p>
+      <p><a href="07-2-00-wildfire-overview.html">Back to 🔥 Wildfire Overview</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

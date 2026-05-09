@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>07.2.02 🔥 Wildfire Practice Space: Part A 🤠 Data Wrangling | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>07.2.02 🔥 Wildfire Practice Space: Part A 🤠 Data Wrangling</h1>
+      <p>🌳 Advanced Module 7 | Thoroughness</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>This Practice Space Quiz checks whether you understand the main coding moves from Part A of the Wildfire Advanced Guided Activity and the related chapter practice tasks. In this quiz, you will work with the early data-wrangling steps of the wildfire project: loading raw data, checking structure, creating quantile-based hazard categories, and summarizing statewide area shares. This practice matters because later modeling and simulation will only make sense if your data setup, category logic, and summary tables are correct.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>What this Practice Space Checks</h2>
+
+      <p><strong>This Practice Space checks whether you can:</strong></p>
+
+      <ul>
+        <li>Use <code>readr::read_csv()</code> to load the wildfire sample data into the correct object.</li>
+        <li>Summarize a dataset to check rows, missing values, and area ranges.</li>
+        <li>Apply <code>quantile()</code> to create cutpoints from the <code>whp</code> variable.</li>
+        <li>Use <code>mutate()</code> and <code>case_when()</code> to turn a continuous hazard value into ordered categories.</li>
+        <li>Use <code>group_by()</code>, <code>summarize()</code>, and <code>mutate()</code> to compute area totals and category probabilities.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Practice Space Steps</h2>
+
+      <ul>
+        <li><strong>Time estimate:</strong> 30 minutes</li>
+        <li><strong>Do:</strong> Saturday, Week 6</li>
+        <li><strong>Before starting:</strong> complete <a href="07-2-01-wildfire-guided-activity-part-a-data-wrangling.html">🔥 Wildfire Guided Activity: Part A 🤠 Data Wrangling</a></li>
+        <li><strong>Open:</strong> <a href="../../../assets/Module-7/Fire-Assignment-Part-A.html">Fire-Assignment-Part-A.html</a></li>
+        <li><strong>Use:</strong> RStudio Desktop, <a href="../../../assets/Module-7/Fire-Assignment-PartA-StudentTemplate.qmd">Fire-Assignment-PartA-StudentTemplate.qmd</a>, and <a href="../../../assets/Module-7/whp_raw_sample.csv"><code>whp_raw_sample.csv</code></a></li>
+        <li><strong>Complete:</strong> Part A tasks on loading data, auditing structure, computing quantile edges, assigning categories, and building <code>prob_tbl</code></li>
+        <li><strong>Return to:</strong> this quiz</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>File Upload Requirement</h2>
+
+      <ul>
+        <li>Your practice work is submitted in a separate assignment.</li>
+        <li><strong>Required file to submit:</strong> your updated version of <code>Fire-Assignment-PartA-StudentTemplate.qmd</code></li>
+      </ul>
+
+      <p><strong>Submit to:</strong> 🔥 Wildfire Practice Space: Part A 🤠 Data Wrangling</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Quiz Questions</h2>
+
+      <p>Use these questions to check your work after completing the Part A template. The blanks show where you should know the missing code. Use the word bank for each task.</p>
+
+      <h3>Task 1: Library and Load Data</h3>
+
+      <p>Before you can analyze wildfire hazard, you need to load the sample data into R and confirm that the file imported correctly.</p>
+
+      <p><strong>Load data</strong></p>
+
+      <p>🎯 Goal: Read <code>whp_raw_sample.csv</code> using <code>readr</code>, storing it in your Environment as <code>county_raw</code>.</p>
+
+      <pre><code>library(readr)
+
+________ &lt;- ________("whp_raw_sample.csv")
+
+# ✅ Verify
+dplyr::glimpse(county_raw)
+nrow(county_raw)</code></pre>
+
+      <p>🗣 Comment: In 1–2 sentences, describe what kind of dataset <code>county_raw</code> is and what one row represents.</p>
+
+      <p><strong>Word bank:</strong> <code>county_raw</code>, <code>readr::read_csv</code>, <code>read_csv::readr</code>, <code>"county_raw.csv"</code>, <code>whp_raw_sample</code></p>
+
+      <h3>Task 2: Audit Check</h3>
+
+      <p>Analysts often begin with a basic audit to check how many rows they have, whether key variables are missing values, and whether numeric columns look reasonable.</p>
+
+      <p><strong>Check data</strong></p>
+
+      <p>🎯 Goal: Use <code>dplyr::summarize()</code> to report the following about <code>county_raw</code>:</p>
+
+      <ul>
+        <li>number of rows,</li>
+        <li>number of missing values in <code>whp</code>,</li>
+        <li>minimum value of <code>cell_area_km2</code>, and</li>
+        <li>maximum value of <code>cell_area_km2</code>.</li>
+      </ul>
+
+      <pre><code># ⚡ Code: dplyr::summarize
+county_summary &lt;- county_raw %&gt;%
+  summarize(
+    n_rows  = ________,
+    n_na_whp = ________,
+    min_area = ________,
+    max_area = ________
+  )
+
+# ✅ Verify
+county_summary</code></pre>
+
+      <p>🗣 Comment: What do these audit numbers tell you about the dataset structure or quality?</p>
+
+      <p><strong>Word bank:</strong> <code>n()</code>, <code>sum(is.na(whp))</code>, <code>min(cell_area_km2)</code>, <code>max(cell_area_km2)</code>, <code>mean(cell_area_km2)</code>, <code>sd(is.na(cell_area_km2))</code>, <code>sum(is.na(cell_area_km2))</code>, <code>min(whp)</code>, <code>max(whp)</code></p>
+
+      <h3>Task 3: Compute WHP Quantile Edges</h3>
+
+      <p>To turn wildfire hazard values into categories, you first need cutpoints that reflect the distribution of the data.</p>
+
+      <p><strong>Compute WHP quantile edges</strong></p>
+
+      <p>🎯 Goal: Use the <code>quantile()</code> function from base R’s <code>stats</code> package to compute the quantiles of the <code>whp</code> column in <code>county_raw</code>. Store the result as <code>e</code> for “edges.”</p>
+
+      <p>Create the seven category edges using these quantiles: <code>0</code>, <code>.25</code>, <code>.50</code>, <code>.75</code>, <code>.90</code>, <code>.95</code>, <code>.99</code>, and <code>1.00</code>.</p>
+
+      <p>📜 Syntax: <code>quantile(x, probs, na.rm)</code></p>
+
+      <pre><code># ⚡ Code: base R stats::quantile
+________ &lt;- stats::quantile(
+  county_raw$________,
+  probs = ________,
+  na.rm = ________
+)
+
+# ✅ Verify
+e</code></pre>
+
+      <p>🗣 Comment: What does the object <code>e</code> represent, and how will it be used later?</p>
+
+      <p><strong>Word bank:</strong> <code>e</code>, <code>whp</code>, <code>c(0, .25, .50, .75, .90, .95, .99, 1)</code>, <code>TRUE</code>, <code>FALSE</code>, <code>cell_area_km2</code>, <code>Category</code></p>
+
+      <h3>Task 4: Category Label</h3>
+
+      <p>Analysts often turn a continuous variable into labeled groups so they can compare patterns more clearly across categories.</p>
+
+      <p><strong>Add a Category label</strong></p>
+
+      <p>🎯 Goal: Use <code>dplyr::mutate()</code> and <code>dplyr::case_when()</code> to turn the numeric <code>whp</code> values in <code>county_raw</code> into an ordered categorical variable called <code>Category</code>, using the quantile edges <code>e</code> you computed in Task 3. Store the resulting dataset as <code>county_cats</code>.</p>
+
+      <ol>
+        <li>Start from <code>county_raw</code>.</li>
+        <li>Use <code>mutate()</code> to add a new variable called <code>Category</code>.</li>
+        <li>Use <code>case_when()</code> to assign a label based on which interval of <code>e</code> each <code>whp</code> value falls into.</li>
+        <li>Convert <code>Category</code> to an ordered factor so the levels follow the intended risk order.</li>
+      </ol>
+
+      <p><strong>Hint:</strong> All intervals are closed on the left with <code>&gt;=</code> and open on the right with <code>&lt;</code>, except the last one, which is closed on both sides with <code>&gt;=</code> and <code>&lt;=</code>.</p>
+
+      <pre><code># ⚡ Code: dplyr::mutate + dplyr::case_when
+county_cats &lt;- county_raw %&gt;%
+  mutate(Category = ________(
+    whp ________ e[________] &amp; whp &lt; e[________] ~ "Very Low",
+    whp &gt;= e[2] &amp; whp &lt; e[________] ~ "Low",
+    whp &gt;= e[3] &amp; whp &lt; e[4] ~ "Moderate",
+    whp &gt;= e[________] &amp; whp &lt; e[5] ~ "High",
+    whp &gt;= e[5] &amp; whp &lt; e[________] ~ "Very High",
+    whp &gt;= e[6] &amp; whp &lt; e[7] ~ "Extreme",
+    whp &gt;= e[________] &amp; whp ________ e[________] ~ "Ultra (Top 1%)",
+    TRUE ~ ________
+  ),
+  Category = ________(
+    Category,
+    levels = c("Very Low", "Low", "Moderate", "High", "Very High", "Extreme", "Ultra (Top 1%)"),
+    ordered = ________
+  ))
+
+# ✅ Verify
+county_cats %&gt;% count(Category)</code></pre>
+
+      <p>🗣 Comment: Explain how the <code>case_when()</code> logic turns numeric WHP values into ordered risk categories.</p>
+
+      <p><strong>Word bank:</strong> <code>case_when</code>, <code>&gt;=</code>, <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, <code>6</code>, <code>7</code>, <code>&lt;=</code>, <code>8</code>, <code>NA_character_</code>, <code>factor</code>, <code>TRUE</code>, <code>FALSE</code>, <code>5</code>, <code>=&gt;</code>, <code>==</code>, <code>&gt;</code>, <code>&lt;</code></p>
+
+      <h3>Task 5: Summary Table</h3>
+
+      <p>After categories are created, you can summarize how much statewide area falls into each category and turn those area totals into probabilities.</p>
+
+      <p><strong>Build <code>prob_tbl</code> from <code>county_cats</code></strong></p>
+
+      <p>🎯 Goal: Use <code>dplyr::group_by()</code> and <code>dplyr::summarize()</code> to aggregate total area by <code>Category</code>, then compute <code>Probability</code> as each category’s share of the total statewide area. Store the result as <code>prob_tbl</code>.</p>
+
+      <ol>
+        <li>Start from <code>county_cats</code>, which already has <code>Category</code> and <code>cell_area_km2</code>.</li>
+        <li>Use <code>group_by()</code> so that all rows in the same <code>Category</code> are treated as one group.</li>
+        <li>Use <code>summarize()</code> to compute <code>area_km2</code> and <code>n_cells</code> for each category.</li>
+        <li>Use <code>.groups = "drop"</code> so the result is no longer grouped after summarizing.</li>
+        <li>Use <code>mutate()</code> to create <code>Probability</code> as <code>area_km2 / sum(area_km2)</code>.</li>
+        <li>Use <code>select()</code> to keep only <code>Category</code>, <code>Probability</code>, <code>area_km2</code>, and <code>n_cells</code>, in that order.</li>
+      </ol>
+
+      <pre><code># ⚡ Code: dplyr::group_by + dplyr::summarize + dplyr::mutate
+________ &lt;- county_cats %&gt;%
+  group_by(________) %&gt;%
+  summarize(
+    area_km2 = ________,
+    n_cells = ________,
+    .groups = ________
+  ) %&gt;%
+  mutate(
+    Probability = area_km2 / ________
+  ) %&gt;%
+  select(________, ________, ________, ________)
+
+# ✅ Verify
+prob_tbl
+sum(prob_tbl$Probability)</code></pre>
+
+      <p>🗣 Comment: What does <code>prob_tbl</code> tell you about the statewide hazard pattern in Idaho?</p>
+
+      <p><strong>Word bank:</strong> <code>prob_tbl</code>, <code>Category</code>, <code>sum(cell_area_km2)</code>, <code>n()</code>, <code>"drop"</code>, <code>sum(area_km2)</code>, <code>Category</code>, <code>Probability</code>, <code>area_km2</code>, <code>n_cells</code>, <code>count()</code></p>
+    </section>
+
+    <section class="content-card">
+      <p><a href="../../course-resources/items/how-to-complete-advanced-guided-activities.html">How to Complete 🌳 Advanced Guided Activities</a></p>
+      <p><a href="07-2-00-wildfire-overview.html">Back to 🔥 Wildfire Overview</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

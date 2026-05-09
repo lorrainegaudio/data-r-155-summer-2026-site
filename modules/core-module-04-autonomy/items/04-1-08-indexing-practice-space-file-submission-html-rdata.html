@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>04.1.08 👈 Indexing Practice Space File Submission HTML &amp; RData | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>04.1.08 👈 Indexing Practice Space File Submission HTML &amp; RData</h1>
+      <p>🌱 Core | 30 min | Module 4</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>This assignment collects your <strong>Chapter 8 Bracket Indexing Practice Space</strong> work as a rendered <strong>HTML report</strong> and a saved <strong>workspace file</strong>.</p>
+
+      <p>For this chapter, those uploaded files matter because they show how you used bracket indexing to load data, subset rows and columns by position and name, handle logical masks carefully, extract a column as a vector, and correct data-entry errors in a reproducible workflow that can be reviewed and rerun.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>File Upload</h2>
+
+      <ul>
+        <li><strong>Required files to submit:</strong> <code>chapter8_practice.html</code>, <code>chapter8_practice.RData</code></li>
+        <li><strong>File type:</strong> <code>.html</code>, <code>.RData</code></li>
+        <li><strong>These files should show:</strong>
+          <ul>
+            <li>your completed Chapter 8 Practice Space work on bracket indexing using <a href="../../../assets/Module-4/Values_Transport_dplace.csv"><code>Values_Transport_dplace.csv</code></a></li>
+            <li>the actual R code used for <strong>Task 1 through Task 8</strong></li>
+            <li>your positional, names-based, and logical-mask subsetting work, plus extraction with <code>[[ ]]</code> and overwrite work with <code>df[rows, "col"] &lt;- value</code></li>
+            <li>your chapter-specific objects, including <code>values_transport</code>, <code>first_10_basic</code>, <code>id_name_year</code>, <code>values_1900</code>, <code>transport_year_clean</code>, and <code>mask</code></li>
+            <li>your checks after code, such as <code>names()</code>, <code>head()</code>, <code>nrow()</code>, <code>unique()</code>, and <code>table()</code> where used in the tasks</li>
+            <li>your learning memos and short written responses for each task</li>
+          </ul>
+        </li>
+        <li><strong>Based on:</strong> <a href="../../../assets/Module-4/Chapter_8_👈Indexing.html">Chapter 8: Bracket Indexing</a></li>
+        <li><strong>If applicable, include:</strong> headings for each task, YAML with the title, your name, and the date, and brief disclosure of outside help in a memo if you used it.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>How You Will Be Marked</h2>
+
+      <h3>✅ Complete if all are true</h3>
+
+      <ol>
+        <li>
+          <strong>Code + tasks</strong>
+          <ul>
+            <li>The uploaded <code>chapter8_practice.html</code> shows the completed <strong>Task 1 through Task 8</strong> for Chapter 8.</li>
+            <li>The work is clearly for <strong>Chapter 8 bracket indexing</strong>, not a different chapter or assignment.</li>
+            <li>The file is readable, complete, and not blank, cut off, or replaced with unrelated content.</li>
+            <li>The report shows the actual R code used for the chapter tasks.</li>
+            <li>The submission includes the chapter-specific subsetting work: loading the CSV, creating <code>first_10_basic</code>, creating <code>id_name_year</code>, creating <code>values_1900</code>, extracting the <code>year</code> column as a vector, and correcting the year-entry errors in <code>transport_year_clean</code>.</li>
+            <li>The code shows bracket indexing with row and column positions, character column names, logical comparisons, <code>which()</code>, <code>[[ ]]</code>, and subassignment.</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>Memos</strong>
+          <ul>
+            <li>The file includes learning memos or short written responses for each required task.</li>
+            <li>The memo responses answer the chapter’s specific prompt questions, including the size of <code>first_10_basic</code>, what <code>id_name_year</code> contains, how many entries have year values of 1900 or later, what missing-value propagation means in a logical mask, what you notice from the year extraction output, and why a copy was made before overwriting year values.</li>
+            <li>The memos explain what the code showed or confirmed, not just what code was typed.</li>
+            <li>If outside help was used, that help is briefly disclosed in a memo.</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>Reproducibility / chapter-specific requirements</strong>
+          <ul>
+            <li>The submission includes the correct output files: <code>chapter8_practice.html</code> and <code>chapter8_practice.RData</code>.</li>
+            <li>The HTML report rendered successfully and opens as a complete report.</li>
+            <li>The <code>.RData</code> file includes the required saved objects: <code>values_transport</code>, <code>first_10_basic</code>, <code>id_name_year</code>, <code>values_1900</code>, <code>transport_year_clean</code>, and <code>mask</code>.</li>
+            <li>The code includes the required data-loading step with <code>readr::read_csv()</code> and the needed package call for <code>readr</code>.</li>
+            <li>The workflow includes checks after code so the subsets, extracted values, and corrected year values can be verified.</li>
+            <li>The files document the chapter workflow clearly enough that the bracket-indexing work can be reviewed and rerun later.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <h3>🟡 Not Ready if any are true</h3>
+
+      <ul>
+        <li>No attachment.</li>
+        <li>Wrong artifact.</li>
+        <li>The file cannot be opened.</li>
+        <li>Only one required file is submitted.</li>
+        <li>The HTML report is blank, incomplete, cut off, or unrelated to Chapter 8.</li>
+        <li>The <code>.RData</code> file does not include the required saved objects.</li>
+        <li>The report does not show the required bracket-indexing workflow.</li>
+        <li>The report does not include the required written responses or memo notes.</li>
+      </ul>
+
+      <p>If your submission is marked 🟡 Not Ready, revise to address the missing elements and resubmit for reevaluation before the assignment locks.</p>
+
+      <h3>❌ Missing</h3>
+
+      <p>No submission.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Before You Submit</h2>
+
+      <ul>
+        <li>Confirm your rendered report is named <code>chapter8_practice.html</code>.</li>
+        <li>Confirm your workspace file is named <code>chapter8_practice.RData</code>.</li>
+        <li>Confirm both files are uploaded.</li>
+        <li>Confirm your HTML report opens in a browser and shows your code, output, and written responses.</li>
+        <li>Confirm your report loads <code>Values_Transport_dplace.csv</code> as <code>values_transport</code>.</li>
+        <li>Confirm your report includes <code>first_10_basic</code>, <code>id_name_year</code>, and <code>values_1900</code>.</li>
+        <li>Confirm your report explains missing-value propagation in a logical mask.</li>
+        <li>Confirm your report uses <code>[[ ]]</code> to extract the <code>year</code> column as a vector.</li>
+        <li>Confirm your report creates <code>transport_year_clean</code> before overwriting year values.</li>
+        <li>Confirm your workspace contains <code>values_transport</code>, <code>first_10_basic</code>, <code>id_name_year</code>, <code>values_1900</code>, <code>transport_year_clean</code>, and <code>mask</code>.</li>
+      </ul>
+
+      <p><a href="04-1-07-indexing-practice-space.html">Back to 04.1.07 👈 Indexing Practice Space</a></p>
+
+      <p><a href="../../course-resources/items/how-to-complete-core-practice-space.html">How to Complete 🌱 Core Practice Space</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 4</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

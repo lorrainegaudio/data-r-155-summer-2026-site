@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>04.1.05 👈 Indexing Guided Activity | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>04.1.05 👈 Indexing Guided Activity</h1>
+      <p>🌱 Core | 1 hr 30 min | Module 4</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>Bracket indexing is one of the main ways analysts point R at exactly the rows, columns, and values they need.</p>
+
+      <p>In this guided activity, you will load a small dataset from CSV and use <code>[ ]</code>, <code>[[ ]]</code>, and <code>$</code> to subset, extract, and modify data in precise ways.</p>
+
+      <p>That work is worth doing now because later analysis depends on selecting the right pieces of a dataset, understanding what type of object your code returns, and catching problems like missing-value propagation before they distort your results. These skills will support later filtering, recoding, column creation, and reproducible notebook work in R.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Guided Activity</h2>
+
+      <ul>
+        <li><strong>Time estimate:</strong> 1 hr 30 min</li>
+        <li><strong>Do:</strong> Wednesday</li>
+        <li><strong>Open:</strong> <a href="../../../assets/Module-4/Chapter_8_👈Indexing.html">Chapter_8_👈Indexing.html</a></li>
+        <li><strong>Use:</strong> RStudio, an R Notebook, the <code>readr</code> package, and the <code>field_sightings.csv</code> file downloaded from this site.</li>
+        <li><strong>Have ready:</strong> Your course folder, <a href="../../../assets/Module-4/field_sightings.csv"><code>field_sightings.csv</code></a> saved in the same folder as your notebook, and a new R Notebook saved as <code>chapter8_notes.Rmd</code> with your name and date added to the YAML header.</li>
+        <li><strong>Produce:</strong> A <code>chapter8_notes.Rmd</code> file with headings, follow-along code, memo notes, checks, and chunk/output controls where needed to keep long results readable.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Chapter</h2>
+
+      <ul>
+        <li><a href="../../../assets/Module-4/Chapter_8_👈Indexing.html">Chapter_8_👈Indexing.html</a></li>
+        <li>Focus on the main guided activity sections on loading <code>field_sightings.csv</code>, positional indexing, names indexing, logical mask indexing, extraction with <code>[[ ]]</code> and <code>$</code>, and insertion or overwrite with subassignment.</li>
+        <li>Pay close attention to the difference between returning a vector versus a 1-column data frame, and to the chapter’s warning about <code>NA</code> values inside logical masks.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Data</h2>
+
+      <p><strong>Dataset:</strong> <a href="../../../assets/Module-4/field_sightings.csv"><code>field_sightings.csv</code></a></p>
+
+      <p>This guided activity uses a simulated bird-banding dataset with two columns, <code>Status</code> and <code>Band_Color</code>, to practice positional indexing, names indexing, logical masks, extraction, and subassignment.</p>
+
+      <p><a href="../../../assets/Module-4/Values_Transport_dplace.csv"><code>Values_Transport_dplace.csv</code></a> appears in the chapter setup because it is used later in Practice Space, but it is not the main dataset for this Guided Activity.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Guiding Questions</h2>
+
+      <ul>
+        <li>How does the meaning of <code>[ ]</code> change when you use positions, column names, or a logical mask?</li>
+        <li>When you subset one column from a data frame, what is the difference between <code>field_sightings["Band_Color"]</code>, <code>field_sightings[, "Band_Color"]</code>, and <code>field_sightings[, "Band_Color", drop = FALSE]</code>?</li>
+        <li>What is the practical difference between <code>[ ]</code>, <code>[[ ]]</code>, and <code>$</code> when you need the column itself for a function like <code>unique()</code> or <code>table()</code>?</li>
+        <li>How can <code>NA</code> values inside a logical mask change a subset in ways you may not expect?</li>
+        <li>As you follow the insertion examples, how do you tell whether your code is overwriting existing values or creating a new column?</li>
+      </ul>
+
+      <p>You do not submit answers to these questions, but use them to focus your reading, coding, and memo notes as you work through the Guided Activity.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Before You Leave This Page</h2>
+
+      <ul>
+        <li>Confirm that <code>chapter8_notes.Rmd</code> is saved in your course folder.</li>
+        <li>Confirm that <code>field_sightings.csv</code> is saved where your notebook can find it.</li>
+        <li>Confirm that you can load the CSV file with <code>read_csv()</code>.</li>
+        <li>Confirm that you can use <code>[ ]</code> to subset rows, columns, or both.</li>
+        <li>Confirm that you can explain when <code>[ ]</code> returns a data frame and when <code>[[ ]]</code> or <code>$</code> returns a vector.</li>
+        <li>Confirm that you can use a logical mask to subset rows.</li>
+        <li>Confirm that you understand why <code>NA</code> values inside a logical mask require caution.</li>
+        <li>Confirm that your memo notes explain what your indexing code selected or changed.</li>
+      </ul>
+
+      <p><a href="../../course-resources/items/how-to-complete-core-guided-activities.html">How to Complete 🌱 Core Guided Activities</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 4</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

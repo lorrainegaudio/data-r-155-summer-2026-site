@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>06.1.02 🏷️ Recoding Supplemental Materials | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>06.1.02 🏷️ Recoding Supplemental Materials</h1>
+      <p>Optional | Time varies | Module 6</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>Review the supplemental resources on this page if you would like an alternative explanation, example, or walkthrough for concepts in this chapter, or if you need extra help with a specific skill.</p>
+
+      <p>These materials are optional. They do not replace the Chapter 12 guided activity.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Resources</h2>
+
+      <ul>
+        <li>
+          <a href="https://quarto.org/docs/output-formats/html-basics.html" target="_blank" rel="noopener">Quarto: HTML Basics</a>
+          <ul>
+            <li>This reading is most useful for learning the basic <strong>HTML output settings</strong> you can control in a Quarto document, especially options like a <strong>table of contents</strong>, <strong>section numbering</strong>, and other document-level features. Use it when you want your rendered report to be easier to navigate and read, not just able to run code.</li>
+          </ul>
+        </li>
+
+        <li>
+          Data Science: A First Introduction
+          <ul>
+            <li>
+              <a href="https://datasciencebook.ca/wrangling.html#using-mutate-to-modify-or-add-columns" target="_blank" rel="noopener">3.7 Using mutate to modify or add columns</a>
+              <ul>
+                <li>This reading is most useful for learning how <code>mutate()</code> creates a new column or changes an existing one inside a data frame. Watch for the basic workflow of defining a new variable from existing columns, because that is the core move behind many later wrangling tasks.</li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="https://datasciencebook.ca/wrangling.html#apply-functions-across-many-columns-with-mutate-and-across" target="_blank" rel="noopener">3.10 Apply functions across many columns with mutate and across</a>
+              <ul>
+                <li>Use this reading when you need to do the same transformation to <strong>multiple columns at once</strong> instead of writing one line per variable. It is especially helpful for understanding how <code>across()</code> works inside <code>mutate()</code> to apply one function across a selected set of columns.</li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="https://datasciencebook.ca/wrangling.html#apply-functions-across-columns-within-one-row-with-rowwise-and-mutate" target="_blank" rel="noopener">3.11 Apply functions across columns within one row with rowwise and mutate</a>
+              <ul>
+                <li>This reading is most useful for clarifying the difference between <strong>working down columns</strong> and <strong>working across values within one row</strong>. Look for how <code>rowwise()</code> changes the workflow so <code>mutate()</code> can compute a row-based result, such as combining several columns for each case.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          Data Analysis and Visualization in R for Ecologists:
+          <a href="https://datacarpentry.github.io/R-ecology-lesson/working-with-data.html#making-new-columns-with-mutate" target="_blank" rel="noopener">Making new columns with mutate()</a>
+          <ul>
+            <li>This reading is most useful for a practical introduction to using <code>mutate()</code> on a real dataset to add derived variables. It shows that <code>mutate()</code> is not just abstract syntax; it is a way to build new columns directly from existing measurements in a reproducible workflow.</li>
+          </ul>
+        </li>
+
+        <li>
+          R for Social Scientists:
+          <a href="https://vickysteeves.gitlab.io/2020-01-nyuR/introducing-dplyr-and-tidyr.html#dplyr" target="_blank" rel="noopener">Introducing dplyr and tidyr</a> (dplyr section)
+          <ul>
+            <li>This reading is most useful for understanding the broader <strong>dplyr verb workflow</strong>, especially how verbs like <code>select()</code>, <code>filter()</code>, <code>mutate()</code>, and <code>summarize()</code> fit together. Use it when you need to see <code>mutate()</code> as one part of a larger tidy data workflow rather than as an isolated command.</li>
+          </ul>
+        </li>
+
+        <li>
+          Data Analysis and Visualization with R for Genomics:
+          <a href="https://datacarpentry.github.io/genomics-r-intro/05-dplyr.html#mutate" target="_blank" rel="noopener">Data Wrangling and Analytics with Tidyverse</a> (start at Mutate and finish the page)
+          <ul>
+            <li>This reading is most useful for reinforcing how <code>mutate()</code> works in a longer wrangling sequence and how it connects to later steps like grouping and summarizing. It is especially helpful when you need more practice seeing column creation, transformation, and tidyverse chaining all in one place.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Video</h2>
+
+      <h3>Great dplyr Workflow</h3>
+
+      <p>This video is most useful if you need to see how the core <strong>dplyr workflow</strong> fits together on a real dataset instead of learning each verb in isolation.</p>
+
+      <p>Watch for how <code>select()</code>, <code>filter()</code>, <code>na.omit()</code>, <code>mutate()</code>, <code>group_by()</code>, and <code>summarise()</code> work together with the <strong>pipe</strong> to move from a large dataset to a smaller analysis and a simple summary result.</p>
+
+      <div class="video-wrapper">
+        <iframe
+          title="R programming for beginners. Manipulate data using the tidyverse: select, filter and mutate."
+          src="https://www.youtube.com/embed/nRtp7wSEtJA"
+          width="560"
+          height="315"
+          loading="lazy"
+          allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+        </iframe>
+      </div>
+
+      <p>If the video above does not appear, use this direct link: <a href="https://youtu.be/nRtp7wSEtJA" target="_blank" rel="noopener">R programming for beginners. Manipulate data using the tidyverse: select, filter and mutate.</a> (06:55 min.)</p>
+
+      <p><a href="../../../assets/Module-6/R_Programming101_TRANSCRIPT_R programming for beginners. Manipulate data using the tidyverse select, filter and mutate.txt">Audio Transcript</a></p>
+    </section>
+
+    <section class="content-card">
+      <h2>How to Use These Materials</h2>
+
+      <ul>
+        <li>Start with the Chapter 12 guided activity before using these resources.</li>
+        <li>Use the Quarto resource if your rendered HTML report is hard to read or navigate.</li>
+        <li>Use the <code>mutate()</code> readings if you are unsure whether you are creating a new column or changing an existing one.</li>
+        <li>Use the <code>across()</code> and <code>rowwise()</code> readings only after you are comfortable with basic <code>mutate()</code>.</li>
+        <li>Use the video when you need to see several <code>dplyr</code> verbs working together in sequence.</li>
+      </ul>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 6</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

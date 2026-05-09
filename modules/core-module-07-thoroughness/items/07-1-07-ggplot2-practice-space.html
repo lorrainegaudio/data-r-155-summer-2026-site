@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>07.1.07 📈 ggplot2 Practice Space | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>07.1.07 📈 ggplot2 Practice Space</h1>
+      <p>🌱 Core | 30 min | Module 7</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>This Practice Space checks whether you can apply the core plotting skills from <strong>Chapter 16: ggplot2</strong> after completing the <strong>ggplot2 Guided Activity</strong>.</p>
+
+      <p>In this chapter, you move from reading about plots to actually building them: creating plot objects, choosing the right geom, mapping variables with <code>aes()</code>, and explaining what a graph shows.</p>
+
+      <p>This light-weight practice matters because it is easy to communicate patterns with graphs in R. This is your chance to test your skills.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>What This Practice Space Checks</h2>
+
+      <ul>
+        <li><strong>Use</strong> <code>ggplot()</code> to build graphs from a dataset and aesthetic mappings.</li>
+        <li><strong>Apply</strong> geoms such as <code>geom_point()</code>, <code>geom_boxplot()</code>, <code>geom_histogram()</code>, and <code>geom_density()</code> to match the goal of a graph.</li>
+        <li><strong>Distinguish</strong> between different graph types, including when a density curve is more useful than a histogram.</li>
+        <li><strong>Create</strong> and save plot objects with the required names: <code>Pretty_Flowers</code>, <code>Petal_Spread</code>, <code>CO2_Graph</code>, and <code>Tall_Density</code>.</li>
+        <li><strong>Explain</strong> plotting choices and graph results in short written reflections using the course memo structure.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Practice Space Steps</h2>
+
+      <ul>
+        <li><strong>Time estimate:</strong> 30 minutes</li>
+        <li><strong>Due:</strong> Thursday</li>
+        <li><strong>Before starting:</strong> Work through the Chapter 16 Practice Space tasks.</li>
+        <li><strong>Open:</strong> <a href="../../../assets/Module-7/Chapter-16_📈-ggplot2.html">Chapter-16_📈-ggplot2.html</a></li>
+        <li><strong>Use:</strong> RStudio Desktop, Quarto, and the <code>ggplot2</code>, <code>dplyr</code>, and <code>dslabs</code> packages.</li>
+        <li><strong>Save as:</strong> <code>chapter16_practice.qmd</code> and <code>chapter16_practice.RData</code>.</li>
+        <li><strong>Complete:</strong> all 7 Practice Space tasks at the end of Chapter 16: package setup, quick recall, scatterplot, boxplot, density plot, histogram with density overlay, and the written reflection.</li>
+        <li><strong>Return to:</strong> the Practice Space Quiz in Canvas when Canvas is available.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Static Quiz Preview</h2>
+
+      <div class="context-note">
+        <p><strong>Important:</strong> This page is a static preview of the quiz questions. It does not submit answers and it does not replace the official Canvas quiz when Canvas is available.</p>
+      </div>
+
+      <h3>Task 2: Scatterplot</h3>
+
+      <p>🎯 Create a scatterplot from the built-in <code>iris</code> dataset, and save it in an object called <code>Pretty_Flowers</code>. Put sepal length on the horizontal axis and petal length on the vertical axis. Color the points by species so that each species has a different color. Make the points moderately large so they are easy to see. Finally, label the x-axis as “Sepal Length (cm)” and the y-axis as “Petal Length (cm)”.</p>
+
+      <pre><code># ⚡ Code
+Pretty_Flowers &lt;- iris %&gt;%
+  ggplot(aes(x = ________, y = ________, color = ________)) +
+  geom_point(size = 3) +
+  ________ +
+  ________</code></pre>
+
+      <pre><code># ✅ Checks
+class(Pretty_Flowers)
+Pretty_Flowers</code></pre>
+
+      <p>🗣/🪞 What pattern do you notice in petal length across species?</p>
+
+      <p><strong>Word bank:</strong> <code>Sepal.Length</code>, <code>Petal.Length</code>, <code>Species</code>, <code>xlab("Sepal Length (cm)")</code>, <code>ylab("Petal Length (cm)")</code>, <code>Petal.Width</code>, <code>Sepal.Width</code></p>
+
+      <h3>Task 3: Boxplot — Group Comparison</h3>
+
+      <p>🎯 Create a boxplot from the built-in <code>iris</code> dataset and store it in an object called <code>Petal_Spread</code>. Put species on the horizontal axis and petal width on the vertical axis. For each species, draw a separate boxplot showing the spread and typical values of petal width. Fill each box with a different color according to species, but remove the legend so only the colored boxplots and axis labels indicate which species is which.</p>
+
+      <pre><code># ⚡ Code
+Petal_Spread &lt;- iris %&gt;%
+  ________(________(x = Species, y = Petal.Width, fill = Species)) +
+  ________(show.legend = FALSE)</code></pre>
+
+      <pre><code># ✅ Checks
+class(Petal_Spread)
+Petal_Spread</code></pre>
+
+      <p>🗣/🪞 Which species appears to have the widest petal-width distribution? What does the boxplot help you see that a table of values would not show as quickly?</p>
+
+      <p><strong>Word bank:</strong> <code>ggplot</code>, <code>aes</code>, <code>geom_boxplot</code></p>
+
+      <h3>Task 4: Density Plot — Split + Transparency</h3>
+
+      <p>🎯 Create a density plot using the built-in <code>CO2</code> dataset and store the plot in an object called <code>CO2_Graph</code>. Put CO2 uptake on the horizontal axis. Use plant type to define separate smooth curves, so each plant type has its own density curve filled with a different color. Make the filled areas partially transparent so the curves can overlap and still be visible where they intersect. Finally, add the title “CO2 Uptake by Plant Type” using <code>ggtitle()</code> at the top of the plot.</p>
+
+      <pre><code># ⚡ Code
+CO2_Graph &lt;- CO2 %&gt;%
+  ________(________(x = uptake, fill = Type)) +
+  ________(alpha = 0.5) +
+  ________("CO2 Uptake by Plant Type")</code></pre>
+
+      <pre><code># ✅ Checks
+class(CO2_Graph)
+CO2_Graph</code></pre>
+
+      <p>🗣/🪞 What does the overlap between the density curves suggest about the two plant types?</p>
+
+      <p><strong>Word bank:</strong> <code>ggplot</code>, <code>aes</code>, <code>geom_density</code>, <code>ggtitle</code></p>
+
+      <h3>Task 5: Histogram vs. Density</h3>
+
+      <p>🎯 Create a graph from the <code>heights</code> dataset and save it in an object called <code>Tall_Density</code>. Put height, in inches, on the horizontal axis. Draw a histogram of heights using bars that are 1 inch wide, filled in blue with white borders. Scale the histogram so that the vertical axis shows density, not raw counts. On top of this, add a smooth density curve that shows the overall shape of the height distribution, using a dark orange line. Fill the area under that density curve with the same dark orange color, but make it partially transparent so you can still see the blue histogram bars underneath. Label the x-axis “Height (inches)” and the y-axis “Density”.</p>
+
+      <pre><code># ⚡ Code
+Tall_Density &lt;- heights %&gt;%
+  ggplot(________(x = height)) +
+  ________(________(y = after_stat(density)), ________ = 1, ________ = "blue", ________ = "white") +
+  ________(color = "darkorange", fill = "darkorange", ________ = 0.3, ________ = 1) +
+  ________("Height (inches)") +
+  ________("Density")</code></pre>
+
+      <pre><code># ✅ Checks
+class(Tall_Density)
+Tall_Density</code></pre>
+
+      <pre><code>head(heights)
+nrow(heights)</code></pre>
+
+      <p>🗣/🪞 What does the density curve add to the histogram? Does the combined graph make the overall shape easier to describe?</p>
+
+      <p><strong>Word bank:</strong> <code>aes</code>, <code>geom_histogram</code>, <code>aes</code>, <code>binwidth</code>, <code>fill</code>, <code>color</code>, <code>geom_density</code>, <code>alpha</code>, <code>linewidth</code>, <code>xlab</code>, <code>ylab</code></p>
+    </section>
+
+    <section class="content-card">
+      <h2>File Upload Requirement</h2>
+
+      <ul>
+        <li>Your practice work is submitted in a separate assignment.</li>
+        <li>Save your Quarto file as <code>chapter16_practice.qmd</code>.</li>
+        <li>Save your workspace as <code>chapter16_practice.RData</code>.</li>
+        <li>Submit your code file (<code>.qmd</code>) and your workspace file (<code>.RData</code>).</li>
+        <li>You may also submit the rendered HTML file if you successfully render it: <code>chapter16_practice.html</code>.</li>
+      </ul>
+
+      <p>Submit the files in: <a href="07-1-08-ggplot2-practice-space-file-submission-qmd-rdata.html">07.1.08 📈 ggplot2 Practice Space File Submission QMD and RData</a></p>
+
+    <section class="content-card">
+      <h2>Before You Leave This Page</h2>
+
+      <ul>
+        <li>Complete the Chapter 16 Practice Space tasks in RStudio.</li>
+        <li>Save your Quarto file as <code>chapter16_practice.qmd</code>.</li>
+        <li>Save your workspace as <code>chapter16_practice.RData</code>.</li>
+        <li>Check that your plot objects are named <code>Pretty_Flowers</code>, <code>Petal_Spread</code>, <code>CO2_Graph</code>, and <code>Tall_Density</code>.</li>
+        <li>Check that your plots display when printed.</li>
+        <li>Use the static quiz preview to check what the Canvas quiz will ask.</li>
+      </ul>
+
+      <p><a href="../../course-resources/items/how-to-complete-core-practice-space.html">How to Complete 🌱 Core Practice Space</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 7</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

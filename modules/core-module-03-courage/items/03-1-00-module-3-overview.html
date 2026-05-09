@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>03.1.00 🦁 Courage Module Overview | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>03.1.00 🦁 Courage Module Overview</h1>
+      <p>🌱 Core: Module 3 | DATA-R 155 | Summer 2026</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>🦁 Courage</h2>
+
+      <p>This module focuses on courage in R work: noticing problems, reading error messages carefully, asking for help clearly, and making deliberate choices when the data are messy. You will continue building R Notebook habits by using Markdown headings, YAML fields, rendering tools, and memo notes to create work that can be checked and shared.</p>
+
+      <p>The Core work has two main topics. In <strong>Help!</strong>, you will practice rendering an R Notebook to HTML, reading the Render tab, finding the first error, and writing better troubleshooting prompts. In <strong>Missing Values</strong>, you will work with <code>NA</code>, <code>NaN</code>, help files, function arguments, <code>na.rm = TRUE</code>, <code>anyNA()</code>, <code>is.na()</code>, <code>which()</code>, nesting functions, removing missing values, and simple imputation.</p>
+
+      <p>This module asks you to slow down when something goes wrong instead of guessing or starting over. The pattern is still familiar: complete the Guided Activity, use supplemental materials when needed, complete the Practice Space, and submit the required file. The important shift is that your work now needs to show how you handled uncertainty, errors, and missing information.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Learning Objectives</h2>
+
+      <p><strong>By the end of this module, the successful student will be able to:</strong></p>
+
+      <ul>
+        <li>Format an R Notebook with a clear YAML title, date field, Markdown headings, code chunks, and memo notes.</li>
+        <li>Render or knit an R Notebook to an HTML report.</li>
+        <li>Distinguish between Preview and Knit in the RStudio notebook workflow.</li>
+        <li>Use the Render tab to identify the first error when a notebook fails to knit.</li>
+        <li>Write a clear troubleshooting prompt that includes the goal, code, error message, and what has already been tried.</li>
+        <li>Use help files to distinguish required arguments from optional arguments with defaults.</li>
+        <li>Distinguish between <code>NA</code> and <code>NaN</code> in R output.</li>
+        <li>Apply <code>na.rm = TRUE</code> when a summary function needs to ignore missing values.</li>
+        <li>Use <code>anyNA()</code>, <code>is.na()</code>, <code>which()</code>, and <code>sum()</code> to detect, locate, and count missing values.</li>
+        <li>Compare removing missing values with replacing missing values through simple imputation.</li>
+        <li>Use nested functions to solve multi-step problems while keeping the code readable.</li>
+        <li>Explain the difference between a function object such as <code>mean</code> and a function call such as <code>mean()</code>.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Why This Topic Is Important</h2>
+
+      <p>R work does not become reliable just because the code runs once. A notebook may look fine in Preview but fail when rendered, and a calculation may return <code>NA</code> because missing values were not handled intentionally. This module helps you build the habit of checking the actual workflow, not just the visible result.</p>
+
+      <p>Errors and missing values are normal parts of data work. The problem is not that they happen; the problem is moving past them without understanding what they mean. Reading the first error, checking function arguments, locating missing values, and documenting your choices help prevent quiet mistakes that can change an analysis without warning.</p>
+
+      <p>This module builds directly on earlier work with notebooks, vectors, indexing, and transparency. It prepares you for later modules where you will work with larger datasets, imports, cleaning decisions, and visual summaries. Those later tasks require the courage to stop, inspect, explain, and revise instead of assuming the output is correct.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Strategies for Success</h2>
+
+      <ul>
+        <li>Knit or render early. Do not wait until the end to find out that the notebook does not build.</li>
+        <li>When rendering fails, read the Render tab and fix the first error before chasing later messages.</li>
+        <li>Keep Markdown headings clear so your notebook is readable as a report, not just a scratchpad.</li>
+        <li>When asking for help, include the goal, the code, the error message, and what you already tried.</li>
+        <li>Use help files to check function arguments instead of guessing what an argument does.</li>
+        <li>When a summary returns <code>NA</code>, check whether missing values are present before changing the code.</li>
+        <li>Use <code>anyNA()</code>, <code>is.na()</code>, and <code>which()</code> for different questions: whether anything is missing, which values are missing, and where they are located.</li>
+        <li>Explain missing-value choices in memo notes. Removing values and imputing values are decisions, not just code tricks.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Assignments and Tasks</h2>
+
+      <h3>🌱 Core</h3>
+
+      <h4>Do Monday</h4>
+      <ul>
+        <li><a href="03-1-01-help-guided-activity.html">03.1.01 🛟 Help! Guided Activity (1 hr 30 min)</a></li>
+        <li><a href="03-1-02-help-supplemental-materials.html">03.1.02 🛟 Help! Supplemental Materials (Optional; time varies)</a></li>
+      </ul>
+
+      <h4>Due by Tuesday at 11:59 p.m. Mountain Time</h4>
+      <ul>
+        <li><a href="03-1-03-help-practice-space.html">03.1.03 🛟 Help! Practice Space (30 min)</a>
+          <ul>
+            <li>Revisions due Thursday at 11:59 p.m. Mountain Time</li>
+            <li>This page is currently under construction.</li>
+          </ul>
+        </li>
+        <li><a href="03-1-04-help-practice-space-file-submission.html">03.1.04 🛟 Help! Practice Space File Submission (30 min)</a>
+          <ul>
+            <li>Revisions due Thursday at 11:59 p.m. Mountain Time</li>
+            <li>This page is currently under construction.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>Do Wednesday</h4>
+      <ul>
+        <li><a href="03-1-05-missing-values-guided-activity.html">03.1.05 ❌ Missing Values Guided Activity (1 hr 30 min)</a></li>
+        <li><a href="03-1-06-missing-values-supplemental-materials.html">03.1.06 ❌ Missing Values Supplemental Materials (Optional; time varies)</a></li>
+      </ul>
+
+      <h4>Due by Thursday at 11:59 p.m. Mountain Time</h4>
+      <ul>
+        <li><a href="03-1-07-missing-values-practice-space.html">03.1.07 ❌ Missing Values Practice Space (30 min)</a>
+          <ul>
+            <li>Revisions due Saturday at 11:59 p.m. Mountain Time</li>
+          </ul>
+        </li>
+        <li><a href="03-1-08-missing-values-practice-space-file-submission-html.html">03.1.08 ❌ Missing Values Practice Space File Submission HTML (30 min)</a>
+          <ul>
+            <li>Revisions due Saturday at 11:59 p.m. Mountain Time</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Helpful Course Resources</h2>
+
+      <ul>
+        <li><a href="../../course-resources/items/how-this-course-works.html">How This Course Works</a></li>
+        <li><a href="../../course-resources/items/how-to-complete-core-guided-activities.html">How to Complete 🌱 Core Guided Activities</a></li>
+        <li><a href="../../course-resources/items/how-to-complete-core-practice-space.html">How to Complete 🌱 Core Practice Space</a></li>
+        <li><a href="../../course-resources/items/how-to-earn-your-grade-core-vs-advanced-complete-vs-yellow.html">How to Earn Your Grade: 🌱 vs 🌳 and ✅ vs 🟡</a></li>
+      </ul>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 3</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

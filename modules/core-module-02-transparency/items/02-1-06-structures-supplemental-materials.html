@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>02.1.06 🏗️ Structures Supplemental Materials | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>02.1.06 🏗️ Structures Supplemental Materials</h1>
+      <p>Optional | Time varies | Module 2</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>Review the supplemental resources on this page if you would like an alternative explanation, example, or walkthrough for concepts in this chapter or need extra help with a specific skill.</p>
+
+      <p>These materials are optional and do not replace the chapter.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Resources</h2>
+
+      <ul>
+        <li>
+          <a href="https://bookdown.org/yihui/rmarkdown/notebook.html" target="_blank" rel="noopener">Bookdown: 3.2 Notebook</a>
+          <ul>
+            <li>This reading is most useful for learning the practical <strong>R Notebook workflow</strong>: creating a notebook, running chunks interactively, and understanding that a notebook is <strong>previewed</strong> rather than fully knitted each time. It also helps clarify where chunk output appears and why saving creates an <code>.nb.html</code> file that keeps the most recent results alongside the source document.</li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="https://datacarpentry.github.io/R-ecology-lesson/how-r-thinks-about-data.html#top" target="_blank" rel="noopener">Data Analysis and Visualization in R for Ecologists: 3 Exploring and Understanding Data</a>
+          <ul>
+            <li>Use this reading when you need help understanding how R inspects data structures, especially with functions like <code>str()</code>, and how R treats <strong>factors</strong> as categorical data rather than plain text. It is especially useful for clarifying that factors may look like character vectors but behave differently because they store <strong>levels</strong> underneath.</li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="https://datasciencebook.ca/wrangling.html#data-frames-vectors-and-lists" target="_blank" rel="noopener">Data Science: A First Introduction — 3.3 Data Frames, Vectors, and Lists</a>
+          <ul>
+            <li>This reading is most useful for sorting out the difference between a <strong>vector</strong>, a <strong>list</strong>, and a <strong>data frame</strong> before you start more complex wrangling. It clearly shows that vectors must keep <strong>one data type</strong>, lists can mix types, and a data frame is a special kind of list whose elements must line up in length.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Video</h2>
+
+      <h3>Data Types</h3>
+
+      <p>This video is most useful if you need a clearer picture of <strong>data types in R</strong> and how to check or change them inside a data frame.</p>
+
+      <p>It is especially helpful for seeing the difference between <strong>character</strong>, <strong>factor</strong>, <strong>integer</strong>, <strong>numeric</strong>, and <strong>logical</strong> data, and for watching how functions like <code>str()</code>, <code>as.factor()</code>, <code>as.integer()</code>, and <code>levels()</code> are used to inspect and fix variable types.</p>
+
+      <div class="video-wrapper">
+        <iframe
+          title="Data types in R programming"
+          src="https://www.youtube.com/embed/VtUVQWl0aRA?si=9HEE91Ed0vc5alcu"
+          width="560"
+          height="315"
+          loading="lazy"
+          allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+        </iframe>
+      </div>
+
+      <p>If the video above does not appear, use the direct link: <a href="https://youtu.be/VtUVQWl0aRA?si=9HEE91Ed0vc5alcu" target="_blank" rel="noopener">Data types in R programming</a> (07:33 min.).</p>
+
+      <p><a href="../../../assets/Module-2/R_Programming101_TRANSCRIPT_Data types in R programming.txt">Audio Transcript</a></p>
+
+      <h3>Modifying Vectors</h3>
+
+      <p>This video is most useful if you need to see how <strong>named vectors</strong>, <strong>logical indexing</strong>, and <strong>modifying vector values</strong> work in practice.</p>
+
+      <p>It is especially helpful for watching how <code>names()</code> assigns labels, how logical tests inside square brackets return matching values, and how indexing can be used to replace selected values or set a value to <code>NA</code> without rewriting the whole vector.</p>
+
+      <div class="video-wrapper">
+        <iframe
+          title="The Basics of R for Ecologists: Lesson 4 Part 3, Naming and modifying vectors and more indexing"
+          src="https://www.youtube.com/embed/CfPw5ksw4ec?si=XvGCfzqBFSCPcvJP"
+          width="560"
+          height="315"
+          loading="lazy"
+          allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+        </iframe>
+      </div>
+
+      <p>If the video above does not appear, use the direct link: <a href="https://youtu.be/CfPw5ksw4ec?si=XvGCfzqBFSCPcvJP" target="_blank" rel="noopener">The Basics of R for Ecologists: Lesson 4 Part 3 (Naming and modifying Vectors + more indexing)</a> (11:11 min.).</p>
+
+      <p><a href="../../../assets/Module-2/R_for_Ecologists_TRANSCRIPT_The Basics of R for Ecologists Lesson 4 Part 3 (Naming and modifying Vectors + more indexing).txt">Audio Transcript</a></p>
+    </section>
+
+    <section class="content-card">
+      <h2>Use This Page When...</h2>
+
+      <ul>
+        <li>You need another explanation of R Notebooks and chunk output.</li>
+        <li>You are confused about factors, levels, or data types.</li>
+        <li>You need help distinguishing vectors, lists, and data frames.</li>
+        <li>You want to see examples of named vectors, logical indexing, or modifying vector values.</li>
+      </ul>
+
+      <p><a href="02-1-05-structures-guided-activity.html">Back to 02.1.05 🏗️ Structures Guided Activity</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 2</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

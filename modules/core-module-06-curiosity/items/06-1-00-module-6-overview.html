@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>06.1.00 🐱 Curiosity Module Overview | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>06.1.00 🐱 Curiosity Module Overview</h1>
+      <p>🌱 Core: Module 6 | DATA-R 155 | Summer 2026</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>🐱 Curiosity</h2>
+
+      <p>This module focuses on curiosity as an analytical habit: asking what the data already contains, what can be clarified, and what patterns appear when you compare groups instead of looking only at individual rows. In Core, you will work with recoding and grouped summaries. You will use <code>ifelse()</code>, <code>case_when()</code>, and <code>mutate()</code> to create clearer variables, then use <code>count()</code>, <code>group_by()</code>, <code>summarize()</code>, and <code>n()</code> to describe grouped patterns.</p>
+
+      <p>The main technical move in this module is moving from raw values to more useful analytical results. Recoding helps you turn existing values into labels, categories, or transformed columns. Grouped summaries help you compare categories, count combinations, and compute statistics within groups. Together, these skills let you ask better questions of a dataset instead of accepting the original columns as the only possible structure.</p>
+
+      <p>The module follows the usual Core pattern: complete the guided activity, use the supplemental materials only when you need another explanation, complete the Practice Space, and submit the rendered HTML report. The work in this module depends on careful Quarto habits: save the source file, render early, check output, write memos, and make sure your code and interpretation tell the same story.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Learning Objectives</h2>
+
+      <p><strong>By the end of this module, the successful student will be able to:</strong></p>
+
+      <ul>
+        <li>Use <code>ifelse()</code> to create a new vector with one result for every position.</li>
+        <li>Apply <code>case_when()</code> to recode values using multiple conditional rules.</li>
+        <li>Explain why the order of rules matters when using <code>case_when()</code>.</li>
+        <li>Use <code>mutate()</code> to create a new column or overwrite an existing column in a data frame.</li>
+        <li>Interpret checks such as <code>table()</code>, <code>head()</code>, <code>summary()</code>, and <code>colnames()</code> to confirm that recoding worked.</li>
+        <li>Use <code>count()</code> to report frequencies for categorical variables and category combinations.</li>
+        <li>Use <code>group_by()</code> and <code>summarize()</code> together to compute separate summary results for groups.</li>
+        <li>Compute multiple summary statistics, such as means, standard deviations, and row counts, in one grouped summary.</li>
+        <li>Distinguish between a grouping variable and a summary variable in a grouped analysis.</li>
+        <li>Write Quarto memo notes that explain what a recoding or grouped-summary result shows.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Why This Topic Is Important</h2>
+
+      <p>Real datasets rarely arrive in the exact form needed for analysis. Values may need to be relabeled, grouped, converted, or combined into new variables before they can answer a useful question. Recoding helps you make those changes deliberately instead of editing data by hand or creating unclear one-off fixes.</p>
+
+      <p>Grouped summaries are just as important because many analytical questions are comparative. A single average for a whole dataset may hide differences across groups. Once you can group data by category and summarize within those groups, you can ask more useful questions about patterns, differences, and relationships.</p>
+
+      <p>This module also strengthens reproducible reporting. Because you are working in Quarto, your code, output, checks, and explanations appear together in one rendered HTML report. That matters because recoding and grouped summaries are easy places to make quiet mistakes. A clear report helps you and your reader see what changed, what was counted, and what the result means.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Strategies for Success</h2>
+
+      <ul>
+        <li>For recoding tasks, identify the original column, the new output name, and the rule before writing code.</li>
+        <li>When using <code>case_when()</code>, check the rule order before running the code. Earlier rules are tested first.</li>
+        <li>Use <code>table()</code> after recoding labels so you can see whether the expected categories actually appeared.</li>
+        <li>When using <code>mutate()</code>, be clear about whether you are creating a new column or overwriting an existing one.</li>
+        <li>For grouped summaries, ask two questions before coding: “What creates the groups?” and “What value am I summarizing?”</li>
+        <li>Use <code>.groups = "drop"</code> or <code>ungroup()</code> when the grouped result should no longer behave as grouped data.</li>
+        <li>Render your Quarto file before the end. Do not wait until all tasks are finished to discover a rendering error.</li>
+        <li>Write memo comments that interpret the output, not just comments that repeat the code.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Assignments and Tasks</h2>
+
+      <h3>🌱 Core</h3>
+
+      <h4>Do Monday</h4>
+      <ul>
+        <li><a href="06-1-01-recoding-guided-activity.html">06.1.01 🏷️ Recoding Guided Activity (1 hr 30 min)</a></li>
+        <li><a href="06-1-02-recoding-supplemental-materials.html">06.1.02 🏷️ Recoding Supplemental Materials (Optional; time varies)</a></li>
+      </ul>
+
+      <h4>Due by Tuesday at 11:59 p.m. Mountain Time</h4>
+      <ul>
+        <li><a href="06-1-03-recoding-practice-space.html">06.1.03 🏷️ Recoding Practice Space (30 min)</a>
+          <ul>
+            <li>Revisions due Thursday at 11:59 p.m. Mountain Time</li>
+          </ul>
+        </li>
+        <li><a href="06-1-04-recoding-practice-space-file-submission-html.html">06.1.04 🏷️ Recoding Practice Space File Submission HTML (30 min)</a>
+          <ul>
+            <li>Revisions due Thursday at 11:59 p.m. Mountain Time</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>Do Wednesday</h4>
+      <ul>
+        <li><a href="06-1-05-grouped-summaries-guided-activity.html">06.1.05 🧺 Grouped Summaries Guided Activity (1 hr 30 min)</a></li>
+        <li><a href="06-1-06-grouped-summaries-supplemental-materials.html">06.1.06 🧺 Grouped Summaries Supplemental Materials (Optional; time varies)</a></li>
+      </ul>
+
+      <h4>Due by Thursday at 11:59 p.m. Mountain Time</h4>
+      <ul>
+        <li><a href="06-1-07-grouped-summaries-practice-space.html">06.1.07 🧺 Grouped Summaries Practice Space (30 min)</a>
+          <ul>
+            <li>Revisions due Saturday at 11:59 p.m. Mountain Time</li>
+          </ul>
+        </li>
+        <li><a href="06-1-08-grouped-summaries-practice-space-file-submission-html.html">06.1.08 🧺 Grouped Summaries Practice Space File Submission HTML (30 min)</a>
+          <ul>
+            <li>Revisions due Saturday at 11:59 p.m. Mountain Time</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Helpful Course Resources</h2>
+
+      <ul>
+        <li><a href="../../course-resources/items/how-this-course-works.html">How This Course Works</a></li>
+        <li><a href="../../course-resources/items/how-to-complete-core-guided-activities.html">How to Complete 🌱 Core Guided Activities</a></li>
+        <li><a href="../../course-resources/items/how-to-complete-core-practice-space.html">How to Complete 🌱 Core Practice Space</a></li>
+        <li><a href="../../course-resources/items/how-to-earn-your-grade-core-vs-advanced-complete-vs-yellow.html">How to Earn Your Grade: 🌱 vs 🌳 and ✅ vs 🟡</a></li>
+      </ul>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 6</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

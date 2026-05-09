@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>06.1.07 🧺 Grouped Summaries Practice Space | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>06.1.07 🧺 Grouped Summaries Practice Space</h1>
+      <p>🌱 Core | 30 min | Module 6</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>This Practice Space checks whether you can apply the main grouped-summary skills from <strong>Chapter 13: Group By, Summarize, and Count</strong> after completing the associated Guided Activity.</p>
+
+      <p>In this chapter, you use <code>group_by()</code>, <code>summarize()</code>, <code>count()</code>, and <code>n()</code> to describe data, compare groups, and explain what grouped results mean in words.</p>
+
+      <p>This practice matters because analysts often need to count categories, summarize numeric variables within groups, and produce reproducible work that others can follow and rerun later.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>What This Practice Space Checks</h2>
+
+      <ul>
+        <li><strong>Use</strong> <code>group_by()</code> and <code>summarize()</code> together to calculate separate results for each group instead of one result for the whole dataset.</li>
+        <li><strong>Apply</strong> <code>count()</code> and <code>n()</code> to report frequencies and row counts for groups and category combinations.</li>
+        <li><strong>Compute</strong> multiple summary statistics, such as mean and standard deviation, in a single <code>summarize()</code> call.</li>
+        <li><strong>Distinguish</strong> between grouping variables and summary variables when analyzing categorical and numerical data.</li>
+        <li><strong>Explain</strong> how grouping changes the meaning of a summary result and document your workflow in Quarto with checks, memos, and interpretation.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Practice Space Steps</h2>
+
+      <ul>
+        <li><strong>Time estimate:</strong> 30 minutes</li>
+        <li><strong>Do:</strong> Saturday</li>
+        <li><strong>Before starting:</strong> Complete the Guided Activity and work through the Chapter 13 Practice Space tasks in the chapter file.</li>
+        <li><strong>Open:</strong> <a href="../../../assets/Module-6/Chapter-13_🧺GroupedSummaries.html">Chapter-13_🧺GroupedSummaries.html</a></li>
+        <li><strong>Use:</strong> RStudio Desktop, Quarto, and the <code>dplyr</code> and <code>dslabs</code> packages</li>
+        <li><strong>Save as:</strong> <code>chapter13_practice.qmd</code></li>
+        <li><strong>Complete:</strong> all 6 Practice Space tasks at the end of Chapter 13: grouped summaries with <code>stars</code>, grouped summaries with three statistics in <code>olive</code>, counting unique values in <code>us_contagious_diseases</code>, predicting and testing grouped counts for <code>state</code> and <code>disease</code>, national mean counts by disease, and the written reflection.</li>
+        <li><strong>Return to:</strong> the Practice Space Quiz in Canvas when Canvas is available.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Static Quiz Preview</h2>
+
+      <div class="context-note">
+        <p><strong>Important:</strong> This page is a static preview of the quiz questions. It does not submit answers and it does not replace the official Canvas quiz when Canvas is available.</p>
+      </div>
+
+      <h3>Task 1: Single Grouping</h3>
+
+      <p>Using <code>stars</code>, compute <code>mean_temperature</code> <strong>and</strong> <code>mean_magnitude</code> for each <code>type</code>. Name the result <code>twinkle_twinkle</code>.</p>
+
+      <pre><code>data(stars)
+?stars
+colnames(stars)</code></pre>
+
+      <p>🎯 Restate the goal. What are you trying to learn, check, or demonstrate?</p>
+
+      <pre><code># ⚡ Code
+twinkle_twinkle &lt;- stars %&gt;%
+  ________ %&gt;%
+  summarize(
+    mean_temperature = ________,
+    mean_magnitude   = ________,
+    .groups = "drop"
+  )</code></pre>
+
+      <pre><code># ✅ Checks
+twinkle_twinkle</code></pre>
+
+      <p>🗣 Comment on the output.</p>
+
+      <p><strong>Word bank:</strong> <code>group_by(type)</code>, <code>mean(temp)</code>, <code>mean(magnitude)</code>, <code>ave(temp)</code>, <code>case_when(type)</code>, <code>ifelse(type)</code>, <code>mutate(type)</code>, <code>sum(temp) / n - 1</code>, <code>sum(magnitide) / n - 1</code></p>
+
+      <h3>Task 2: Single Grouping + Three Stats</h3>
+
+      <p>Pick one numeric fatty acid in <code>olive</code>, such as <code>palmitic</code>, <code>oleic</code>, or another fatty-acid variable. Group by <code>region</code>, then calculate:</p>
+
+      <ul>
+        <li>the mean of your chosen fatty acid,</li>
+        <li>the standard deviation of your chosen fatty acid, and</li>
+        <li>the number of rows in each region.</li>
+      </ul>
+
+      <p>Store the result as <code>Olive_Garden</code>.</p>
+
+      <pre><code>data(olive)
+?olive
+colnames(olive)</code></pre>
+
+      <p>🎯 Restate the goal. What are you trying to learn, check, or demonstrate?</p>
+
+      <pre><code># ⚡ Code
+fatty_acid &lt;- "palmitic"    # Example of a fatty acid
+
+Olive_Garden &lt;- olive ________
+  group_by(region) ________
+  summarize(
+    mean_value = mean(fatty_acid) ________
+    sd_value = sd(fatty_acid) ________
+    n = n()
+  ________</code></pre>
+
+      <pre><code># ✅ Checks
+Olive_Garden</code></pre>
+
+      <p>🗣 In a short comment, note the region with the highest mean value for the fatty acid you selected.</p>
+
+      <p>🪞 Why is <code>region</code> the grouping variable and the fatty acid column the summary variable?</p>
+
+      <p><strong>Word bank:</strong> <code>%&gt;%</code>, <code>%&gt;%</code>, <code>,</code>, <code>,</code>, <code>)</code>, <code>(</code>, <code>&lt;-</code>, <code>&amp;</code>, <code>%in%</code>, <code>|</code></p>
+
+      <h3>Task 3: Counting Unique Values</h3>
+
+      <p>Which function can you use to count unique values in a column?</p>
+
+      <p>For <code>us_contagious_diseases</code> from <code>dslabs</code>, determine the number of unique diseases in the column <code>disease</code>.</p>
+
+      <pre><code>data("us_contagious_diseases")
+?us_contagious_diseases</code></pre>
+
+      <pre><code># ✅ Pre-check
+## What are the unique diseases?
+unique(us_contagious_diseases$disease)
+
+## How many unique diseases are there?
+________(unique(us_contagious_diseases$disease))</code></pre>
+
+      <p>🗣 Inline memo sentence</p>
+
+      <p>Write this as normal text in your Quarto document, not as code. Replace the blank with the correct function to count unique diseases.</p>
+
+      <pre><code>🗣 There are `r ________(unique(us_contagious_diseases$disease))` unique diseases within the `disease` column of the `us_contagious_diseases` dataset.
+
+They are `r unique(us_contagious_diseases$disease)`.</code></pre>
+
+      <p>🎯 For <code>us_contagious_diseases</code>, determine the number of states in the column <code>state</code>.</p>
+
+      <pre><code># ✅ Pre-check
+## What are the unique states?
+unique(us_contagious_diseases$state)
+
+## How many unique states are there?
+________(unique(us_contagious_diseases$state))</code></pre>
+
+      <p>🗣 Inline memo sentence</p>
+
+      <p>Write this as normal text in your Quarto document, not as code. Replace the blank with the correct function to count unique states.</p>
+
+      <pre><code>🗣 There are `r ________(unique(us_contagious_diseases$state))` unique states within the `state` column of the `us_contagious_diseases` dataset.</code></pre>
+
+      <p><strong>Word bank:</strong> <code>length</code>, <code>length</code>, <code>length</code>, <code>sum</code>, <code>n</code>, <code>count</code>, <code>unique</code>, <code>max</code></p>
+
+      <h3>Task 4, Step 1: Make and Test a Prediction</h3>
+
+      <p>How many rows would you expect if each state has 7 diseases?</p>
+
+      <p>If there are 51 states in the dataset, and you assume every state has data for all 7 diseases, how many groups will <code>group_by(state, disease)</code> create?</p>
+
+      <ul>
+        <li><code>51^7</code> groups</li>
+        <li><code>51 - 7 = 44</code> groups</li>
+        <li><code>51 / 7 ≈ 7</code> groups</li>
+        <li><code>51 × 7 = 357</code> groups</li>
+        <li><code>51 + 7 = 58</code> groups</li>
+      </ul>
+
+      <h3>Task 4, Step 2: Test the Prediction</h3>
+
+      <p>Use <code>group_by()</code> with both <code>state</code> and <code>disease</code>, then use <code>count()</code> to count the number of rows for each state and disease combination. Store the result as <code>categorical_counts</code>.</p>
+
+      <p>🎯 Restate the goal. What are you trying to learn, check, or demonstrate?</p>
+
+      <pre><code># ⚡ Code
+categorical_counts &lt;- us_contagious_diseases %&gt;%
+  ________(state, disease) %&gt;%
+  ________()</code></pre>
+
+      <pre><code># ✅ Check row count
+________(categorical_counts)</code></pre>
+
+      <p>🗣 Comment about the results. Was your prediction of group size correct?</p>
+
+      <p>🪞 Explain why <code>group_by()</code> is useful when reporting the <strong>frequency</strong> of categorical data like <code>state</code> and <code>disease</code>.</p>
+
+      <p><strong>Word bank:</strong> <code>group_by</code>, <code>count</code>, <code>nrow</code>, <code>summarize</code>, <code>filter</code>, <code>select</code>, <code>mutate</code>, <code>ifelse</code>, <code>case_when</code>, <code>sum</code></p>
+
+      <h3>Task 5: National Mean Counts by Disease</h3>
+
+      <p>From <code>us_contagious_diseases</code>, calculate the national mean of <code>count</code> for each <code>disease</code>. Then keep only the three diseases with the highest national mean counts. Store the result as <code>Infectious_Burden</code>.</p>
+
+      <p><strong>Tip:</strong> Arrange the diseases by their national mean and keep the top three.</p>
+
+      <pre><code># ⚡ National means per disease
+________ &lt;- ________ %&gt;%
+  group_by(________) %&gt;%
+  summarize(
+    ________ = mean(________, na.rm = TRUE),
+    .groups = "drop"
+  ) %&gt;%
+  arrange(desc(________))</code></pre>
+
+      <pre><code># ✅ Checks
+head(Infectious_Burden, 3)</code></pre>
+
+      <p>🗣 Comment on the results. Which three diseases had the highest national mean counts?</p>
+
+      <p><strong>Word bank:</strong> <code>Infectious_Burden</code>, <code>us_contagious_diseases</code>, <code>disease</code>, <code>national_mean</code>, <code>count</code>, <code>national_mean</code>, <code>population</code>, <code>weeks_reporting</code>, <code>n</code></p>
+    </section>
+
+    <section class="content-card">
+      <h2>File Upload Requirement</h2>
+
+      <ul>
+        <li>Your practice work is submitted in a separate assignment.</li>
+        <li><strong>Required file to submit:</strong> <code>chapter13_practice.html</code></li>
+      </ul>
+
+      <p>Submit the file in: <a href="06-1-08-grouped-summaries-practice-space-file-submission-html.html">06.1.08 🧺 Grouped Summaries Practice Space File Submission HTML</a></p>
+    </section>
+
+    <section class="content-card">
+      <h2>Before You Leave This Page</h2>
+
+      <ul>
+        <li>Complete the Chapter 13 Practice Space tasks in RStudio.</li>
+        <li>Save your Quarto file as <code>chapter13_practice.qmd</code>.</li>
+        <li>Render your file to create <code>chapter13_practice.html</code>.</li>
+        <li>Check that your output includes code, grouped summaries, checks, and interpretation memos.</li>
+        <li>Use the static quiz preview to check what the Canvas quiz will ask.</li>
+      </ul>
+
+      <p><a href="../../course-resources/items/how-to-complete-core-practice-space.html">How to Complete 🌱 Core Practice Space</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 6</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

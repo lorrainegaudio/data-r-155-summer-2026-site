@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>04.1.03 📤 Importing Data Practice Space | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>04.1.03 📤 Importing Data Practice Space</h1>
+      <p>🌱 Core | 30 min | Module 4</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>This Practice Space checks whether you can apply the main importing skills from <strong>Chapter 7: Datasets and Importing Data</strong> after completing the associated Guided Activity.</p>
+
+      <p>In this chapter, you check file locations with <code>getwd()</code> and <code>list.files()</code>, load packages and built-in datasets, and import CSV and Excel files with <code>read_csv()</code> and <code>read_excel()</code>.</p>
+
+      <p>This practice matters because most import problems are really file-management problems, and you need a reliable workflow for getting data into R before you can analyze it.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>What This Practice Space Checks</h2>
+
+      <ul>
+        <li><strong>Define</strong> tabular data as a table where rows represent observations and columns represent variables.</li>
+        <li><strong>Interpret</strong> <code>getwd()</code> and <code>list.files()</code> to determine where R is looking for files and whether the needed files are visible.</li>
+        <li><strong>Use</strong> <code>data()</code> to load datasets from base R and from an installed package.</li>
+        <li><strong>Import</strong> a CSV file with <code>read_csv()</code> and an Excel file with <code>read_excel()</code>.</li>
+        <li><strong>Troubleshoot</strong> common import problems such as missing packages, wrong file locations, and incorrect file names.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Practice Space Steps</h2>
+
+      <ul>
+        <li><strong>Time estimate:</strong> 30 minutes</li>
+        <li><strong>Due:</strong> Thursday</li>
+        <li><strong>Before starting:</strong> Complete the Guided Activity and work through the integrated Chapter 7 Practice Space tasks in the chapter file.</li>
+        <li><strong>Open:</strong> <a href="../../../assets/Module-4/Chapter_7_📤ImportingData.html">Chapter_7_📤ImportingData.html</a></li>
+        <li><strong>Use:</strong> RStudio Desktop / R Notebook / packages <code>readr</code>, <code>readxl</code>, and <code>dslabs</code> / files <a href="../../../assets/Module-4/Values_Transport_dplace.csv"><code>Values_Transport_dplace.csv</code></a> and <a href="../../../assets/Module-4/car_prices.xlsx"><code>car_prices.xlsx</code></a></li>
+        <li><strong>Save as:</strong> <code>chapter7_practice.Rmd</code> and <code>chapter7_practice.RData</code></li>
+        <li><strong>Complete:</strong> all 13 Practice Space tasks: Tasks 1–7 integrated into the Guided Activity, Task 8 saving your workspace for submission, and Tasks 9–13 multiple-choice concept checks on tabular data, file visibility, Knit troubleshooting, and the correct import functions.</li>
+        <li><strong>Return to:</strong> the Practice Space Quiz in Canvas when Canvas is available.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Static Quiz Preview</h2>
+
+      <div class="context-note">
+        <p><strong>Important:</strong> This page is a static preview of the quiz questions. It does not submit answers and it does not replace the official Canvas quiz when Canvas is available.</p>
+      </div>
+
+      <h3>Task 9</h3>
+
+      <p><strong>In this course, what is tabular data?</strong></p>
+
+      <ul>
+        <li>A table where rows represent observations and columns represent variables</li>
+        <li>A list where each element can be a different length</li>
+        <li>A single vector that stores only numbers</li>
+        <li>A plot with x- and y-axes</li>
+      </ul>
+
+      <h3>Task 10</h3>
+
+      <p><strong><code>list.files()</code>: What does the output tell you?</strong></p>
+
+      <ul>
+        <li>Which packages are installed on your computer</li>
+        <li>Which functions are available in Base R</li>
+        <li>Which files are in R’s current working directory</li>
+        <li>Which objects are stored in the Environment pane</li>
+      </ul>
+
+      <h3>Task 11</h3>
+
+      <p><strong>You click Knit and get an error that a file cannot be opened. What is the best first check?</strong></p>
+
+      <ul>
+        <li>Reinstall R and all packages</li>
+        <li>Run <code>getwd()</code> and <code>list.files()</code> to confirm where R is looking and whether the file is there</li>
+        <li>Prompt an LLM with the error message to get suggestions for how to fix it</li>
+        <li>Rename the file to something shorter</li>
+      </ul>
+
+      <h3>Task 12</h3>
+
+      <p><strong>Which function is used in this chapter to import an Excel <code>.xlsx</code> file?</strong></p>
+
+      <ul>
+        <li><code>read_csv()</code></li>
+        <li><code>readr()</code></li>
+        <li><code>readxl()</code></li>
+        <li><code>read_excel()</code></li>
+      </ul>
+
+      <h3>Task 13</h3>
+
+      <p><strong>Which function is used in this chapter to import a CSV file?</strong></p>
+
+      <ul>
+        <li><code>read_csv()</code></li>
+        <li><code>read_excel()</code></li>
+        <li><code>readxl()</code></li>
+        <li><code>readr()</code></li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>File Upload Requirement</h2>
+
+      <ul>
+        <li>Your practice work is submitted in a separate assignment.</li>
+        <li><strong>Required files to submit:</strong> <code>chapter7_practice.html</code> and <code>chapter7_practice.RData</code></li>
+      </ul>
+
+    <p>Submit the files in: <a href="04-1-04-importing-data-practice-space-file-submission-rmd-rdata.html">04.1.04 📤 Importing Data Practice Space File Submission RMD &amp; RData</a></p>
+
+    <section class="content-card">
+      <h2>Before You Leave This Page</h2>
+
+      <ul>
+        <li>Complete the Chapter 7 Practice Space tasks in RStudio.</li>
+        <li>Save your notebook as <code>chapter7_practice.Rmd</code>.</li>
+        <li>Knit the notebook to create <code>chapter7_practice.html</code>.</li>
+        <li>Save your workspace as <code>chapter7_practice.RData</code>.</li>
+        <li>Check that your notebook imports both <code>Values_Transport_dplace.csv</code> and <code>car_prices.xlsx</code>.</li>
+        <li>Check that <code>getwd()</code> and <code>list.files()</code> show the folder and files you expect.</li>
+        <li>Use the static quiz preview to check what the Canvas quiz will ask.</li>
+      </ul>
+
+      <p><a href="../../course-resources/items/how-to-complete-core-practice-space.html">How to Complete 🌱 Core Practice Space</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 4</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

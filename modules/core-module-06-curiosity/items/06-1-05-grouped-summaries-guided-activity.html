@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>06.1.05 🧺 Grouped Summaries Guided Activity | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>06.1.05 🧺 Grouped Summaries Guided Activity</h1>
+      <p>🌱 Core | 1 hr 30 min | Module 6</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>Grouped summaries help analysts move from raw rows to useful answers about groups, patterns, and comparisons.</p>
+
+      <p>In this guided activity, you will learn how to use <code>count()</code>, <code>summarize()</code>, and <code>group_by()</code> to describe data by category, compute multiple statistics, and interpret what grouped results mean.</p>
+
+      <p>That work is worth doing now because later analysis depends on comparing subgroups, not just reporting one number for a whole dataset. These skills also strengthen your Quarto workflow by asking you to organize code, render often, check output, and explain results clearly.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Guided Activity</h2>
+
+      <ul>
+        <li><strong>Time estimate:</strong> 1 hr 30 min</li>
+        <li><strong>Do:</strong> Wednesday</li>
+        <li><strong>Open:</strong> <a href="../../../assets/Module-6/Chapter-13_🧺GroupedSummaries.html">Chapter-13_🧺GroupedSummaries.html</a></li>
+        <li><strong>Use:</strong> RStudio, a Quarto notes file, <code>dplyr</code>, and the chapter’s built-in example data in R.</li>
+        <li><strong>Have ready:</strong> Your course folder open in RStudio, a new Quarto document started, and the <code>dplyr</code> and <code>dslabs</code> packages available.</li>
+        <li><strong>Produce:</strong> A <code>chapter13_notes.qmd</code> file with headings, follow-along grouped summary code, checks, and memo notes.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Chapter</h2>
+
+      <ul>
+        <li><a href="../../../assets/Module-6/Chapter-13_🧺GroupedSummaries.html">Chapter-13_🧺GroupedSummaries.html</a></li>
+        <li>Focus on the main guided activity sections on summaries with <code>count()</code>, <code>summarize()</code>, and <code>group_by()</code>.</li>
+        <li>Pay close attention to the difference between counting and summarizing, computing more than one statistic at once, grouping by more than one variable, and removing grouping after a summary when needed.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Data</h2>
+
+      <p><strong>No external dataset required.</strong></p>
+
+      <p>This chapter uses built-in example data to practice grouped counts and summaries. The main Guided Activity examples shown in the chapter use <code>mtcars</code>, and you also load <code>dplyr</code> and <code>dslabs</code> as part of the chapter setup.</p>
+
+      <p>The purpose is to practice grouping, summarizing, checking grouped output, and explaining what the summaries mean.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Guiding Questions</h2>
+
+      <ul>
+        <li>How does the chapter show the difference between using <code>count()</code> for frequencies and using <code>summarize()</code> for custom statistics?</li>
+        <li>When you add <code>group_by()</code>, what changes about the meaning of a result like a mean or a row count?</li>
+        <li>In the examples, which variable is being used to create groups, and which variable is being summarized within those groups?</li>
+        <li>What do you notice when the chapter moves from one grouping variable to combinations of variables?</li>
+        <li>After summarizing, when might you need <code>.groups = "drop"</code> or <code>ungroup()</code>, and how can you check whether grouping is still there?</li>
+      </ul>
+
+      <p>You do not submit answers to these questions, but use them to focus your reading, coding, and memo notes as you work through the Guided Activity.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Before You Leave This Page</h2>
+
+      <ul>
+        <li>Confirm that your <code>chapter13_notes.qmd</code> file is saved in the correct course folder.</li>
+        <li>Confirm that <code>dplyr</code> loads successfully.</li>
+        <li>Confirm that you can explain the difference between <code>count()</code> and <code>summarize()</code>.</li>
+        <li>Confirm that you can use <code>group_by()</code> to summarize values within groups.</li>
+        <li>Confirm that you understand why grouping may need to be dropped after a summary.</li>
+        <li>Render your Quarto file early enough to catch errors before Practice Space.</li>
+      </ul>
+
+      <p><a href="../../course-resources/items/how-to-complete-core-guided-activities.html">How to Complete 🌱 Core Guided Activities</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 6</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

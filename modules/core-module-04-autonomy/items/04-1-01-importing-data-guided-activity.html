@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>04.1.01 📤 Importing Data Guided Activity | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>04.1.01 📤 Importing Data Guided Activity</h1>
+      <p>🌱 Core | 1 hr 30 min | Module 4</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>Importing data is how analysts move from toy examples to real project workflow.</p>
+
+      <p>In this guided activity, you will learn how tabular data is organized, how the working directory affects file imports, and how to load built-in, package, CSV, and Excel datasets into R using a simple, reliable notebook workflow.</p>
+
+      <p>That work is worth doing now because many import errors are really file-management errors, and later analysis depends on getting data into R correctly before you can explore, subset, summarize, or visualize it. These skills will help you build a notebook that can Knit from top to bottom and reload your data from a clean start.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Guided Activity</h2>
+
+      <ul>
+        <li><strong>Time estimate:</strong> 1 hr 30 min</li>
+        <li><strong>Do:</strong> Monday</li>
+        <li><strong>Open:</strong> <a href="../../../assets/Module-4/Chapter_7_📤ImportingData.html">Chapter_7_📤ImportingData.html</a></li>
+        <li><strong>Use:</strong> RStudio, an R Notebook, the <code>readr</code>, <code>readxl</code>, and <code>dslabs</code> packages, and the chapter data files downloaded from this site.</li>
+        <li><strong>Have ready:</strong> Your course folder, <a href="../../../assets/Module-4/Values_Transport_dplace.csv"><code>Values_Transport_dplace.csv</code></a> and <a href="../../../assets/Module-4/car_prices.xlsx"><code>car_prices.xlsx</code></a> saved in the same folder as your notebook, and a new R Notebook saved as <code>chapter7_practice.Rmd</code>.</li>
+        <li><strong>Produce:</strong> A working R Notebook with follow-along code, memo notes, file checks, package loading, and successful dataset imports that can Knit from top to bottom.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Chapter</h2>
+
+      <ul>
+        <li><a href="../../../assets/Module-4/Chapter_7_📤ImportingData.html">Chapter_7_📤ImportingData.html</a></li>
+        <li>Focus on the guided activity sections on tabular data, working directories, downloading and organizing files, checking file visibility with <code>getwd()</code> and <code>list.files()</code>, loading packages, and importing datasets with <code>data()</code>, <code>read_csv()</code>, and <code>read_excel()</code>.</li>
+        <li>Pay close attention to the difference between loading built-in or package datasets and importing external files from your course folder.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Data</h2>
+
+      <p><strong>Datasets:</strong></p>
+
+      <ul>
+        <li><a href="../../../assets/Module-4/Values_Transport_dplace.csv"><code>Values_Transport_dplace.csv</code></a></li>
+        <li><a href="../../../assets/Module-4/car_prices.xlsx"><code>car_prices.xlsx</code></a></li>
+      </ul>
+
+      <p>This guided activity uses two external files so you can practice importing both CSV and Excel data into R.</p>
+
+      <p>The chapter also uses built-in and package datasets such as <code>mtcars</code> and <code>movielens</code> to distinguish between loading data that already comes with R or a package and importing files from your own folder.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Guiding Questions</h2>
+
+      <ul>
+        <li>How does the chapter distinguish between tabular data, rows, columns, observations, and variables?</li>
+        <li>Why does the working directory matter when you Knit a notebook and try to import a file by name?</li>
+        <li>What checks in the chapter help you confirm that R can actually see the files you downloaded before you try to import them?</li>
+        <li>What is the difference between loading a dataset with <code>data()</code> and importing a file with <code>read_csv()</code> or <code>read_excel()</code>?</li>
+        <li>When you import a file, what does the feedback about rows, columns, delimiter, and column types help you notice about whether the import worked correctly?</li>
+      </ul>
+
+      <p>You do not submit answers to these questions, but use them to focus your reading, coding, and memo notes as you work through the Guided Activity.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Before You Leave This Page</h2>
+
+      <ul>
+        <li>Confirm that <code>chapter7_practice.Rmd</code> is saved in your course folder.</li>
+        <li>Confirm that <code>Values_Transport_dplace.csv</code> and <code>car_prices.xlsx</code> are saved where your notebook can find them.</li>
+        <li>Confirm that <code>getwd()</code> and <code>list.files()</code> show the folder and files you expect.</li>
+        <li>Confirm that the needed packages load successfully.</li>
+        <li>Confirm that your CSV and Excel imports run without file-path errors.</li>
+        <li>Confirm that your notebook Knits from top to bottom from a clean start.</li>
+      </ul>
+
+      <p><a href="../../course-resources/items/how-to-complete-core-guided-activities.html">How to Complete 🌱 Core Guided Activities</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 4</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

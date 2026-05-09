@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>07.1.03 🎲 Probability Functions Practice Space | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>07.1.03 🎲 Probability Functions Practice Space</h1>
+      <p>🌱 Core | 30 min | Module 7</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>This Core Practice Space Quiz checks whether you can apply the Chapter 15 Guided Activity and practice tasks on <strong>probability simulation in base R</strong>.</p>
+
+      <p>It focuses on using <code>sample()</code>, <code>rnorm()</code>, and <code>replicate()</code> to simulate outcomes, check results with appropriate tools, and interpret whether the simulated patterns seem reasonable.</p>
+
+      <p>This practice matters because simulation is a practical way to study chance behavior, estimate risk, and connect R code to real questions about data and variability.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>What This Practice Space Checks</h2>
+
+      <ul>
+        <li><strong>Use</strong> <code>sample()</code> to simulate outcomes from a discrete set, such as repeated rolls of a 20-sided die.</li>
+        <li><strong>Use</strong> <code>rnorm()</code> to simulate continuous values from a normal distribution with a given mean and standard deviation.</li>
+        <li><strong>Apply</strong> <code>replicate()</code> to repeat a simulation many times and store the results as a vector for later analysis.</li>
+        <li><strong>Interpret</strong> checks such as <code>table()</code>, <code>mean()</code>, <code>any()</code>, and <code>sum()</code> to judge whether simulated results look reasonable or suggest a practical conclusion.</li>
+        <li><strong>Explain</strong> what simulation results imply in context, such as whether a die appears roughly fair or whether a hospital should keep some larger blankets available.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Practice Space Steps</h2>
+
+      <ul>
+        <li><strong>Time estimate:</strong> 30 minutes</li>
+        <li><strong>Do:</strong> Tuesday</li>
+        <li><strong>Before starting:</strong> complete the Guided Activity and complete the Chapter 15 Practice Tasks.</li>
+        <li><strong>Open:</strong> <a href="../../../assets/Module-7/Chapter-15_🎲Probabilityfunctions.html">Chapter-15_🎲Probabilityfunctions.html</a></li>
+        <li><strong>Use:</strong> RStudio Desktop / Quarto</li>
+        <li><strong>Save as:</strong> <code>chapter15_practice.qmd</code></li>
+        <li><strong>Complete:</strong> Task 0 through Task 4.</li>
+        <li><strong>Return to:</strong> the Practice Space Quiz in Canvas when Canvas is available.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Static Quiz Preview</h2>
+
+      <div class="context-note">
+        <p><strong>Important:</strong> This page is a static preview of the quiz questions. It does not submit answers and it does not replace the official Canvas quiz when Canvas is available.</p>
+      </div>
+
+      <h3>Task 1: Simulate a 20-Sided Die</h3>
+
+      <p>💭 Scenario: Your friend shows up to your DnD game with a big 3D printed 20-sided die and claims it is fair. You decide to test it. For practice, you will simulate what 300 rolls of a fair 20-sided die can look like, then check whether the results look roughly fair overall.</p>
+
+      <p>🎯 Simulate 300 rolls of a loaded or fair 20-sided die using values <code>1:20</code> and store the result in <code>big_die</code>.</p>
+
+      <pre><code># ⚡ Type this in your Quarto file. Fill in the blanks.
+big_die &lt;- sample(________, size = ________, replace = ________)
+
+big_die_counts &lt;- table(big_die)
+
+# Did you roll a 20?
+round(prop.table(big_die_counts), 3)
+range(big_die_counts)
+mean(big_die == ________)</code></pre>
+
+      <p>🗣 Comment: Does this simulated die look roughly fair? Explain using the overall pattern of counts, not just whether a 20 appeared. A fair die should have counts that are similar but not exactly equal.</p>
+
+      <p><strong>Word bank:</strong> <code>1:20</code>, <code>300</code>, <code>TRUE</code>, <code>20</code>, <code>FALSE</code>, <code>1:300</code></p>
+
+      <h3>Task 2: D20 Marathon</h3>
+
+      <p>💭 Scenario: A game store is running a weekend probability demo and asks you to help analyze whether a 20-sided die behaves the way a fair die should over many rolls.</p>
+
+      <h4>Step 1</h4>
+
+      <p>🎯 Simulate 5221 rolls of a fair 20-sided die. Store the result as <code>boring_weekend</code> using <code>sample()</code>.</p>
+
+      <pre><code># ⚡ Type this in your Quarto file. Fill in the blanks.
+boring_weekend &lt;- sample(________, size = ________, replace = ________)</code></pre>
+
+      <p>🗣 What do you expect the distribution of rolls to look like? Will the values be exactly equal? Have a normal distribution? Something else? Type your answer before working ahead. Keep whatever you typed, even if you are wrong. That is part of honest analytical work.</p>
+
+      <h4>Step 2</h4>
+
+      <p>🎯 Create <code>d20_counts</code>: a table of how many times each face appeared.</p>
+
+      <pre><code># ⚡ Type this in your Quarto file. Fill in the blank.
+d20_counts &lt;- ________
+
+# ✅ Quick check
+print(d20_counts)</code></pre>
+
+      <p>🗣 Comment on how similar or different the counts are across the values in the table.</p>
+
+      <h4>Step 3</h4>
+
+      <p>🎯 Find the proportion of rolls that were natural 20s. Then compare that result to the fair-die benchmark of <code>0.05</code>.</p>
+
+      <pre><code># ✅ Type this in your Quarto file. Fill in the blank.
+mean(boring_weekend == ________)
+
+abs(mean(boring_weekend == ________) - 0.05)</code></pre>
+
+      <p>🗣 Comment: Based on both the full frequency table from Step 2 and the natural-20 rate here, does the die appear to be fair? Explain why. A fair die should have counts that are roughly even overall and a natural-20 rate close to <code>0.05</code>, but not perfectly exact.</p>
+
+      <p><strong>Word bank:</strong> <code>1:20</code>, <code>5221</code>, <code>TRUE</code>, <code>table(boring_weekend)</code>, <code>20</code>, <code>20</code>, <code>1:5221</code>, <code>FALSE</code>, <code>count(boring_weekend)</code>, <code>n(boring_weekend)</code>, <code>sum(boring_weekend)</code></p>
+
+      <h3>Task 3: Baby Blanket Simulation</h3>
+
+      <p>💭 Scenario: A hospital is considering ordering new blankets for newborns. They want to know how many blankets they should order in each size. The hospital has data on newborn lengths, which are normally distributed with a mean of 20 inches and a standard deviation of 0.9 inches. The hospital wants to know how many babies are likely to be longer than 23 inches, which would require larger blankets.</p>
+
+      <h4>Step 1</h4>
+
+      <p>🎯 Simulate 100 newborn lengths in inches with mean <code>20.0</code> and standard deviation <code>0.9</code>. Store the result as <code>blanketed_babies</code>. Use <code>rnorm()</code>.</p>
+
+      <pre><code># ⚡ Type this in your Quarto file. Fill in the blanks.
+blanketed_babies &lt;- rnorm(________, mean = ________, sd = ________)</code></pre>
+
+      <p>🗣 Comment: What do you expect the distribution of baby lengths to look like? Will the values be exactly equal? Have a normal distribution? Something else? Type your answer before working ahead. Keep whatever you typed, even if you are wrong.</p>
+
+      <h4>Step 2</h4>
+
+      <p>🎯 Using <code>any()</code>, check whether any babies in <code>blanketed_babies</code> are longer than 23 inches. Then count how many are over 23 inches. Do not store the result as a new object.</p>
+
+      <pre><code># ✅ Type this in your Quarto file. Fill in the blanks.
+any(________)
+
+sum(________)</code></pre>
+
+      <p>🗣 Comment: Yes or No — based on this simulation, does the hospital appear to need longer blankets?</p>
+
+      <p><strong>Word bank:</strong> <code>100</code>, <code>20.0</code>, <code>0.9</code>, <code>blanketed_babies &gt; 23</code>, <code>blanketed_babies &gt; 23</code>, <code>blanketed_babies &lt; 23</code>, <code>blanketed_babies &lt; 23</code>, <code>23</code>, <code>blanketed_babies &gt; 20.0</code></p>
+
+      <h3>Task 3, Step 3: Week-to-Week Risk</h3>
+
+      <p>🎯 Repeat Steps 1 and 2 for 1000 simulated weeks. Store a vector named <code>weeks_too_long</code> that records, for each simulated week, <strong>how many babies were longer than 23 inches</strong>. Hint: use <code>replicate()</code>.</p>
+
+      <pre><code># ⚡ Type this in your Quarto file. Fill in the blanks.
+weeks_too_long &lt;- replicate(________, sum(rnorm(________, mean = ________, sd = ________) ________ ________))</code></pre>
+
+      <pre><code># ✅ Checks
+table(weeks_too_long)
+mean(weeks_too_long)
+mean(weeks_too_long &gt; 0)
+max(weeks_too_long)</code></pre>
+
+      <p>🗣 Comment: In these 1000 simulated weeks, how often do you see at least one baby longer than 23 inches? What does that suggest about whether the hospital should keep some larger blankets available?</p>
+
+      <p><strong>Word bank:</strong> <code>1000</code>, <code>100</code>, <code>20.0</code>, <code>0.9</code>, <code>&gt;</code>, <code>23</code>, <code>&lt;</code></p>
+
+      <h3>Task 4: Reflect</h3>
+
+      <p>🤔 <strong>Reflect</strong></p>
+
+      <p>📝 Write a short paragraph reflecting on what the utility of <code>replicate()</code> was in Task 3, Step 3.</p>
+
+      <pre><code>✍️ EXPLANATION:
+"____________________________________________________________"
+
+"____________________________________________________________"
+
+"____________________________________________________________"</code></pre>
+
+      <p><strong>Answer format:</strong> short paragraph in Canvas.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>File Upload Requirement</h2>
+
+      <ul>
+        <li>Your practice work is submitted in a separate assignment.</li>
+        <li><strong>Required files to submit:</strong> <code>chapter15_practice.qmd</code> and <code>chapter15_practice.RData</code></li>
+      </ul>
+
+      <p>Submit the files in: <a href="07-1-04-probability-functions-practice-space-file-submission-qmd-rdata.html">07.1.04 🎲 Probability Functions Practice Space File Submission QMD and RData</a></p>
+
+    <section class="content-card">
+      <h2>Before You Leave This Page</h2>
+
+      <ul>
+        <li>Complete the Chapter 15 Practice Space tasks in RStudio.</li>
+        <li>Save your Quarto file as <code>chapter15_practice.qmd</code>.</li>
+        <li>Save your workspace as <code>chapter15_practice.RData</code>.</li>
+        <li>Check that your output includes simulation code, results, checks, and interpretation memos.</li>
+        <li>Use the static quiz preview to check what the Canvas quiz will ask.</li>
+      </ul>
+
+      <p><a href="../../course-resources/items/how-to-complete-core-practice-space.html">How to Complete 🌱 Core Practice Space</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 7</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

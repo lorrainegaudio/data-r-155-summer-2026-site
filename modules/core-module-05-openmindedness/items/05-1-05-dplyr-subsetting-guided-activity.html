@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>05.1.05 💈 dplyr Subsetting Guided Activity | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>05.1.05 💈 dplyr Subsetting Guided Activity</h1>
+      <p>🌱 Core | 1 hr 30 min | Module 5</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>Subsetting is how analysts narrow a dataset to the rows and columns that actually matter for a question. In this guided activity, you will use <code>select()</code>, <code>filter()</code>, and the pipe <code>%&gt;%</code> to build smaller, clearer datasets from larger ones while continuing to work in Quarto.</p>
+
+      <p>That work is worth doing now because nearly every later analysis depends on choosing the right variables, keeping the right cases, and writing steps that are easy to read and check. These skills will support later graphing, summarizing, modeling, and project-based analysis in R.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Guided Activity</h2>
+
+      <ul>
+        <li><strong>Time estimate:</strong> 1 hr 30 min</li>
+        <li><strong>Do:</strong> Wednesday</li>
+        <li><strong>Open:</strong> <a href="../../../assets/Module-5/Chapter_11_💈dplyrSubsetting.html">Chapter_11_💈dplyrSubsetting.html</a></li>
+        <li><strong>Use:</strong> RStudio, a Quarto notes file, the <code>dplyr</code> and <code>dslabs</code> packages, and the chapter’s example datasets</li>
+        <li><strong>Have ready:</strong> Your course folder open in RStudio, a new Quarto document saved as <code>chapter11_notes.qmd</code>, and the required packages installed so you can follow along, memo, and render as you work</li>
+        <li><strong>Produce:</strong> A <code>chapter11_notes.qmd</code> file with YAML, headings, follow-along code, checks, and memo notes that document your subsetting workflow</li>
+      </ul>
+
+      <h3>Chapter</h3>
+
+      <ul>
+        <li><a href="../../../assets/Module-5/Chapter_11_💈dplyrSubsetting.html">Chapter_11_💈dplyrSubsetting.html</a></li>
+        <li>Focus on the Quarto setup, package loading, <code>select()</code>, <code>filter()</code>, and especially the section that combines <code>filter()</code> and <code>select()</code> in one pipeline. Pay close attention to how comparison operators and Boolean logic change which rows are kept, and why the chapter recommends filtering before selecting.</li>
+      </ul>
+
+      <h3>Data</h3>
+
+      <p><strong>No single external dataset required:</strong> built-in and package datasets used during the chapter.</p>
+
+      <p>This chapter uses <code>mtcars</code> plus <code>dslabs</code> datasets such as <code>gapminder</code> and <code>us_contagious_diseases</code> to practice row and column subsetting with realistic examples.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Guiding Questions</h2>
+
+      <ul>
+        <li>How does the chapter show the difference between using <code>select()</code> to choose columns and <code>filter()</code> to keep rows?</li>
+        <li>What does the pipe <code>%&gt;%</code> make easier to read or understand when you work through a subsetting task?</li>
+        <li>Which comparison operators or Boolean rules in the chapter change which observations are kept, and how can you tell what each one is doing?</li>
+        <li>Why is it usually safer in this chapter to <code>filter()</code> first and <code>select()</code> second when you build a pipeline?</li>
+        <li>As you follow the examples, what checks help you confirm that your new subset contains the rows and columns you intended?</li>
+      </ul>
+
+      <p>You do not submit answers to these questions, but use them to focus your reading, coding, and memo notes as you work through the Guided Activity.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Before You Move On</h2>
+
+      <ul>
+        <li>Confirm your <code>chapter11_notes.qmd</code> file is saved in your course folder.</li>
+        <li>Check that your Quarto document includes YAML, headings, code chunks, and memo notes.</li>
+        <li>Run the examples in order so each subset depends on code that appears earlier in the file.</li>
+        <li>Check that your <code>select()</code>, <code>filter()</code>, and pipe examples return the rows and columns you expected.</li>
+        <li>Render or preview your Quarto document before leaving the activity.</li>
+      </ul>
+
+      <p><a href="../../course-resources/items/how-to-complete-core-guided-activities.html">How to Complete 🌱 Core Guided Activities</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 5</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

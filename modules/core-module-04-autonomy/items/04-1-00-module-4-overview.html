@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>04.1.00 Module 4 Overview | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>04.1.00 Module 4 Overview</h1>
+      <p>🌱 Core: Module 4 | 🧭 Autonomy</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>🧭 Autonomy</h2>
+
+      <p>In this Core module, autonomy means being able to manage data work without waiting for every step to be handed to you. You will practice two skills that make independent analysis possible: importing data into R and selecting the exact rows, columns, or values you need. You will work with CSV and Excel files, check file locations with <code>getwd()</code> and <code>list.files()</code>, load packages, import datasets with <code>read_csv()</code> and <code>read_excel()</code>, and use bracket indexing to subset, extract, and modify data.</p>
+
+      <p>The first Core topic focuses on getting data into R correctly. You will learn why the working directory matters, how package and built-in datasets differ from external files, and how to check that R can see the files you plan to import. The second Core topic focuses on indexing. You will use <code>[ ]</code>, <code>[[ ]]</code>, and <code>$</code> to select parts of a data frame, work with logical masks, handle possible <code>NA</code> behavior, and correct data-entry problems through subassignment.</p>
+
+      <p>Across the module, you will keep using an R Notebook workflow: write code, check output, memo what you noticed, and save files that can be reopened and reviewed. The pattern is practical: first learn the workflow in a Guided Activity, then use Practice Space to show that you can apply the same ideas on your own. The main goal is not just to import or index once; it is to build a reliable workflow for finding files, loading data, selecting data carefully, and documenting what changed.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Learning Objectives</h2>
+
+      <p><strong>By the end of this module, the successful student will be able to:</strong></p>
+
+      <ul>
+        <li>Describe tabular data using rows as observations and columns as variables.</li>
+        <li>Use <code>getwd()</code> and <code>list.files()</code> to check where R is looking for files.</li>
+        <li>Load required packages with <code>library()</code> and distinguish package datasets from external files.</li>
+        <li>Import CSV and Excel files into R using <code>read_csv()</code> and <code>read_excel()</code>.</li>
+        <li>Apply bracket indexing with <code>df[rows, cols]</code> to subset rows and columns by position, name, or logical condition.</li>
+        <li>Distinguish the output of <code>[ ]</code>, <code>[[ ]]</code>, and <code>$</code> when extracting data from a data frame.</li>
+        <li>Explain how <code>NA</code> values can affect logical masks and why <code>which()</code> can help produce cleaner row indices.</li>
+        <li>Use subassignment to modify selected values in a copied data frame while preserving the original object.</li>
+        <li>Create reproducible notebook work that includes code, checks, memo notes, and saved output files.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Why This Topic is Important</h2>
+
+      <p>Real data work starts before analysis. If R cannot find your file, if the wrong file is imported, or if you do not notice that a column imported differently than expected, every later step becomes unreliable. This module helps prevent one of the most common beginner problems: treating file-management errors as mysterious R errors. Checking the working directory, confirming visible files, and reading import feedback are basic habits that save time and prevent avoidable mistakes.</p>
+
+      <p>Indexing is just as important because most analysis does not use a whole dataset all at once. You often need selected rows, selected columns, one extracted vector, or a corrected copy of a data frame. This module teaches you to point R at the exact part of the data you mean, then verify that the result is the object type and size you expected.</p>
+
+      <p>These skills connect directly to later modules. Once you can import data and select parts of it carefully, you are better prepared for filtering, recoding, summarizing, plotting, and writing reports. The autonomy in this module is practical: you are learning how to manage files, inspect imported data, make careful selections, and document changes without guessing.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Strategies for Success</h2>
+
+      <ul>
+        <li>Keep your notebook and data files in the same course folder unless the chapter tells you otherwise.</li>
+        <li>Run <code>getwd()</code> and <code>list.files()</code> before importing a file; do not guess where R is looking.</li>
+        <li>Watch import messages for rows, columns, delimiters, and guessed column types.</li>
+        <li>Use clear object names such as <code>dplace_df</code>, <code>car_prices_df</code>, and <code>values_transport</code> so you can tell imported objects apart.</li>
+        <li>After every subset, check the result with functions such as <code>head()</code>, <code>names()</code>, <code>nrow()</code>, <code>ncol()</code>, <code>unique()</code>, or <code>table()</code>.</li>
+        <li>Pay attention to whether your code returns a data frame or a vector; this matters for what functions will work next.</li>
+        <li>Use <code>which()</code> when you need row positions from a logical condition and want to avoid confusing <code>NA</code> behavior.</li>
+        <li>Make a copy of a data frame before overwriting values so the original imported data stays available for checking.</li>
+        <li>Memo what you checked and why, especially when file paths, import steps, or indexing output did not behave as expected.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Assignments and Tasks</h2>
+
+      <h3>🌱 Core</h3>
+
+      <h4>Do Monday</h4>
+      <ul>
+        <li><a href="04-1-01-importing-data-guided-activity.html">04.1.01 📤 Importing Data Guided Activity</a> <span class="item-meta">(1 hr 30 min)</span></li>
+        <li><a href="04-1-02-importing-data-supplemental-materials.html">04.1.02 📤 Importing Data Supplemental Materials</a> <span class="item-meta">(Optional; time varies)</span></li>
+      </ul>
+
+      <h4>Due Tuesday by 11:59 p.m. Mountain Time</h4>
+      <ul>
+        <li>
+          <a href="04-1-03-importing-data-practice-space.html">04.1.03 📤 Importing Data Practice Space</a> <span class="item-meta">(30 min)</span>
+          <ul>
+            <li>Revisions due Thursday by 11:59 p.m. Mountain Time</li>
+          </ul>
+        </li>
+        <li>
+          <a href="04-1-04-importing-data-practice-space-file-submission-rmd-rdata.html">04.1.04 📤 Importing Data Practice Space File Submission RMD &amp; RData</a> <span class="item-meta">(30 min)</span>
+          <ul>
+            <li>Revisions due Thursday by 11:59 p.m. Mountain Time</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>Do Wednesday</h4>
+      <ul>
+        <li><a href="04-1-05-indexing-guided-activity.html">04.1.05 👈 Indexing Guided Activity</a> <span class="item-meta">(1 hr 30 min)</span></li>
+        <li><a href="04-1-06-indexing-supplemental-materials.html">04.1.06 👈 Indexing Supplemental Materials</a> <span class="item-meta">(Optional; time varies)</span></li>
+      </ul>
+
+      <h4>Due Thursday by 11:59 p.m. Mountain Time</h4>
+      <ul>
+        <li>
+          <a href="04-1-07-indexing-practice-space.html">04.1.07 👈 Indexing Practice Space</a> <span class="item-meta">(30 min)</span>
+          <ul>
+            <li>Revisions due Saturday by 11:59 p.m. Mountain Time</li>
+          </ul>
+        </li>
+        <li>
+          <a href="04-1-08-indexing-practice-space-file-submission-html-rdata.html">04.1.08 👈 Indexing Practice Space File Submission HTML &amp; RData</a> <span class="item-meta">(30 min)</span>
+          <ul>
+            <li>Revisions due Saturday by 11:59 p.m. Mountain Time</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Module Files</h2>
+
+      <ul>
+        <li><a href="../../../assets/Module-4/Chapter_7_📤ImportingData.html">Chapter 7: 📤 Importing Data</a></li>
+        <li><a href="../../../assets/Module-4/Chapter_8_👈Indexing.html">Chapter 8: 👈 Indexing</a></li>
+        <li><a href="../../../assets/Module-4/Values_Transport_dplace.csv">Values_Transport_dplace.csv</a></li>
+        <li><a href="../../../assets/Module-4/car_prices.xlsx">car_prices.xlsx</a></li>
+        <li><a href="../../../assets/Module-4/field_sightings.csv">field_sightings.csv</a></li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Quick Links</h2>
+
+      <p><a href="../../course-resources/items/how-to-complete-core-guided-activities.html">How to Complete 🌱 Core Guided Activities</a></p>
+
+      <p><a href="../../course-resources/items/how-to-complete-core-practice-space.html">How to Complete 🌱 Core Practice Space</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 4</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

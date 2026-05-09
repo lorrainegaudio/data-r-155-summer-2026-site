@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>05.1.08 💈 dplyr Subsetting Practice Space File Submission QMD | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>05.1.08 💈 dplyr Subsetting Practice Space File Submission QMD</h1>
+      <p>🌱 Core | 30 min | Module 5</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>This assignment collects your <strong>Chapter 11 Practice Space</strong> work as a <strong>Quarto <code>.qmd</code> file</strong>. For this chapter, the uploaded file matters because it shows how you used <code>select()</code> and <code>filter()</code> to build focused subsets, check that those subsets are correct, and document your reasoning in a reproducible workflow file that can be run again from top to bottom.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>File Upload</h2>
+
+      <ul>
+        <li><strong>Required file to submit:</strong> <code>chapter11_practice.qmd</code></li>
+        <li><strong>File type:</strong> <code>.qmd</code></li>
+        <li><strong>This file should show:</strong>
+          <ul>
+            <li>your completed Chapter 11 Practice Space work for <strong>Task 0 through Task 7</strong>,</li>
+            <li>the actual R code used for <code>select()</code> and <code>filter()</code> tasks,</li>
+            <li>the required chapter objects: <code>C_Overload</code>, <code>star_names</code>, <code>No_Florida</code>, <code>Fast_n_Furious</code>, and <code>filtered_cars</code>,</li>
+            <li>your checks after code, such as <code>head()</code>, <code>unique()</code>, <code>nrow()</code>, <code>range()</code>, or <code>all()</code> where used in the tasks,</li>
+            <li>your memo responses written as normal text outside code chunks, including the Chapter 11 reflection, and</li>
+            <li>brief disclosure of outside help in a memo if you used it.</li>
+          </ul>
+        </li>
+        <li><strong>Based on:</strong> <a href="../../../assets/Module-5/Chapter_11_💈dplyrSubsetting.html" target="_blank" rel="noopener">Chapter 11: <em>dplyr Subsetting</em></a></li>
+        <li><strong>If applicable, include:</strong> headings for Task 0 through Task 7, code that loads <code>dplyr</code> and <code>dslabs</code>, and Quarto chunk controls with <code>#|</code> if you used them.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>How you will be marked</h2>
+
+      <h3>✅ Complete if all are true:</h3>
+
+      <ol class="upper-alpha">
+        <li>
+          <p><strong>Code + tasks</strong></p>
+          <ul>
+            <li>The uploaded <code>chapter11_practice.qmd</code> contains the completed <strong>Task 0 through Task 7</strong> for Chapter 11.</li>
+            <li>The work is clearly for <strong>Chapter 11 dplyr subsetting</strong>, not a different chapter or assignment.</li>
+            <li>The file is readable, complete, and not blank, cut off, or replaced with unrelated content.</li>
+            <li>The file shows the actual R code used for the chapter tasks.</li>
+            <li>The submission includes the chapter-specific subsetting work using <code>select()</code> and <code>filter()</code>.</li>
+            <li>The file includes the required chapter objects: <code>C_Overload</code>, <code>star_names</code>, <code>No_Florida</code>, <code>Fast_n_Furious</code>, and <code>filtered_cars</code>.</li>
+            <li>The submission includes the Chapter 11 reflection comparing <code>dplyr</code> subsetting with base-R brackets <code>[ ]</code>.</li>
+          </ul>
+        </li>
+
+        <li>
+          <p><strong>Memos</strong></p>
+          <ul>
+            <li>The file includes memo responses for each required task or step where memoing is requested.</li>
+            <li>Each task includes a goal memo in the student&rsquo;s own words.</li>
+            <li>The memos answer the chapter&rsquo;s specific comment questions, including what <code>select()</code> did, whether <code>star_names</code> stays a one-column data frame, what rows were removed from <code>murders</code>, what each filtering condition means for <code>Fast_n_Furious</code>, and what <code>all()</code> verifies for <code>filtered_cars</code>.</li>
+            <li>The reflection memo explains the utility of <code>select()</code> and <code>filter()</code> as compared with base-R bracket subsetting.</li>
+            <li>If outside help was used, that help is briefly disclosed in a memo.</li>
+          </ul>
+        </li>
+
+        <li>
+          <p><strong>Reproducibility / chapter-specific requirements</strong></p>
+          <ul>
+            <li>The submission is the correct output format: <code>chapter11_practice.qmd</code>, not a different file type.</li>
+            <li>The file runs from top to bottom without errors when executed in order.</li>
+            <li>The document includes code that loads the required packages <code>dplyr</code> and <code>dslabs</code>.</li>
+            <li>The file is organized with headings for Task 0 through Task 7.</li>
+            <li>Memo responses are written as normal text outside code chunks.</li>
+            <li>The chapter objects have the expected content:
+              <ul>
+                <li><code>C_Overload</code> keeps only <code>year</code> and <code>carbon_emissions</code>.</li>
+                <li><code>star_names</code> has one column named <code>star</code>.</li>
+                <li><code>No_Florida</code> has no rows with <code>state == "Florida"</code>.</li>
+                <li><code>Fast_n_Furious</code> keeps only manual, 8-cylinder cars with <code>qsec &lt; 15</code>.</li>
+                <li><code>filtered_cars</code> keeps rows where <code>disp &gt; 250</code> or <code>disp &lt; 160</code> and only the first three columns.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+      <h3>🟡 Not Ready if any are missing:</h3>
+
+      <ul>
+        <li>No attachment, wrong artifact, or file cannot be opened.</li>
+      </ul>
+
+      <p>If your submission is marked 🟡 Not Ready, revise to address the missing elements and resubmit for reevaluation before the assignment locks.</p>
+
+      <h3>❌ Missing</h3>
+
+      <p>No submission.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Before You Submit</h2>
+
+      <ul>
+        <li>Confirm the file is named <code>chapter11_practice.qmd</code>.</li>
+        <li>Confirm your document includes Task 0 through Task 7.</li>
+        <li>Confirm package setup code for <code>dplyr</code> and <code>dslabs</code> appears before the tasks that use those packages.</li>
+        <li>Confirm your code uses <code>select()</code> for column selection and <code>filter()</code> for row filtering.</li>
+        <li>Confirm your memo responses are written as normal text, not hidden inside code chunks.</li>
+        <li>Confirm your file is saved before uploading.</li>
+      </ul>
+
+      <p><a href="05-1-07-dplyr-subsetting-practice-space.html">Back to 05.1.07 💈 dplyr Subsetting Practice Space</a></p>
+
+      <p><a href="../../course-resources/items/how-to-complete-core-practice-space.html">How to Complete 🌱 Core Practice Space</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 5</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

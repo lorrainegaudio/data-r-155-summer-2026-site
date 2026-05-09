@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>07.2.07 🔥 Wildfire Guided Activity: Part C 🎰 Monte Carlo | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>07.2.07 🔥 Wildfire Guided Activity: Part C 🎰 Monte Carlo</h1>
+      <p>🌳 Advanced Module 7 | Thoroughness</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>In Part C, you move from working with one wildfire scenario to simulating many possible wildfire seasons statewide. Part C focuses on statewide simulation. You will use hazard-category weights and lognormal distance models to simulate one season, then many seasons, and estimate the probability of seeing at least 50 fast-growing fires in a season. This matters because analysts often need to estimate what could happen across many repeated events, not just describe a single case. In this guided activity, you will practice building vectors, using <code>sample.int()</code>, <code>rlnorm()</code>, and <code>replicate()</code>, and interpreting a simulation-based answer to a wildfire risk question.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Advanced Guided Activity</h2>
+
+      <ul>
+        <li><strong>Focus:</strong> Monte Carlo simulation for statewide wildfire spread</li>
+        <li><strong>Time estimate:</strong> 1 hour 30 minutes</li>
+        <li><strong>Do:</strong> Friday, Week 7</li>
+        <li><strong>Open:</strong> <a href="../../../assets/Module-7/Fire-Assignment-Part-C.html">Fire-Assignment-Part-C.html</a></li>
+        <li><strong>Use:</strong> RStudio Desktop, Quarto, and <a href="../../../assets/Module-7/Fire-Assignment-PartC-StudentTemplate.qmd">Fire-Assignment-PartC-StudentTemplate.qmd</a></li>
+        <li><strong>Have ready:</strong> complete Part B first so you are familiar with the wildfire categories, the lognormal model, and how the spread-distance parameters are being used.</li>
+        <li><strong>What you will do:</strong> build the category, probability, and parameter vectors from Table 1; simulate one wildfire season and then many seasons; estimate the expected number of fast-growing fires; and estimate the probability of at least 50 fast-growing fires in a season.</li>
+        <li><strong>Produce:</strong>
+          <ul>
+            <li><code>Fire-Assignment-PartC-StudentTemplate.qmd</code></li>
+            <li>memoed notes for Part C</li>
+            <li>objects such as <code>labels</code>, <code>prob</code>, <code>meanlog</code>, <code>sdlog</code>, <code>N</code>, <code>S</code>, <code>k</code>, <code>idx</code>, <code>d</code>, <code>fast_flags_one</code>, <code>fast_count_one</code>, and <code>counts_fast_mix</code></li>
+            <li>a histogram showing the distribution of simulated seasonal fast-fire counts</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Activity File</h2>
+
+      <ul>
+        <li><a href="../../../assets/Module-7/Fire-Assignment-Part-C.html">Fire-Assignment-Part-C.html</a></li>
+        <li>Pay closest attention to Tasks 1 through 10 and to how the one-season logic is reused inside <code>replicate()</code> to answer the statewide wildfire question.</li>
+        <li>Download this file for best viewing. Canvas sometimes prevents some formatting from displaying correctly, and those formatting differences may cause confusion.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Data and Report Template</h2>
+
+      <p><strong>No new external dataset required:</strong> Part C does not introduce a new external dataset. Instead, you will use the category labels, probabilities, and lognormal parameter values provided in Table 1 below and build simulation objects from those values.</p>
+
+      <ul>
+        <li><a href="../../../assets/Module-7/Fire-Assignment-PartC-StudentTemplate.qmd">Fire-Assignment-PartC-StudentTemplate.qmd</a></li>
+        <li>Save the template in your course folder before you start, then open it in RStudio.</li>
+      </ul>
+
+      <p>In this part, you are creating the simulation objects directly in R from the provided table values rather than downloading a new data file.</p>
+
+      <p>The table below gives the wildfire hazard categories, statewide category probabilities, and the lognormal model parameters used in Parts B and C. In Part C, you will use these values to build vectors for <code>labels</code>, <code>prob</code>, <code>meanlog</code>, and <code>sdlog</code>.</p>
+
+      <div style="overflow-x: auto;">
+        <table style="border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 15px;">
+          <thead>
+            <tr style="background-color: #0033a0; color: #ffffff;">
+              <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Category</th>
+              <th style="padding: 10px; text-align: right; border: 1px solid #ddd;">Probability</th>
+              <th style="padding: 10px; text-align: right; border: 1px solid #ddd;">Mean (km)</th>
+              <th style="padding: 10px; text-align: right; border: 1px solid #ddd;">SD (km)</th>
+              <th style="padding: 10px; text-align: right; border: 1px solid #ddd;">Mean log</th>
+              <th style="padding: 10px; text-align: right; border: 1px solid #ddd;">SD log</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 10px; border: 1px solid #ddd;">Very Low</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">25</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">2.0</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">1.0</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">0.582</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">0.472</td>
+            </tr>
+            <tr style="background-color: #f7f7f7;">
+              <td style="padding: 10px; border: 1px solid #ddd;">Low</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">25</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">3.0</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">1.0</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">1.046</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">0.325</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px; border: 1px solid #ddd;">Moderate</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">25</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">4.5</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">1.5</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">1.451</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">0.325</td>
+            </tr>
+            <tr style="background-color: #f7f7f7;">
+              <td style="padding: 10px; border: 1px solid #ddd;">High</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">15</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">7.0</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">2.0</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">1.907</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">0.280</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px; border: 1px solid #ddd;">Very High</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">5</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">12.0</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">3.0</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">2.455</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">0.246</td>
+            </tr>
+            <tr style="background-color: #f7f7f7;">
+              <td style="padding: 10px; border: 1px solid #ddd;">Extreme</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">4</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">18.0</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">4.0</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">2.866</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">0.220</td>
+            </tr>
+            <tr style="background-color: #fff1e8;">
+              <td style="padding: 10px; border: 1px solid #ddd; color: #0033a0;">Ultra (Top 1%)</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">1</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">28.0</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">6.0</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">3.310</td>
+              <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">0.212</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Use the values in this table exactly as written and keep the order consistent when you build your vectors. That order matters because the probabilities and lognormal parameters must stay aligned with the correct wildfire hazard categories throughout the simulation.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Guiding Questions</h2>
+
+      <ul>
+        <li>Why do the order and alignment of <code>labels</code>, <code>prob</code>, <code>meanlog</code>, and <code>sdlog</code> matter before you start simulating?</li>
+        <li>What is the difference between simulating one wildfire season and simulating many seasons with <code>replicate()</code>?</li>
+        <li>How does <code>sample.int()</code> help model the idea that ignitions can occur in different hazard categories with different probabilities?</li>
+        <li>What does the count of fast-growing fires tell you for one season, and what does the distribution of counts across many seasons tell you?</li>
+        <li>How does the histogram in Task 10 support or challenge your estimated probability of at least 50 fast-growing fires?</li>
+      </ul>
+
+      <p>You do not submit separate answers to these questions. Use them to focus your reading, follow-along coding, and memoed comments as you work through Part C.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Submission for This Part</h2>
+
+      <p>There is one submission for this part right now: the quiz. Complete the QMD template first so you can work through the coding steps yourself, then use the quiz to check your understanding. The quiz may be taken multiple times, so if you miss a question, review your Part C work and try again.</p>
+
+      <ul>
+        <li><strong>Submit to:</strong> <a href="07-2-08-wildfire-practice-space-part-c-monte-carlo.html">🔥 Wildfire Practice Space: Part C 🎰 Monte Carlo Quiz</a></li>
+        <li><strong>Submission type:</strong> quiz</li>
+        <li><strong>What to submit:</strong> your completed quiz responses</li>
+        <li><strong>Before you submit:</strong> work through <code>Fire-Assignment-PartC-StudentTemplate.qmd</code> first to test your code, check your simulated objects and summaries, and use the quiz as a self-check for the parts you completed.</li>
+      </ul>
+
+      <p><strong>No file upload is required for Part C by itself.</strong> Save your completed Part C work because you will later combine Parts A, B, and C into one final wildfire report for the final Wildfire submission page.</p>
+    </section>
+
+    <section class="content-card">
+      <p><a href="../../course-resources/items/how-to-complete-advanced-guided-activities.html">How to Complete 🌳 Advanced Guided Activities</a></p>
+      <p><a href="07-2-00-wildfire-overview.html">Back to 🔥 Wildfire Overview</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

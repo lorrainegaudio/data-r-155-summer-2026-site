@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>04.1.06 👈 Indexing Supplemental Materials | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>04.1.06 👈 Indexing Supplemental Materials</h1>
+      <p>Optional | Time varies | Module 4</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>Review the supplemental resources on this page if you would like an alternative explanation, example, or walkthrough for concepts in this chapter or need extra help with a specific skill.</p>
+
+      <p>These materials are optional and do not replace the chapter.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Resources</h2>
+
+      <h3>Subsetting</h3>
+
+      <ul>
+        <li>
+          <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Extract.html" target="_blank" rel="noopener">R Documentation on Extract</a>
+          <ul>
+            <li>This reference is most useful when you need the exact rules for <code>[</code>, <code>[[</code>, and <code>$</code>, especially the difference between selecting <strong>many elements</strong> versus <strong>one element</strong>. It is also the right place to check how <strong>negative</strong>, <strong>logical</strong>, and <strong>character</strong> indices work, and what <code>drop = FALSE</code> does when subsetting matrices or arrays.</li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="https://adv-r.hadley.nz/subsetting.html#subsetting" target="_blank" rel="noopener">Advanced R: Subsetting</a>
+          <ul>
+            <li>This reading is most useful for building a stronger mental model of <strong>subsetting across vectors, lists, matrices, and data frames</strong>. It helps clarify when the same bracket syntax behaves differently across object types, which is exactly the point where many beginners start making indexing mistakes.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Code Chunk Options</h3>
+
+      <ul>
+        <li>
+          <a href="https://yihui.org/knitr/options/#chunk-options" target="_blank" rel="noopener">knitr Chunk Options: Official List</a>
+          <ul>
+            <li>Use this reference when you need the full list of <strong>chunk options</strong> and want to check whether an option exists or what it really does. It is especially useful for precise questions about options such as <code>echo</code>, <code>eval</code>, <code>include</code>, <code>warning</code>, <code>message</code>, and more specialized settings like <code>results = 'asis'</code>.</li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="https://rstudio.github.io/cheatsheets/html/rmarkdown.html#code-chunks" target="_blank" rel="noopener">Posit R Markdown Cheatsheet: Code Chunks</a>
+          <ul>
+            <li>This cheatsheet is most useful as a fast reminder of <strong>R Markdown code chunk syntax</strong> and the most common chunk options students actually use while writing reports. It is the page to keep open when you just need the syntax for a chunk header or a quick reminder of options like <code>echo</code>, <code>eval</code>, <code>include</code>, <code>message</code>, and <code>warning</code>.</li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="https://yihui.org/rmarkdown-cookbook/chunk-options" target="_blank" rel="noopener">R Markdown Cookbook: Chapter 11 Chunk Options</a>
+          <ul>
+            <li>This reading is most useful when you are ready to go beyond the quick syntax and understand how <strong>chunk options change document behavior</strong> in a more detailed way. It is especially helpful for a deeper look at how to control whether code runs, whether code shows, and how results are printed in the final output.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Video</h2>
+
+      <h3>The Many Ways of Indexing</h3>
+
+      <p>This video is most useful if you need a practical introduction to <strong>indexing and filtering data frames</strong> after working mostly with vectors.</p>
+
+      <p>It is especially helpful for seeing how to subset by <strong>row and column position</strong>, extract a column with <code>$</code>, filter rows with <strong>logical conditions</strong>, and use functions like <code>head()</code>, <code>names()</code>, <code>rownames()</code>, <code>nrow()</code>, <code>ncol()</code>, <code>str()</code>, <code>levels()</code>, <code>grep()</code>, and <code>grepl()</code> while exploring built-in data such as <code>ChickWeight</code>.</p>
+
+      <div class="video-wrapper">
+        <iframe
+          title="The Basics of R for Ecologists: Lesson 6 Part 1, indexing and filtering dataframes"
+          src="https://www.youtube.com/embed/nu_F1m1Y5gU?si=v-Nn_WPOiJuS9BVo"
+          width="560"
+          height="315"
+          loading="lazy"
+          allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+        </iframe>
+      </div>
+
+      <p>If the video above does not appear, use the direct link: <a href="https://youtu.be/nu_F1m1Y5gU?si=ovO7wEEOlxydVYLB" target="_blank" rel="noopener">The Basics of R for Ecologists: Lesson 6 Part 1 (indexing and filtering dataframes)</a> (25:09 min.).</p>
+
+      <p><a href="../../../assets/Module-4/R_for_Ecology_TRANSCRIPT_The Basics of R for Ecologists Lesson 6 Part 1 (indexing and filtering dataframes).txt">Audio Transcript</a></p>
+    </section>
+
+    <section class="content-card">
+      <h2>Use This Page When...</h2>
+
+      <ul>
+        <li>You are confused about when to use <code>[ ]</code>, <code>[[ ]]</code>, or <code>$</code>.</li>
+        <li>You need to check whether your code returns a vector or a data frame.</li>
+        <li>You need a reference for logical, positional, or name-based indexing.</li>
+        <li>Your notebook output is too long and you need chunk options to control what appears.</li>
+        <li>You want another walkthrough of indexing and filtering rows in a data frame.</li>
+      </ul>
+
+      <p><a href="04-1-05-indexing-guided-activity.html">Back to 04.1.05 👈 Indexing Guided Activity</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 4</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

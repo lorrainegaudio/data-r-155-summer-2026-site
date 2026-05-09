@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>06.1.03 🏷️ Recoding Practice Space | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>06.1.03 🏷️ Recoding Practice Space</h1>
+      <p>🌱 Core | 30 min | Module 6</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>This Practice Space checks whether you can apply the main recoding skills from <strong>Chapter 12: Recoding</strong> after completing the associated Guided Activity.</p>
+
+      <p>In this chapter, you use <code>ifelse()</code>, <code>case_when()</code>, and <code>mutate()</code> to label values, build cleaner variables, and document your work in Quarto with checks and memos.</p>
+
+      <p>This practice matters because recoding is a common data-analysis task, and this course expects you to produce work that can be re-run, checked, and understood later.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>What This Practice Space Checks</h2>
+
+      <ul>
+        <li><strong>Use</strong> vectorized conditionals such as <code>ifelse()</code> and <code>case_when()</code> to return one result for every position.</li>
+        <li><strong>Apply</strong> <code>mutate()</code> to create new columns or overwrite an existing column in a data frame.</li>
+        <li><strong>Distinguish</strong> between recoding with a new output variable and updating an existing variable with transformed values.</li>
+        <li><strong>Interpret</strong> checks such as <code>table()</code>, <code>head()</code>, <code>summary()</code>, and <code>colnames()</code> to confirm that recoding worked as expected.</li>
+        <li><strong>Document</strong> a reproducible Quarto workflow with headings, memoing, inline R code, rendering, and brief AI disclosure when outside help was used.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Practice Space Steps</h2>
+
+      <ul>
+        <li><strong>Time estimate:</strong> 30 minutes</li>
+        <li><strong>Do:</strong> after completing the Chapter 12 Guided Activity</li>
+        <li><strong>Before starting:</strong> work through the Chapter 12 Practice Space tasks</li>
+        <li><strong>Open:</strong> <a href="../../../assets/Module-6/Chapter-12_🏷️Recoding.html">Chapter-12_🏷️Recoding.html</a></li>
+        <li><strong>Use:</strong> RStudio Desktop, Quarto, and the <code>dplyr</code> and <code>dslabs</code> packages</li>
+        <li><strong>Save as:</strong> <code>chapter12_practice.qmd</code></li>
+        <li><strong>Complete:</strong> the Practice Space setup and all 5 tasks: concept check, simple <code>ifelse()</code>, recoding with <code>mutate()</code> and <code>case_when()</code>, temperature-group recoding, and unit conversion with <code>mutate()</code>.</li>
+        <li><strong>Return to:</strong> the Practice Space Quiz in Canvas when Canvas is available.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Static Quiz Preview</h2>
+
+      <div class="context-note">
+        <p><strong>Important:</strong> This page is a static preview of the quiz questions. It does not submit answers and it does not replace the official Canvas quiz when Canvas is available.</p>
+      </div>
+
+      <h3>Task 1: 🧠 Concept Check</h3>
+
+      <p>Which line of code returns a new vector with one result for every position?</p>
+
+      <ul>
+        <li><code>ifelse(x &gt; 3, "Large", "Small")</code></li>
+        <li><code>x[x &gt; 3]</code></li>
+        <li><code>x[x &gt; 3] &lt;- 99</code></li>
+        <li><code>filter(data, x &gt; 3)</code></li>
+      </ul>
+
+      <h3>Task 2: 🔀 Simple <code>ifelse()</code></h3>
+
+      <p>🎯 Use <code>ifelse()</code> to label each <code>height</code> in the dataset <code>heights</code> as <code>"Tall"</code> if <code>height</code> is greater than <code>68</code> and <code>"Not Tall"</code> otherwise. Store the result as <code>height_label</code>.</p>
+
+      <pre><code># ✅ pre-check
+data("heights")
+?heights
+names(heights)</code></pre>
+
+      <p>🗣 Which column contains height values? What are the unique values in that column? Should <code>"Tall"</code> be assigned to the <code>yes</code> or <code>no</code> argument in the <code>ifelse()</code> statement?</p>
+
+      <pre><code># ⚡ Code
+height_label &lt;- ________(
+  test = ________$________ &gt; 68,
+  yes = ________,
+  no = ________
+)</code></pre>
+
+      <pre><code># ✅ Check
+table(height_label)  # expect "Tall" and "Not Tall"</code></pre>
+
+      <p>🗣 Comment on the output. Do you see the expected labels? How many <code>"Tall"</code> and <code>"Not Tall"</code> are there?</p>
+
+      <p><strong>Canvas quiz note:</strong> The official quiz may provide a word bank. This preview leaves the answer spaces blank so you can practice from the chapter.</p>
+
+      <h3>Task 3: 📊 Recode with <code>mutate()</code> and <code>case_when()</code></h3>
+
+      <p>🎯 Create <code>mpg_class</code> with three labels using <code>case_when()</code>: <code>"High MPG"</code> if <code>mpg</code> is greater than <code>25</code>; <code>"Low MPG"</code> if <code>mpg</code> is less than <code>15</code>; otherwise <code>"Medium MPG"</code>.</p>
+
+      <pre><code># ⚡ Code
+mpg_recode &lt;- mtcars %&gt;%
+  ________(mpg_class = ________(
+    mpg &gt; 25 ~ ________,
+    mpg &lt; 15 ~ ________,
+    TRUE     ~ ________
+  ))</code></pre>
+
+      <pre><code># ✅ Checks
+table(mpg_recode$mpg_class)  # expect 3 levels</code></pre>
+
+      <p>🗣 Comment on the output. Do you see the expected labels? How many <code>"High MPG"</code>, <code>"Medium MPG"</code>, and <code>"Low MPG"</code> are there?</p>
+
+      <p><strong>Canvas quiz note:</strong> The official quiz may provide a word bank. This preview leaves the answer spaces blank so you can practice from the chapter.</p>
+
+      <h3>Task 4: ↔️ Recode: Name Focus</h3>
+
+      <p>🎯 With the dataset <code>stars</code> from the <code>dslabs</code> package, classify each star by temperature range in a new column called <code>temp_group</code>. Store the result as <code>stars_recode</code>.</p>
+
+      <p>Use these rules:</p>
+
+      <ul>
+        <li>Temperatures less than <code>4000</code> are <code>"Cool"</code>.</li>
+        <li>Temperatures between <code>4000</code> and <code>7500</code> are <code>"Warm"</code>.</li>
+        <li>All stars more than <code>7500</code> are <code>"Hot"</code>.</li>
+      </ul>
+
+      <pre><code># ✅ pre-check
+?dslabs::stars
+stars &lt;- dslabs::stars
+
+# View(stars)
+colnames(stars)
+summary(stars$temp)</code></pre>
+
+      <p>🗣 Which column contains temperature values in the data frame <code>stars</code>? Identify where the new output column name goes: left or right of the <code>=</code>?</p>
+
+      <pre><code># ⚡ Code
+________ &lt;- ________ %&gt;%
+  mutate(
+    ________ = case_when(
+      ________ &lt; 4000 ~ ________,
+      ________ &lt;= 7500 ~ ________,
+      ________ ~ ________
+    )
+  )</code></pre>
+
+      <pre><code># ✅ Checks
+table(stars_recode$temp_group)  # expect 3 levels</code></pre>
+
+      <p>🗣 Comment on the output. Do you see the expected labels? How many <code>"Cool"</code>, <code>"Warm"</code>, and <code>"Hot"</code> stars are there?</p>
+
+      <p><strong>Canvas quiz note:</strong> The official quiz may provide a word bank. This preview leaves the answer spaces blank so you can practice from the chapter.</p>
+
+      <h3>Task 5: ⚖️ Unit Conversion with <code>mutate()</code></h3>
+
+      <p>🎯 Create <code>international_friendly_heights</code> by <strong>overwriting</strong> the <code>height</code> column. Hint: inches × <code>2.54</code>.</p>
+
+      <pre><code># ✅ pre-check
+heights &lt;- dslabs::heights
+head(heights)</code></pre>
+
+      <pre><code># ⚡ Code
+international_friendly_heights &lt;- heights %&gt;%
+  mutate(________ = ________ * ________)</code></pre>
+
+      <pre><code># ✅ Checks
+head(international_friendly_heights)</code></pre>
+
+      <p>🗣 Comment on the output. Do you see a new column? Do the values look correct for a unit conversion from inches to centimeters?</p>
+
+      <p><strong>Answer format:</strong> open entry in Canvas.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>File Upload Requirement</h2>
+
+      <ul>
+        <li>Your practice work is submitted in a separate assignment.</li>
+        <li><strong>Required file to submit:</strong> <code>chapter12_practice.html</code></li>
+      </ul>
+
+      <p>Submit the file in: <a href="06-1-04-recoding-practice-space-file-submission-html.html">06.1.04 🏷️ Recoding Practice Space File Submission HTML</a></p>
+    </section>
+
+    <section class="content-card">
+      <h2>Before You Leave This Page</h2>
+
+      <ul>
+        <li>Complete the Chapter 12 Practice Space tasks in RStudio.</li>
+        <li>Save your Quarto file as <code>chapter12_practice.qmd</code>.</li>
+        <li>Render your file to create <code>chapter12_practice.html</code>.</li>
+        <li>Check that your output includes code, checks, and comments or memos.</li>
+        <li>Use the static quiz preview to check what the Canvas quiz will ask.</li>
+      </ul>
+
+      <p><a href="../../course-resources/items/how-to-complete-core-practice-space.html">How to Complete 🌱 Core Practice Space</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 6</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

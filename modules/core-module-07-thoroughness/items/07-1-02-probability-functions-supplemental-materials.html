@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>07.1.02 🎲 Probability Functions Supplemental Materials | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>07.1.02 🎲 Probability Functions Supplemental Materials</h1>
+      <p>Optional | Time varies | Module 7</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>Review the supplemental resources on this page if you would like an alternative explanation, example, or walkthrough for concepts in this chapter, or if you need extra help with a specific skill.</p>
+
+      <p>These materials are optional. They do not replace the Chapter 15 guided activity.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Resources</h2>
+
+      <h3><code>tidyr</code></h3>
+
+      <ul>
+        <li>
+          Data Analysis and Visualization in R for Ecologists:
+          <a href="https://datacarpentry.github.io/R-ecology-lesson/working-with-data.html#reshaping-data-with-tidyr" target="_blank" rel="noopener">Reshaping data with tidyr</a>
+          <ul>
+            <li>This reading is most useful for clarifying when and why to switch between <strong>long</strong> and <strong>wide</strong> data, especially with <code>pivot_wider()</code> and <code>pivot_longer()</code>. It also helps connect a practical workflow: <code>group_by()</code> + <code>summarise()</code> first, then reshape the result so comparisons across groups are easier.</li>
+            <li>Look for how the same data changes structure when moving from long to wide and back again, and what information is carried in <code>names_from</code>, <code>values_from</code>, <code>names_to</code>, and <code>values_to</code>. Also notice where <code>NA</code> values come from after <code>pivot_wider()</code> and why filtering them after <code>pivot_longer()</code> can recover the original summarized data.</li>
+          </ul>
+        </li>
+
+        <li>
+          R for Social Scientists:
+          <a href="https://vickysteeves.gitlab.io/2020-01-nyuR/introducing-dplyr-and-tidyr.html#dplyr" target="_blank" rel="noopener">Introducing dplyr and tidyr</a>
+          <ul>
+            <li>This reading is most useful for clarifying how <code>tidyr</code> reshapes data to match the question you want to ask, especially with the older <code>spread()</code> and <code>gather()</code> workflow. It gives a concrete example of turning one categorical variable into multiple logical columns, then reversing that change when you need the variable back in a single column.</li>
+            <li>Look for how the data structure changes when values become <strong>column names</strong> versus when column names become <strong>values</strong> again. Also notice the practical pattern of using <code>mutate()</code> to create a helper logical column, then using <code>filter()</code> and <code>select()</code> to clean up the reshaped result.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Video</h2>
+
+      <h3>Normal Distribution</h3>
+
+      <p>This video is most useful if you want another explanation of the <strong>normal distribution</strong> and how R can generate or display normally distributed values. Watch for the connection between the distribution’s shape, simulated values, and the R functions used to work with normal data.</p>
+
+      <div class="video-wrapper">
+        <iframe
+          title="The normal distribution in R"
+          src="https://www.youtube.com/embed/q8baE17TAiU?si=siCksYf_7xWy36R4"
+          width="560"
+          height="315"
+          loading="lazy"
+          allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+        </iframe>
+      </div>
+
+      <p>If the video above does not appear, use this direct link: <a href="https://youtu.be/q8baE17TAiU?si=siCksYf_7xWy36R4" target="_blank" rel="noopener">The normal distribution in R</a> (05:58 min.).</p>
+
+      <p><a href="../../../assets/Module-7/Equitable_Equations_TRANSCRIPT_The normal distribution in R.txt">Audio Transcript</a></p>
+
+      <h3>Monte Carlo Simulations</h3>
+
+      <p>This video is most useful if you want to see the basic idea of <strong>Monte Carlo simulation</strong>: repeating random trials many times to estimate what tends to happen. Watch for how repeated simulation gives more useful evidence than a single random run.</p>
+
+      <div class="video-wrapper">
+        <iframe
+          title="Introduction to Monte Carlo simulations using R - The absolute basics"
+          src="https://www.youtube.com/embed/T_igE6bb6hU?si=QmdOJQQoLcKbXq8A"
+          width="560"
+          height="315"
+          loading="lazy"
+          allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+        </iframe>
+      </div>
+
+      <p>If the video above does not appear, use this direct link: <a href="https://youtu.be/T_igE6bb6hU?si=QmdOJQQoLcKbXq8A" target="_blank" rel="noopener">Introduction to Monte Carlo simulations using R - The absolute basics</a> (19:28 min.).</p>
+
+      <p><a href="../../../assets/Module-7/Ian_Dworkin_TRANSCRIPT_Introduction to monte carlo simulations using R - The absolute basics.srt.txt">Audio Transcript</a></p>
+    </section>
+
+    <section class="content-card">
+      <h2>How to Use These Materials</h2>
+
+      <ul>
+        <li>Start with the Chapter 15 guided activity before using these resources.</li>
+        <li>Use the normal distribution video if <code>rnorm()</code> or continuous simulated values feel unclear.</li>
+        <li>Use the Monte Carlo video if <code>replicate()</code> and repeated simulation feel abstract.</li>
+        <li>Use the <code>tidyr</code> readings only if the chapter or later work asks you to reshape data for comparison.</li>
+        <li>Return to your Quarto notes and connect each resource back to the simulation or probability question you are working on.</li>
+      </ul>
+
+      <p><a href="07-1-01-probability-functions-guided-activity.html">Back to 07.1.01 🎲 Probability Functions Guided Activity</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 7</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

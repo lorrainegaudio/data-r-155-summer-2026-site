@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>07.2.08 🔥 Wildfire Practice Space: Part C 🎰 Monte Carlo | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>07.2.08 🔥 Wildfire Practice Space: Part C 🎰 Monte Carlo</h1>
+      <p>🌳 Advanced Module 7 | Thoroughness</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>This Practice Space Quiz checks whether you understand the main coding moves from <strong>Wildfire Guided Activity: Part C</strong> and the related chapter practice work. In this quiz, you will work with a statewide wildfire simulation by building category, probability, and parameter vectors; simulating one season and many seasons; estimating the number of fast-growing fires; and interpreting the probability of seeing at least 50 fast-growing events in a season. This practice matters because it brings together probability, simulation, and interpretation in one complete workflow.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>What this Practice Space Checks</h2>
+
+      <p><strong>This Practice Space checks whether you can:</strong></p>
+
+      <ul>
+        <li>Create ordered label, probability, and lognormal parameter vectors from a reference table.</li>
+        <li>Use <code>sample.int()</code> and indexed parameter vectors to simulate wildfire categories and distances for one season.</li>
+        <li>Use logical conditions, <code>sum()</code>, and <code>mean()</code> to count and summarize fast-growing fires.</li>
+        <li>Use braces and <code>replicate()</code> to repeat a one-season simulation across many seasons.</li>
+        <li>Interpret and visualize the distribution of seasonal fast-fire counts with a histogram and threshold line.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Practice Space Steps</h2>
+
+      <ul>
+        <li><strong>Time estimate:</strong> 30 minutes</li>
+        <li><strong>Do:</strong> complete during or after <a href="07-2-07-wildfire-guided-activity-part-c-monte-carlo.html">🔥 Wildfire Guided Activity: Part C 🎰 Monte Carlo</a></li>
+        <li><strong>Before starting:</strong> complete the guided activity and the related chapter practice tasks</li>
+        <li><strong>Open/Download:</strong> <a href="../../../assets/Module-7/Fire-Assignment-Part-C.html">Fire-Assignment-Part-C.html</a></li>
+        <li><strong>Use:</strong> RStudio Desktop, Quarto, and <code>Fire-Assignment-PartC-StudentTemplate.qmd</code></li>
+        <li><strong>Save as:</strong> <code>Fire-Assignment-PartC-StudentTemplate.qmd</code></li>
+        <li><strong>Complete:</strong> Part C tasks on building <code>labels</code>, <code>prob</code>, <code>meanlog</code>, and <code>sdlog</code>; setting <code>N</code>, <code>S</code>, and <code>k</code>; simulating one season with <code>idx</code> and <code>d</code>; counting <code>fast_count_one</code>; using <code>replicate()</code> to create <code>counts_fast_mix</code>; and plotting the distribution of seasonal fast-fire counts</li>
+        <li><strong>Return to:</strong> this quiz</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>File Upload Requirement</h2>
+
+      <p>Your practice work is <strong>not</strong> submitted here. This page is only for the quiz.</p>
+
+      <p>Complete <code>Fire-Assignment-PartC-StudentTemplate.qmd</code> first so you can work through the coding steps yourself, then use this quiz to check your understanding. Save your completed Part C file because you will later combine Parts A, B, and C into one final wildfire report for the final Wildfire submission page.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Quiz Questions</h2>
+
+      <p>Use these questions to check your work after completing the Part C template. The blanks show where you should know the missing code. Use the word bank for each task.</p>
+
+      <h3>Task 5: Sample Categories for One Season</h3>
+
+      <p>❓ In a season with 450 new ignitions statewide, what is the probability we see at least 50 fast-growing events, defined as fires spreading at least 10 km in 8 hours, when ignitions can occur in any hazard category according to their statewide area weights?</p>
+
+      <pre><code># ⚡ Set up
+prob    &lt;- c(0.25, 0.25, 0.25, 0.15, 0.05, 0.04, 0.01)
+
+meanlog &lt;- c(0.582, 1.046, 1.451, 1.907, 2.455, 2.866, 3.310)
+sdlog   &lt;- c(0.472, 0.325, 0.325, 0.280, 0.246, 0.220, 0.212)
+
+N &lt;- 450
+S &lt;- 100000
+k &lt;- 10</code></pre>
+
+      <p>🎯 Simulate one season’s worth of categories, without any distances. Each ignition gets a hazard category chosen at random according to the statewide area weights in <code>prob</code>. Use <code>sample.int()</code> to sample indices from <code>1:length(labels)</code> and store them in a vector named <code>idx</code>. Then check the first few values and a frequency table to see how often each category appears.</p>
+
+      <pre><code># ⚡ Test
+idx &lt;- ________(________,
+                  size    = ________,
+                  replace = ________,
+                  prob    = ________)
+
+# ✅ Verify
+table(________)</code></pre>
+
+      <p>🗣 Comment: Which categories appear most often in this one simulated season? Does that pattern make sense compared with the values in <code>prob</code>?</p>
+
+      <p><strong>Word bank:</strong> <code>sample.int</code>, <code>length(labels)</code>, <code>N</code>, <code>TRUE</code>, <code>prob</code>, <code>labels[idx]</code></p>
+
+      <h3>Task 6: Draw Distances for One Season</h3>
+
+      <p>🎯 Next, turn those category indices into distances. For each ignition, use <code>rlnorm()</code> with the <code>meanlog</code> and <code>sdlog</code> values for that ignition’s category. You do this by indexing the parameter vectors with <code>idx</code>. Store the simulated distances in a vector called <code>d</code>, then look at the first few values and a summary.</p>
+
+      <pre><code># ⚡ Test
+d &lt;- ________(________,
+            meanlog = meanlog[________],
+            sdlog   = sdlog[________])
+
+# ✅ Verify
+head(d)
+summary(d)</code></pre>
+
+      <p>🗣 Comment: What does the summary of <code>d</code> show about simulated spread distances for this one season?</p>
+
+      <p><strong>Word bank:</strong> <code>rlnorm</code>, <code>N</code>, <code>idx</code>, <code>idx</code>, <code>prob</code></p>
+
+      <h3>Task 7: Count Fast Runs for One Season</h3>
+
+      <p>🎯 Now that you have one season of distances in <code>d</code>, count how many ignitions are fast. A fast ignition has a distance of at least <code>k</code>, where <code>k = 10</code> km. Use a logical comparison to mark fast runs with <code>TRUE</code> or <code>FALSE</code>, then wrap that result in <code>sum()</code> to count how many <code>TRUE</code> values there are. Store this count in <code>fast_count_one</code> and print it.</p>
+
+      <pre><code># ⚡ Test
+fast_flags_one &lt;- d ________ ________
+fast_count_one &lt;- ________(________)
+
+# ✅ Verify
+fast_count_one
+mean(fast_flags_one)</code></pre>
+
+      <p>🗣 Comment: How many fast-growing fires occurred in this one simulated season? What proportion of the simulated ignitions were fast-growing?</p>
+
+      <p><strong>Word bank:</strong> <code>&gt;=</code>, <code>k</code>, <code>sum</code>, <code>fast_flags_one</code></p>
+
+      <h3>Task 8: Bundle One-Season Logic in a Single Block</h3>
+
+      <p>Braces <code>{ ... }</code> group several lines together so they act as one expression and return the final result.</p>
+
+      <p>🎯 Bundle the three steps above into one block of code that represents a single season: sampling <code>idx</code>, drawing <code>d</code>, and counting fast ignitions. Run it to make sure it still returns a single count.</p>
+
+      <pre><code># ⚡ Test
+fast_count_one &lt;- {
+  idx &lt;- ________(________,
+                    size    = ________,
+                    replace = ________,
+                    prob    = ________)
+
+  d   &lt;- ________(________,
+                meanlog = meanlog[idx],
+                sdlog   = sdlog[idx])
+
+  ________(d ________ ________)
+}
+
+# ✅ Verify
+fast_count_one</code></pre>
+
+      <p>🗣 Comment: Why is it useful to bundle the one-season logic before using <code>replicate()</code>?</p>
+
+      <p><strong>Word bank:</strong> <code>sample.int</code>, <code>length(labels)</code>, <code>N</code>, <code>TRUE</code>, <code>prob</code>, <code>rlnorm</code>, <code>N</code>, <code>sum</code>, <code>&gt;=</code>, <code>k</code></p>
+
+      <h3>Task 9: Simulate Many Seasons</h3>
+
+      <p>🎯 Now that the one-season computation works and returns a single count, use <code>replicate()</code> to repeat it <code>S</code> times. Store the vector of seasonal counts as <code>counts_fast_mix</code>. Then compute the expected number of fast runs per season and the probability that a season has at least 50 fast-growing events.</p>
+
+      <pre><code># ⚡ Test: Final, complete simulation
+set.seed(2025)
+
+counts_fast_mix &lt;- ________(
+  n = ________,
+  expr = {
+    idx &lt;- ________(length(labels), size = ________, replace = ________, prob = ________)
+    d   &lt;- ________(________, meanlog = meanlog[idx], sdlog = sdlog[idx])
+    ________(d &gt;= ________)
+  }
+)
+
+# ⚡ Test: Answer Question
+prob_at_least_50 &lt;- ________(counts_fast_mix ________ 50)</code></pre>
+
+      <p>🗣 Comment: What does <code>prob_at_least_50</code> estimate? Explain it as a simulation-based probability for statewide wildfire seasons.</p>
+
+      <p><strong>Word bank:</strong> <code>replicate</code>, <code>S</code>, <code>sample.int</code>, <code>N</code>, <code>TRUE</code>, <code>prob</code>, <code>rlnorm</code>, <code>N</code>, <code>sum</code>, <code>k</code>, <code>mean</code>, <code>&gt;=</code></p>
+    </section>
+
+    <section class="content-card">
+      <p><a href="../../course-resources/items/how-to-complete-advanced-guided-activities.html">How to Complete 🌳 Advanced Guided Activities</a></p>
+      <p><a href="07-2-00-wildfire-overview.html">Back to 🔥 Wildfire Overview</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

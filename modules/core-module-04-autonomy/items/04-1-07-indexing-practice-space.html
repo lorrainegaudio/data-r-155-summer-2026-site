@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>04.1.07 👈 Indexing Practice Space | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>04.1.07 👈 Indexing Practice Space</h1>
+      <p>🌱 Core | 30 min | Module 4</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>This Practice Space checks whether you can apply the main bracket-indexing skills from <strong>Chapter 8: Bracket Indexing</strong> after completing the associated Guided Activity.</p>
+
+      <p>In this chapter, you load a CSV, subset rows and columns with base R indexing, extract a column as a vector, explain missing value propagation, and overwrite incorrect values using subassignment.</p>
+
+      <p>This practice matters because analysts rarely use an entire dataset at once. They need to point R at the exact rows and columns they need, check their results, and keep a reproducible record of what they changed.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>What This Practice Space Checks</h2>
+
+      <ul>
+        <li><strong>Use</strong> <code>readr::read_csv()</code> to load <code>Values_Transport_dplace.csv</code> into R as a data frame.</li>
+        <li><strong>Apply</strong> bracket indexing with <code>df[rows, cols]</code> to subset data by position, by column name, and by a logical condition.</li>
+        <li><strong>Explain</strong> missing value propagation in a logical mask and why <code>which()</code> helps avoid confusing subsetting results when <code>NA</code> values may appear.</li>
+        <li><strong>Extract</strong> one column as the thing itself using <code>[[ ]]</code> so it can be checked with functions such as <code>table()</code> or <code>unique()</code>.</li>
+        <li><strong>Use</strong> subassignment with <code>df[rows, "col"] &lt;- value</code> to overwrite incorrect values in a copied data frame.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Practice Space Steps</h2>
+
+      <ul>
+        <li><strong>Time estimate:</strong> 1 hour</li>
+        <li><strong>Do:</strong> After completing the Guided Activity</li>
+        <li><strong>Before starting:</strong> Complete the Guided Activity and make sure <a href="../../../assets/Module-4/Values_Transport_dplace.csv"><code>Values_Transport_dplace.csv</code></a> is saved in the same course folder as your practice notebook.</li>
+        <li><strong>Open:</strong> <a href="../../../assets/Module-4/Chapter_8_👈Indexing.html">Chapter_8_👈Indexing.html</a></li>
+        <li><strong>Use:</strong> RStudio Desktop / R Notebook / package <code>readr</code> / dataset <a href="../../../assets/Module-4/Values_Transport_dplace.csv"><code>Values_Transport_dplace.csv</code></a></li>
+        <li><strong>Save as:</strong> <code>chapter8_practice.Rmd</code></li>
+        <li><strong>Complete:</strong> all 9 Practice Space tasks: load the CSV, positional subsetting, names-based subsetting, logical-mask subsetting with <code>which()</code>, explain missing value propagation, extract the <code>year</code> column, overwrite incorrect year values, save your workspace as <code>chapter8_practice.RData</code>, and knit your notebook to HTML for submission.</li>
+        <li><strong>Return to:</strong> the Practice Space Quiz in Canvas when Canvas is available.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Static Quiz Preview</h2>
+
+      <div class="context-note">
+        <p><strong>Important:</strong> This page is a static preview of the quiz questions. It does not submit answers and it does not replace the official Canvas quiz when Canvas is available.</p>
+      </div>
+
+      <h3>Task 1</h3>
+
+      <p><strong>Load the CSV with <code>readr::read_csv()</code></strong></p>
+
+      <p>🎯 <strong>Goal:</strong> Load <code>Values_Transport_dplace.csv</code> into R using <code>read_csv()</code> and assign it to an object called <code>values_transport</code>.</p>
+
+      <pre><code># ⚡ Type this in your R Notebook. Fill in the blanks.
+
+# 1) Confirm the CSV is in the same folder as your R Notebook
+list.files()
+
+# 2) Load required package, then read the CSV
+library(________)
+
+________ &lt;- read_csv("Values_Transport_dplace.csv")</code></pre>
+
+      <p><strong>Answer format:</strong> fill in the package name and the object name.</p>
+
+      <h3>Task 2</h3>
+
+      <p>📍 <strong>Positional subsetting</strong> — rows and columns by index number</p>
+
+      <p>🎯 <strong>Goal:</strong> Create <code>first_10_basic</code> containing the first 10 rows and columns 2 through 5 of <code>values_transport</code>. Use <code>df[rows, cols]</code>.</p>
+
+      <pre><code># ⚡ Type this in your R Notebook. Fill in the blanks.
+
+first_10_basic &lt;- ________[________, ________]</code></pre>
+
+      <p>🗣 How many rows and how many columns does <code>first_10_basic</code> have?</p>
+
+      <p><strong>Answer format:</strong> fill in the data frame name, row positions, and column positions.</p>
+
+      <h3>Task 3</h3>
+
+      <p>🏷 <strong>Names / character subsetting</strong> — choose specific columns by name</p>
+
+      <p>🎯 <strong>Goal:</strong> Create <code>id_name_year</code> containing only the columns <code>id</code>, <code>name</code>, and <code>year</code>.</p>
+
+      <pre><code># ⚡ Type this in your R Notebook. Fill in the blanks.
+
+________ &lt;- values_transport[, c(________, ________, ________)]
+
+# ✅ Check
+names(id_name_year)
+head(id_name_year)</code></pre>
+
+      <p>🗣 The <code>id_name_year</code> data frame contains only the columns <code>id</code>, <code>name</code>, and <code>year</code> from the original <code>values_transport</code> data frame.</p>
+
+      <p><strong>Answer format:</strong> fill in the new object name and the three column names as quoted character strings.</p>
+
+      <h3>Task 4</h3>
+
+      <p>🔍 <strong>Logical mask subsetting</strong></p>
+
+      <p>🎯 <strong>Goal:</strong> Subset rows where <code>year</code> is greater than or equal to 1900 using <code>which()</code> to avoid <code>NA</code> problems.</p>
+
+      <pre><code># ⚡ Type this in your R Notebook. Fill in the blanks.
+
+idx_1900 &lt;- ________(values_transport[, ________] ________ 1900)
+
+values_1900 &lt;- values_transport[________, ]
+
+# ✅ Check
+nrow(values_transport)  # original number of rows
+nrow(values_1900)       # number of rows where year &gt;= 1900</code></pre>
+
+      <p>🗣 The <code>values_1900</code> data frame contains only the rows from <code>values_transport</code> where the <code>year</code> column is greater than or equal to 1900. The number of rows in <code>values_1900</code> should be less than or equal to the number of rows in the original <code>values_transport</code> data frame.</p>
+
+      <p>🗣 How many entries have a year of 1900 or later?</p>
+
+      <p><strong>Answer format:</strong> fill in the indexing helper, the column name, the comparison operator, and the row-index object.</p>
+
+      <h3>Task 5</h3>
+
+      <p>⚠️ <strong>Explain Missing Value Propagation</strong></p>
+
+      <p>🎯 <strong>Goal:</strong> Explain what <strong>missing value propagation</strong> means when you create a logical mask like this:</p>
+
+      <pre><code>mask &lt;- values_transport[, "year"] &gt;= 1900</code></pre>
+
+      <p>If there were <code>NA</code> values in the <code>year</code> column, what will R return when a comparison involves <code>NA</code>, such as <code>NA &gt;= 1900</code>? Why can <code>NA</code> values in a logical mask cause confusing subsetting results with <code>[mask, ]</code>? How does <code>which()</code> help avoid this issue?</p>
+
+      <p><strong>When you create a logical mask like <code>mask &lt;- values_transport[, "year"] &gt;= 1900</code>, what happens if <code>values_transport[, "year"]</code> contains <code>NA</code> values?</strong></p>
+
+      <ul>
+        <li>When a comparison involves <code>NA</code>, R returns <code>NA</code>, so the mask can contain <code>NA</code> values that may produce unexpected rows unless you use <code>which()</code> to keep only <code>TRUE</code> indices.</li>
+        <li>When a comparison involves <code>NA</code>, R returns <code>FALSE</code>, so the mask never contains missing values and subsetting is always safe.</li>
+        <li>When a comparison involves <code>NA</code>, R returns <code>0</code>, so the mask becomes numeric and subsetting fails unless you convert it back to <code>TRUE</code>/<code>FALSE</code>.</li>
+        <li>When a comparison involves <code>NA</code>, R returns <code>NA</code>, so using <code>which()</code> keeps <code>TRUE</code> and <code>NA</code> positions to prevent losing data.</li>
+      </ul>
+
+      <h3>Task 6</h3>
+
+      <p>🧪 <strong>Extraction</strong></p>
+
+      <p>🎯 <strong>Goal:</strong> Extract the <code>year</code> column as a vector using <code>[[ ]]</code>, then run <code>unique()</code>.</p>
+
+      <pre><code># ⚡ Type this in your R Notebook. Fill in the blanks.
+
+________(values_transport________ "year" ________)</code></pre>
+
+      <p>🗣 Comment on the output of <code>unique()</code>. What do you notice about possible values in the <code>year</code> column in the <code>values_transport</code> data frame?</p>
+
+      <p><strong>Answer format:</strong> fill in the function name and the double-bracket extraction syntax.</p>
+
+      <h3>Task 7: Step 1</h3>
+
+      <p>🛠 <strong>Overwrite</strong></p>
+
+      <p><strong>Scenario:</strong> You found four data-entry errors in the <code>year</code> column. After reviewing field notes, you confirm these corrections:</p>
+
+      <ul>
+        <li><code>-621</code> should be <code>1821</code></li>
+        <li><code>-1750</code> should be <code>1750</code></li>
+        <li><code>110</code> should be <code>1910</code></li>
+        <li><code>1292</code> should be <code>1892</code></li>
+      </ul>
+
+      <p>🎯 <strong>Goal:</strong> Use subassignment with <code>df[rows, "col"] &lt;- value</code> to overwrite the incorrect year values in the copy of <code>values_transport</code> called <code>transport_year_clean</code>.</p>
+
+      <pre><code># ⚡ Type this in your R Notebook. Fill in the blanks.
+
+# Step 1: Make a copy of the data frame
+________ &lt;- ________</code></pre>
+
+      <p><strong>Answer format:</strong> fill in the new copied data frame name and the original data frame name.</p>
+
+      <h3>Task 7: Step 2</h3>
+
+      <p>🛠 <strong>Overwrite</strong></p>
+
+      <p><strong>Scenario:</strong> You found four data-entry errors in the <code>year</code> column. After reviewing field notes, you confirm these corrections:</p>
+
+      <ul>
+        <li><code>-621</code> should be <code>1821</code></li>
+        <li><code>-1750</code> should be <code>1750</code></li>
+        <li><code>110</code> should be <code>1910</code></li>
+        <li><code>1292</code> should be <code>1892</code></li>
+      </ul>
+
+      <p>🎯 <strong>Goal:</strong> Identify row indices for each incorrect value.</p>
+
+      <pre><code># ⚡ Type this in your R Notebook. Fill in the blanks.
+
+idx_621 &lt;- ________(transport_year_clean[, "year"] == -621)
+idx_1750 &lt;- ________(transport_year_clean[, "year"] == -1750)
+idx_110 &lt;- ________(transport_year_clean[, "year"] == 110)
+idx_1292 &lt;- ________(transport_year_clean[, "year"] == 1292)</code></pre>
+
+      <p><strong>Options:</strong></p>
+
+      <ul>
+        <li><code>idx</code></li>
+        <li><code>mean</code></li>
+        <li><code>sum</code></li>
+        <li><code>which</code></li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>File Upload Requirement</h2>
+
+      <ul>
+        <li>Your practice work is submitted in a separate assignment.</li>
+        <li><strong>Required files to submit:</strong> <code>chapter8_practice.html</code> and <code>chapter8_practice.RData</code></li>
+      </ul>
+
+      <p>Submit the files in: <a href="04-1-08-indexing-practice-space-file-submission-html-rdata.html">04.1.08 👈 Indexing Practice Space File Submission HTML &amp; RData</a></p>
+    </section>
+
+    <section class="content-card">
+      <h2>Before You Leave This Page</h2>
+
+      <ul>
+        <li>Complete the Chapter 8 Practice Space tasks in RStudio.</li>
+        <li>Save your notebook as <code>chapter8_practice.Rmd</code>.</li>
+        <li>Knit the notebook to create <code>chapter8_practice.html</code>.</li>
+        <li>Save your workspace as <code>chapter8_practice.RData</code>.</li>
+        <li>Check that your notebook loads <code>Values_Transport_dplace.csv</code> as <code>values_transport</code>.</li>
+        <li>Check that your code uses positional, name-based, and logical-mask subsetting.</li>
+        <li>Check that your notebook explains missing value propagation.</li>
+        <li>Check that your subassignment code works on a copied data frame, not the original object.</li>
+        <li>Use the static quiz preview to check what the Canvas quiz will ask.</li>
+      </ul>
+
+      <p><a href="../../course-resources/items/how-to-complete-core-practice-space.html">How to Complete 🌱 Core Practice Space</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 4</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

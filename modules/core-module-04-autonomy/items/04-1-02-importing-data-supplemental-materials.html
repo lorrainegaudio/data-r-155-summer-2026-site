@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>04.1.02 📤 Importing Data Supplemental Materials | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>04.1.02 📤 Importing Data Supplemental Materials</h1>
+      <p>Optional | Time varies | Module 4</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>Review the supplemental resources on this page if you would like an alternative explanation, example, or walkthrough for concepts in this chapter or need extra help with a specific skill.</p>
+
+      <p>These materials are optional and do not replace the chapter.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Resources</h2>
+
+      <ul>
+        <li>
+          <a href="https://rstudio.github.io/cheatsheets/html/data-import.html#read-tabular-data-with-readr" target="_blank" rel="noopener">Import Data Cheatsheet</a>
+          <ul>
+            <li>This cheatsheet is most useful as a quick guide to the import functions themselves, especially <code>read_csv()</code>, <code>read_delim()</code>, <code>read_tsv()</code>, and <code>read_excel()</code>, plus arguments like <code>col_names</code>, <code>skip</code>, <code>n_max</code>, <code>na</code>, and <code>col_types</code> when a file does not import cleanly. It is the page to keep open when you need the exact syntax for choosing a delimiter, reading only part of a file, or fixing guessed column types.</li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="https://datasciencebook.ca/reading.html" target="_blank" rel="noopener">Data Science: A First Introduction — Chapter 2 Reading in Data Locally and from the Web</a>
+          <ul>
+            <li>This reading is most useful for understanding relative versus absolute file paths and why relative paths usually make imports work more reliably across different computers and project folders. It also helps clarify how the working directory affects imports, including practical path pieces like <code>.</code> for the current folder and <code>..</code> for the previous folder.</li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="https://datacarpentry.github.io/genomics-r-intro/03-basics-factors-dataframes.html" target="_blank" rel="noopener">Data Analysis and Visualization with R for Genomics: R Basics Continued — Factors and Data Frames</a>
+          <ul>
+            <li>This reading is most useful for checking what you imported after the file opens, especially with <code>dim()</code>, <code>summary()</code>, and <code>str()</code>. It helps you recognize common data frame issues by showing how to read row and column counts, how to inspect each column’s type, and how to notice when character data, integers, and other columns were imported differently than expected.</li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="https://datacarpentry.github.io/genomics-r-intro/03-basics-factors-dataframes.html#importing-tabular-data-into-r" target="_blank" rel="noopener">Importing Tabular Data into R</a>
+          <ul>
+            <li>Use this section when you need a more detailed look at <code>read.csv()</code> and the arguments that commonly need adjustment during import, such as <code>header</code>, <code>sep</code>, <code>dec</code>, and <code>nrow</code>. It is especially helpful for understanding that <code>read.csv()</code> is a shortcut built on <code>read.table()</code>, which matters when a file has an unusual delimiter or decimal mark.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Video</h2>
+
+      <h3>Importing Excel Files</h3>
+
+      <p>This video is most useful if you need a practical walkthrough of <strong>importing Excel files into RStudio</strong>, especially when the data are not sitting neatly on the first sheet or in the top-left corner.</p>
+
+      <p>It is especially helpful for seeing how <code>read_excel()</code> uses arguments like <code>sheet</code>, <code>range</code>, <code>col_types</code>, and <code>na</code> to pull in the right cells, define missing values, and clean up import problems such as duplicate column names or messy working-directory setup.</p>
+
+      <div class="video-wrapper">
+        <iframe
+          title="Importing data from Excel into RStudio"
+          src="https://www.youtube.com/embed/UYJysvFfG-I?si=qADihmxCBEnxwW6h"
+          width="560"
+          height="315"
+          loading="lazy"
+          allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+        </iframe>
+      </div>
+
+      <p>If the video above does not appear, use the direct link: <a href="https://www.youtube.com/watch?v=UYJysvFfG-I" target="_blank" rel="noopener">Importing data from excel into R studio</a> (14:56 min.).</p>
+
+      <p><a href="../../../assets/Module-4/R_Programming101_TRANSCRIPT_Importing Data from Microsoft Excel.txt">Audio Transcript</a></p>
+    </section>
+
+    <section class="content-card">
+      <h2>Use This Page When...</h2>
+
+      <ul>
+        <li>You need the exact syntax for <code>read_csv()</code>, <code>read_excel()</code>, or related import functions.</li>
+        <li>You are confused about working directories or file paths.</li>
+        <li>R cannot find your CSV or Excel file.</li>
+        <li>Your imported data has the wrong number of rows or columns.</li>
+        <li>You need to check column types after importing a file.</li>
+        <li>You need another walkthrough of importing Excel data with <code>read_excel()</code>.</li>
+      </ul>
+
+      <p><a href="04-1-01-importing-data-guided-activity.html">Back to 04.1.01 📤 Importing Data Guided Activity</a></p>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 4</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

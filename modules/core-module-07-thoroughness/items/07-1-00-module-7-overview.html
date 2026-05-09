@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>07.1.00 ✔️ Thoroughness Module Overview | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>07.1.00 ✔️ Thoroughness Module Overview</h1>
+      <p>🌱 Core: Module 7 | DATA-R 155 | Summer 2026</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>✔️ Thoroughness</h2>
+
+      <p>This module focuses on thoroughness as an analytical habit: checking whether results make sense, choosing the right tool for the question, and explaining what the output shows. In Core, you will work with probability simulation and data visualization. You will use <code>sample()</code>, <code>rnorm()</code>, and <code>replicate()</code> to model uncertain outcomes, then use <code>ggplot2</code> to build graphs that communicate patterns clearly.</p>
+
+      <p>The main technical move in this module is connecting code output to interpretation. Probability simulations help you think about fairness, risk, variation, and repeated outcomes. Plotting with <code>ggplot2</code> helps you compare relationships, distributions, and groups using scatterplots, boxplots, density plots, histograms, and labels. Together, these skills ask you to do more than run code: you must check the output and explain what it means.</p>
+
+      <p>The module follows the usual Core pattern: complete the guided activity, use supplemental materials only when you need another explanation, complete the Practice Space, and submit the required files. The work in this module depends on careful Quarto habits: save the source file, save the workspace, render when appropriate, check object names, and make sure your written interpretation matches the code and output.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Learning Objectives</h2>
+
+      <p><strong>By the end of this module, the successful student will be able to:</strong></p>
+
+      <ul>
+        <li>Use <code>sample()</code> to simulate outcomes from a discrete set of possible values.</li>
+        <li>Use <code>rnorm()</code> to simulate continuous values from a normal distribution with a specified mean and standard deviation.</li>
+        <li>Apply <code>replicate()</code> to repeat a simulation many times and store the repeated results.</li>
+        <li>Interpret simulation checks such as <code>table()</code>, <code>mean()</code>, <code>any()</code>, and <code>sum()</code>.</li>
+        <li>Explain whether simulated results look reasonable, fair, unusual, or practically important.</li>
+        <li>Use <code>ggplot()</code>, <code>aes()</code>, and <code>geom_*()</code> layers to build graphs from data frames.</li>
+        <li>Create scatterplots, boxplots, density plots, and histograms that match the analytical question.</li>
+        <li>Distinguish between mapping a variable inside <code>aes()</code> and setting a fixed visual property outside <code>aes()</code>.</li>
+        <li>Create and save named plot objects for later checking and review.</li>
+        <li>Write memo notes that explain what a simulation or graph shows in context.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Why This Topic Is Important</h2>
+
+      <p>Many real questions involve uncertainty. A single outcome may be misleading, but repeated simulation can show what tends to happen over time. By using R to simulate die rolls, normally distributed values, and repeated weekly outcomes, you practice using computation to reason about chance instead of relying on guesses or formulas alone.</p>
+
+      <p>Visualization is equally important because graphs often reveal patterns that tables do not show quickly. A good graph helps you compare groups, inspect distributions, notice overlap, and communicate a result to someone else. A weak graph can confuse the reader or hide the point, even when the code technically runs.</p>
+
+      <p>This module asks you to be thorough with both code and interpretation. You need to create the right objects, run the right checks, inspect the output, and explain what the result means. That habit matters in later data work because analytical mistakes often happen when people stop at “the code ran” instead of asking whether the result is reasonable.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Strategies for Success</h2>
+
+      <ul>
+        <li>For simulation tasks, identify the possible outcomes, the number of trials, and whether replacement is needed before writing code.</li>
+        <li>Use checks such as <code>table()</code>, <code>mean()</code>, <code>sum()</code>, and <code>any()</code> to inspect what the simulation produced.</li>
+        <li>Do not over-interpret one random result. Use repeated simulation when the question is about longer-term risk or patterns.</li>
+        <li>For <code>ggplot2</code> tasks, identify the dataset, x-variable, y-variable, and graph type before writing the plot code.</li>
+        <li>Check whether a visual property belongs inside <code>aes()</code> as a mapped variable or outside <code>aes()</code> as a fixed setting.</li>
+        <li>Print each plot object after creating it so you can see whether the graph actually displays as intended.</li>
+        <li>Use exact object names, including capitalization, because the workspace file is checked for specific objects.</li>
+        <li>Write memo notes that interpret the simulation or graph, not just notes that repeat the code.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Assignments and Tasks</h2>
+
+      <h3>🌱 Core</h3>
+
+      <h4>Do Monday</h4>
+      <ul>
+        <li><a href="07-1-01-probability-functions-guided-activity.html">07.1.01 🎲 Probability Functions Guided Activity (1 hr 30 min)</a></li>
+        <li><a href="07-1-02-probability-functions-supplemental-materials.html">07.1.02 🎲 Probability Functions Supplemental Materials (Optional; time varies)</a></li>
+      </ul>
+
+      <h4>Due by Tuesday at 11:59 p.m. Mountain Time</h4>
+      <ul>
+        <li><a href="07-1-03-probability-functions-practice-space.html">07.1.03 🎲 Probability Functions Practice Space (30 min)</a>
+          <ul>
+            <li>Revisions due Thursday at 11:59 p.m. Mountain Time</li>
+          </ul>
+        </li>
+        <li><a href="07-1-04-probability-functions-practice-space-file-submission-qmd-rdata.html">07.1.04 🎲 Probability Functions Practice Space File Submission QMD and RData (30 min)</a>
+          <ul>
+            <li>Revisions due Thursday at 11:59 p.m. Mountain Time</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>Do Wednesday</h4>
+      <ul>
+        <li><a href="07-1-05-ggplot2-guided-activity.html">07.1.05 📈 ggplot2 Guided Activity (1 hr 30 min)</a></li>
+        <li><a href="07-1-06-ggplot2-supplemental-materials.html">07.1.06 📈 ggplot2 Supplemental Materials (Optional; time varies)</a></li>
+      </ul>
+
+      <h4>Due by Thursday at 11:59 p.m. Mountain Time</h4>
+      <ul>
+        <li><a href="07-1-07-ggplot2-practice-space.html">07.1.07 📈 ggplot2 Practice Space (30 min)</a>
+          <ul>
+            <li>Revisions due Saturday at 11:59 p.m. Mountain Time</li>
+          </ul>
+        </li>
+        <li><a href="07-1-08-ggplot2-practice-space-file-submission-qmd-rdata.html">07.1.08 📈 ggplot2 Practice Space File Submission QMD and RData (30 min)</a>
+          <ul>
+            <li>Revisions due Saturday at 11:59 p.m. Mountain Time</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Helpful Course Resources</h2>
+
+      <ul>
+        <li><a href="../../course-resources/items/how-this-course-works.html">How This Course Works</a></li>
+        <li><a href="../../course-resources/items/how-to-complete-core-guided-activities.html">How to Complete 🌱 Core Guided Activities</a></li>
+        <li><a href="../../course-resources/items/how-to-complete-core-practice-space.html">How to Complete 🌱 Core Practice Space</a></li>
+        <li><a href="../../course-resources/items/how-to-earn-your-grade-core-vs-advanced-complete-vs-yellow.html">How to Earn Your Grade: 🌱 vs 🌳 and ✅ vs 🟡</a></li>
+      </ul>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 7</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>02.1.00 ✍️ Transparency Module Overview | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>02.1.00 ✍️ Transparency Module Overview</h1>
+      <p>🌱 Core: Module 2 | DATA-R 155 | Summer 2026</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>✍️ Transparency</h2>
+
+      <p>This module focuses on transparency: making your R work clear enough that someone else can see what you did, why you did it, and how your output was created. You will move from basic scripts into R Notebooks, where code, output, and memo notes can live in the same document. You will also begin working more seriously with vectors, including numeric, character, and logical vectors.</p>
+
+      <p>The Core work focuses on vector basics and R object structures. You will practice vector arithmetic, recycling, object checks with functions such as <code>class()</code> and <code>length()</code>, string combination with <code>paste()</code>, factors with <code>factor()</code>, named vectors with <code>names()</code>, and indexing by position, name, or logical condition. You will also keep strengthening your notebook workflow by writing clear headings, running code chunks, memoing your thinking, and checking that your work runs from a clean Environment.</p>
+
+      <p>The module pattern should feel familiar from Module 1: complete the Guided Activity, use supplemental materials when you need another explanation, complete the Practice Space, and submit the required file. The difference is that your work now needs to be more transparent. You are not just getting the code to run; you are also showing the reasoning, checks, and notes that make your work easier to review and reproduce.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Learning Objectives</h2>
+
+      <p><strong>By the end of this module, the successful student will be able to:</strong></p>
+
+      <ul>
+        <li>Create and edit an R Notebook with a usable YAML header, code chunks, section headings, and memo text.</li>
+        <li>Build numeric, character, and logical vectors directly in R.</li>
+        <li>Use vector arithmetic to combine vectors and interpret the resulting output.</li>
+        <li>Recognize recycling when vectors of different lengths are used together in arithmetic.</li>
+        <li>Apply object checks such as <code>class()</code>, <code>length()</code>, <code>mode()</code>, and <code>str()</code> to inspect how R is treating stored values.</li>
+        <li>Use <code>paste()</code> to combine character strings and observe how it works across vectors.</li>
+        <li>Create and inspect factor vectors with <code>factor()</code>, including levels and ordering.</li>
+        <li>Create named vectors with <code>names()</code> and retrieve values by name or by position.</li>
+        <li>Use logical filtering and bracket indexing to select values that meet a condition.</li>
+        <li>Explain coercion when mixed values in one vector are converted to a shared data type.</li>
+        <li>Document code output, troubleshooting, and outside help clearly in notebook memo notes.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Why This Topic Is Important</h2>
+
+      <p>Vectors are one of the basic building blocks of R. If you do not understand how R stores and combines vector values, later data work will feel random. This module helps you see what kind of object you created, how long it is, what type of values it contains, and how R behaves when you combine or compare those values.</p>
+
+      <p>Transparency matters because code that “worked once” is not enough. In real analytical work, you need to leave a trail: what you ran, what output appeared, what you checked, and what you concluded. R Notebooks help you keep code, output, and written explanation together, which makes your work easier to review, revise, and troubleshoot.</p>
+
+      <p>This module also prevents common beginner mistakes: mixing data types without noticing coercion, confusing object names with element names, indexing the wrong position, forgetting that R is case sensitive, and moving ahead without checking output. These habits prepare you for later work with filtering, subsetting, recoding, and larger datasets.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Strategies for Success</h2>
+
+      <ul>
+        <li>Run notebook chunks as you write them. Do not wait until the end to discover that earlier code failed.</li>
+        <li>Check your objects often with <code>class()</code>, <code>length()</code>, <code>mode()</code>, or <code>str()</code> before using them in later code.</li>
+        <li>Watch for coercion. If a vector mixes numbers and text, R may convert the values to a shared type.</li>
+        <li>Keep object names and element names separate in your thinking. A vector can have one object name and many named elements inside it.</li>
+        <li>Use bracket indexing carefully. Indexing by position, name, and logical condition are related, but they are not interchangeable.</li>
+        <li>When using logical filters, print the result and ask whether the selected values match the condition you intended.</li>
+        <li>Write memo notes while you work, not after you forget what happened.</li>
+        <li>Run the notebook from a clean Environment before submitting so you know the document can reproduce the work in order.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Assignments and Tasks</h2>
+
+      <h3>🌱 Core</h3>
+
+      <h4>Do Monday</h4>
+      <ul>
+        <li><a href="02-1-01-vector-basics-guided-activity.html">02.1.01 📏 Vector Basics Guided Activity (1 hr 30 min)</a></li>
+        <li><a href="02-1-02-vector-basics-supplemental-materials.html">02.1.02 📏 Vector Basics Supplemental Materials (Optional; time varies)</a></li>
+      </ul>
+
+      <h4>Due by Tuesday at 11:59 p.m. Mountain Time</h4>
+      <ul>
+        <li><a href="02-1-03-vector-basics-practice-space.html">02.1.03 📏 Vector Basics Practice Space (30 min)</a>
+          <ul>
+            <li>Revisions due Thursday at 11:59 p.m. Mountain Time</li>
+          </ul>
+        </li>
+        <li><a href="02-1-04-vector-basics-practice-space-file-submission-rmd-and-rdata.html">02.1.04 📏 Vector Basics Practice Space File Submission RMD &amp; RData (30 min)</a>
+          <ul>
+            <li>Revisions due Thursday at 11:59 p.m. Mountain Time</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>Do Wednesday</h4>
+      <ul>
+        <li><a href="02-1-05-structures-guided-activity.html">02.1.05 🏗️ Structures Guided Activity (1 hr 30 min)</a></li>
+        <li><a href="02-1-06-structures-supplemental-materials.html">02.1.06 🏗️ Structures Supplemental Materials (Optional; time varies)</a></li>
+      </ul>
+
+      <h4>Due by Thursday at 11:59 p.m. Mountain Time</h4>
+      <ul>
+        <li><a href="02-1-07-structures-practice-space.html">02.1.07 🏗️ Structures Practice Space (30 min)</a>
+          <ul>
+            <li>Revisions due Saturday at 11:59 p.m. Mountain Time</li>
+          </ul>
+        </li>
+        <li><a href="02-1-08-structures-practice-space-file-submission-rmd.html">02.1.08 🏗️ Structures Practice Space File Submission RMD (30 min)</a>
+          <ul>
+            <li>Revisions due Saturday at 11:59 p.m. Mountain Time</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Helpful Course Resources</h2>
+
+      <ul>
+        <li><a href="../../course-resources/items/how-this-course-works.html">How This Course Works</a></li>
+        <li><a href="../../course-resources/items/how-to-complete-core-guided-activities.html">How to Complete 🌱 Core Guided Activities</a></li>
+        <li><a href="../../course-resources/items/how-to-complete-core-practice-space.html">How to Complete 🌱 Core Practice Space</a></li>
+        <li><a href="../../course-resources/items/how-to-earn-your-grade-core-vs-advanced-complete-vs-yellow.html">How to Earn Your Grade: 🌱 vs 🌳 and ✅ vs 🟡</a></li>
+      </ul>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 2</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>

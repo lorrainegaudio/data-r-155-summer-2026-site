@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>05.1.06 💈 dplyr Subsetting Supplemental Materials | DATA-R 155</title>
+  <link rel="stylesheet" href="../../../css/site.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>05.1.06 💈 dplyr Subsetting Supplemental Materials</h1>
+      <p>Optional | Time varies | Module 5</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../../index.html">Home</a>
+      <a href="#">Course Calendar</a>
+      <a href="#">Gradebook</a>
+      <a href="../../course-resources/items/how-to-book-a-meeting-with-the-instructor.html">Book a Meeting</a>
+      <a href="#">Discussion Groups</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-card">
+      <h2>Purpose</h2>
+
+      <p>Review the supplemental resources on this page if you would like an alternative explanation, example, or walkthrough for concepts in this chapter or need extra help with a specific skill.</p>
+
+      <p>These materials are optional and do not replace the chapter. Use them when you need another explanation of Quarto, <code>dplyr</code>, <code>select()</code>, <code>filter()</code>, the pipe, or row-and-column subsetting.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Resources</h2>
+
+      <h3>Quarto Workflow</h3>
+
+      <ul>
+        <li>
+          <a href="https://quarto.org/docs/get-started/hello/rstudio.html" target="_blank" rel="noopener">Quarto for RStudio</a>
+          <ul>
+            <li>This reading is most useful for learning the basic <strong>Quarto workflow in RStudio</strong>: create a <code>.qmd</code> file, write <strong>YAML</strong>, add <strong>code chunks</strong> and <strong>Markdown text</strong>, then <strong>render</strong> the document to HTML or another output format. It also helps clarify that Quarto is the next-generation version of R Markdown and shows where <strong>visual editing</strong>, <strong>source editing</strong>, and <strong>chunk execution</strong> fit into the workflow.</li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="https://rstudio.github.io/cheatsheets/html/quarto.html" target="_blank" rel="noopener">Quarto Cheatsheet</a>
+          <ul>
+            <li>Use this cheatsheet as a quick reference for the <strong>Quarto syntax and workflow pieces</strong> you need while writing reports, especially <strong>code cells</strong>, <strong>execution options</strong>, <strong>inline code</strong>, figures, and tables. It is the page to keep open when you need a fast reminder of source-file structure or common authoring commands without reading long documentation.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>dplyr Reference Guides</h3>
+
+      <ul>
+        <li>
+          <a href="https://dplyr.tidyverse.org/reference/select.html" target="_blank" rel="noopener">dplyr::select() Reference Guide</a>
+          <ul>
+            <li>This guide is most useful for learning exactly how <code>select()</code> keeps, drops, and reorders columns by name. Look for helpers like <code>:</code>, <code>starts_with()</code>, <code>ends_with()</code>, <code>contains()</code>, and <code>everything()</code>, since those tools make column selection faster than base R indexing.</li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="https://dplyr.tidyverse.org/reference/filter.html" target="_blank" rel="noopener">dplyr::filter() Reference Guide</a>
+          <ul>
+            <li>This guide is most useful for understanding how <code>filter()</code> keeps rows only when conditions evaluate to <code>TRUE</code>. It is especially helpful for checking the exact behavior of <strong>multiple conditions</strong>, <code>%in%</code>, grouped filtering, and the important rule that rows with <code>NA</code> in the condition are dropped.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Subsetting with filter(), select(), and the Pipe</h3>
+
+      <ul>
+        <li>
+          Data Science: A First Introduction
+          <ul>
+            <li>
+              <a href="https://datasciencebook.ca/intro.html#creating-subsets-of-data-frames-with-filter-select" target="_blank" rel="noopener">1.7 Creating subsets of data frames with filter and select</a>
+              <ul>
+                <li>This reading is most useful for a first introduction to the difference between <strong>rows</strong> and <strong>columns</strong> when subsetting a data frame. It helps you see the basic workflow of using <code>filter()</code> for rows and <code>select()</code> for columns before combining those verbs in longer pipelines.</li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="https://datasciencebook.ca/wrangling.html#using-select-to-extract-a-range-of-columns" target="_blank" rel="noopener">3.5 Using select to extract a range of columns</a>
+              <ul>
+                <li>Use this reading when you need clearer examples of choosing columns with <code>select()</code>, especially by <strong>name</strong>, <strong>position-like ranges with <code>:</code></strong>, and tidyselect helpers. It is especially useful for understanding that <code>select()</code> is about keeping or dropping variables, not filtering observations.</li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="https://datasciencebook.ca/wrangling.html#using-filter-to-extract-rows-1" target="_blank" rel="noopener">3.6 Using filter to extract rows</a>
+              <ul>
+                <li>This reading is most useful for learning how <strong>logical conditions</strong> drive row filtering with <code>filter()</code>. Focus on the comparisons and operators it demonstrates, including <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&amp;</code>, <code>|</code>, and <code>%in%</code>, because those are the core tools for keeping only the rows you want.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          Data Analysis and Visualization in R for Ecologists
+          <ul>
+            <li>
+              <a href="https://datacarpentry.github.io/R-ecology-lesson/working-with-data.html#manipulating-data" target="_blank" rel="noopener">Manipulating data</a>
+              <ul>
+                <li>This reading is most useful for seeing how <strong>dplyr verbs</strong> work on a real dataset, especially when you are moving from base R indexing into cleaner data-manipulation workflows. It helps clarify the practical role of verbs like <code>select()</code>, <code>filter()</code>, <code>mutate()</code>, and <code>group_by()</code> in day-to-day wrangling.</li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="https://datacarpentry.github.io/R-ecology-lesson/working-with-data.html#the-pipe" target="_blank" rel="noopener">The Pipe</a>
+              <ul>
+                <li>This reading is most useful for understanding what the <strong>pipe</strong> does and why it makes multi-step data work easier to read. Watch for how the pipe passes the result of one step into the next so you can read a wrangling workflow from left to right instead of nesting functions inside each other.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          Data Analysis and Visualization with R for Genomics
+          <ul>
+            <li>
+              <a href="https://datacarpentry.github.io/genomics-r-intro/05-dplyr.html" target="_blank" rel="noopener">Data Wrangling and Analytics with Tidyverse</a>
+              <ul>
+                <li>This reading is most useful for seeing a broader tidyverse wrangling workflow in one place, including <code>select()</code>, <code>filter()</code>, <code>mutate()</code>, <code>group_by()</code>, and summary operations. It is especially helpful when you need to see how these verbs fit together as a sequence rather than as isolated commands.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Video</h2>
+
+      <h3>Quarto</h3>
+
+      <p>This video is most useful if you want a practical introduction to <strong>Quarto in RStudio</strong> as a document workflow that combines <strong>text, code, figures, tables, and references</strong> in one file. It is especially helpful for seeing how to set chunk options such as <code>echo = FALSE</code>, <code>message = FALSE</code>, and <code>warning = FALSE</code>, insert <strong>inline R code</strong>, add <strong>cross-references and citations</strong>, and render the document to formats like <strong>HTML</strong>, <strong>PDF</strong>, or <strong>Word</strong>.</p>
+
+      <div class="video-wrapper">
+        <iframe title="Quarto - replacing R Markdown in R Studio" src="https://www.youtube.com/embed/GIqpYO4xinc?si=TvIBHyWf-kdPjD8L" width="560" height="315" loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+      </div>
+
+      <p>If the video above does not appear, follow this direct link: <a href="https://youtu.be/GIqpYO4xinc?si=ATg6ASfLYBPpJm6Y" target="_blank" rel="noopener">Quarto - replacing R Markdown in R Studio</a> (14:03 min).</p>
+
+      <p><a href="../../../assets/Module-5/R_Programming101_TRANSCRIPT_Quarto  -  replacing R Markdown in R Studio.txt" target="_blank" rel="noopener">Audio Transcript</a></p>
+
+      <h3>YAML</h3>
+
+      <p>This video is most useful if you need to understand what the <strong>YAML header in a Quarto document actually controls</strong>, especially document-wide settings like <strong>format</strong>, <strong>table of contents</strong>, and <strong>numbered sections</strong>. It is also helpful for seeing the difference between <strong>project-level YAML</strong> in <code>_quarto.yml</code>, <strong>document-level YAML</strong> at the top of a <code>.qmd</code> file, and chunk-level settings.</p>
+
+      <div class="video-wrapper">
+        <iframe title="Quarto - How to use YAML in R Studio to configure your quarto document" src="https://www.youtube.com/embed/aHMJu-YynYI?si=tBRLYJZnUzmSuqgy" width="560" height="315" loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+      </div>
+
+      <p>If the video above does not appear, follow this direct link: <a href="https://youtu.be/aHMJu-YynYI?si=4UdVHB7dj9-jjqkH" target="_blank" rel="noopener">Quarto - How to use YAML in R Studio to configure your quarto document</a> (06:41 min).</p>
+
+      <p><a href="../../../assets/Module-5/R_Programming101_TRANSCRIPT_Quarto - How to use YAML in R Studio to configure your quarto document.txt" target="_blank" rel="noopener">Audio Transcript</a></p>
+
+      <h3>Chunk Options</h3>
+
+      <p>This video is most useful if you need a focused explanation of <strong>Quarto code chunks</strong> and the chunk options that control what happens when a document is rendered. It is especially helpful for seeing how options like <code>echo</code>, <code>eval</code>, <code>warning</code>, and <code>message</code> change whether code is shown, run, or hidden.</p>
+
+      <div class="video-wrapper">
+        <iframe title="Quarto - inserting executable code as code chunks into your document" src="https://www.youtube.com/embed/1yu_iMl7mPY?si=yxJ1qloS3Sp1TMhW" width="560" height="315" loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+      </div>
+
+      <p>If the video above does not appear, follow this direct link: <a href="https://youtu.be/1yu_iMl7mPY?si=jDTWCodaURg8dl1o" target="_blank" rel="noopener">Quarto - inserting executable code as code chunks into your document</a> (04:41 min).</p>
+
+      <p><a href="../../../assets/Module-5/R_Programming101_TRANSCRIPT_Quarto - inserting executable code as code chunks into your document.txt" target="_blank" rel="noopener">Audio Transcript</a></p>
+    </section>
+
+    <section class="content-card">
+      <h2>Before You Move On</h2>
+
+      <ul>
+        <li>Use the Quarto resources if your <code>.qmd</code> file structure, YAML, or rendering process is unclear.</li>
+        <li>Use the <code>select()</code> resources when your question is about columns.</li>
+        <li>Use the <code>filter()</code> resources when your question is about rows.</li>
+        <li>Use the pipe resources when you need help reading or writing a multi-step workflow.</li>
+      </ul>
+
+      <p><a href="../index.html">Back to 🌱 Core: Module 5</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2026 Boise State University | All Rights Reserved</p>
+      <p>Contact: lorrainegaudio@boisestate.edu | 123 University Drive, Boise, ID 83725</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/site.js"></script>
+</body>
+</html>
