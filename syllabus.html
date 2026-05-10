@@ -14,8 +14,8 @@
       --soft: #f5f7fa;
       --line: #d9e2ec;
       --card: #ffffff;
-      --advanced: #fff3e8;
-      --core: #f7fbff;
+      --core: #bfcce7;
+      --advanced: #f5d0c2;
       --warning: #fff7e6;
     }
     * { box-sizing: border-box; }
@@ -120,8 +120,14 @@
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1rem;
     }
-    .core { background: var(--core); }
-    .advanced { background: var(--advanced); }
+    .core {
+      background: var(--core);
+      border-left: 6px solid var(--bsu-blue);
+    }
+    .advanced {
+      background: var(--advanced);
+      border-left: 6px solid var(--bsu-orange);
+    }
     .muted { color: var(--muted); }
     table {
       width: 100%;
